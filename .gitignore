@@ -1,4 +1,6 @@
 # Rendered audio — regenerate with ingest/pregen.py, don't bloat the repo
+# Rendered speech now ships as MP3 (~26 MB, see ingest/compress_audio.py).
+# WAVs are intermediates only — 4x the size for inaudible gain on speech.
 audio/*.wav
 
 # Raw scrape output — big, and reproducible from the ingest scripts

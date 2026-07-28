@@ -3,68 +3,69 @@
   "bars": [
     {
       "index": 0,
-      "file": "7ec625fd26017289.wav"
+      "file": "7ec625fd26017289.mp3"
     },
     {
       "index": 1,
-      "file": "b6d97c18f3cdbcd2.wav"
+      "file": "b6d97c18f3cdbcd2.mp3"
     },
     {
       "index": 2,
-      "file": "5bc603b11e944454.wav"
+      "file": "5bc603b11e944454.mp3"
     },
     {
       "index": 3,
-      "file": "81e6eef3f21c732d.wav"
+      "file": "81e6eef3f21c732d.mp3"
     },
     {
       "index": 4,
-      "file": "1b62fbad6c36b9a1.wav"
+      "file": "1b62fbad6c36b9a1.mp3"
     },
     {
       "index": 5,
-      "file": "335214b2bb7f206c.wav"
+      "file": "335214b2bb7f206c.mp3"
     },
     {
       "index": 6,
-      "file": "46924ce695a6b6c3.wav"
+      "file": "46924ce695a6b6c3.mp3"
     },
     {
       "index": 7,
-      "file": "accd011b0a106d02.wav"
+      "file": "accd011b0a106d02.mp3"
     },
     {
       "index": 8,
-      "file": "9f5390107342fd91.wav"
+      "file": "9f5390107342fd91.mp3"
     },
     {
       "index": 9,
-      "file": "20e2cc5a93438d5c.wav"
+      "file": "20e2cc5a93438d5c.mp3"
     },
     {
       "index": 10,
-      "file": "0f5d28e73ca96cae.wav"
+      "file": "0f5d28e73ca96cae.mp3"
     },
     {
       "index": 11,
-      "file": "d4ed5a0994c35f6f.wav"
+      "file": "d4ed5a0994c35f6f.mp3"
     },
     {
       "index": 12,
-      "file": "d0b416766531a9ae.wav"
+      "file": "d0b416766531a9ae.mp3"
     },
     {
       "index": 13,
-      "file": "9a6ebca00e80c4a0.wav"
+      "file": "9a6ebca00e80c4a0.mp3"
     },
     {
       "index": 14,
-      "file": "f81a1787f1350478.wav"
+      "file": "f81a1787f1350478.mp3"
     },
     {
       "index": 15,
-      "file": "17d040dad40556b6.wav"
+      "file": "17d040dad40556b6.mp3"
     }
   ],
-  "intro": "fea1b1e65e96b0d9.wav"
+  "intro": "fea1b1e65e96b0d9.mp3",
+  "format": "mp3"
 }

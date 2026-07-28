@@ -119,7 +119,7 @@
 
 <script>
 const $ = s => document.querySelector(s);
-let TABLE = null, BATTLE = null, QUEUE = [], qi = 0;
+let TABLE = null, BATTLE = null, QUEUE = [], qi = 0, PLAYABLE = [];
 
 const fmt = n => (n > 0 ? '+' : '') + n.toFixed(1);
 
@@ -144,15 +144,26 @@ async function boot(){
   for (const sel of [$('#selA'), $('#selB')]) {
     sel.innerHTML = rows.map(r => `<option value="${r.slug}">${r.name}</option>`).join('');
   }
-  // Default to a matchup that actually has a battle on disk, so the demo
-  // is one click from the door. Falls back to the two extreme residuals.
-  const first = (cached.battles || [])[0];
+  // Default to a matchup that has a battle on disk AND whose bots are both
+  // still in the roster. Those two sets drift apart every time the data is
+  // re-ingested — a cached battle for a bot that has since dropped out
+  // selects nothing, and the demo dies on the first click.
+  const slugs = new Set(rows.map(r => r.slug));
+  PLAYABLE = (cached.battles || []).filter(b => slugs.has(b.a) && slugs.has(b.b));
+  const first = PLAYABLE[0];
   $('#selA').value = first ? first.a : rows[0].slug;
   $('#selB').value = first ? first.b : rows[rows.length - 1].slug;
 
   $('#chartSub').innerHTML =
     `<b>${rows.length}</b> bots · fitted line r=<b>${t.fit.r}</b> · ` +
     `above the line = the crowd rates them higher than the record earns`;
+
+  // Mark which matchups can actually be played, so nobody picks a pair with
+  // no cached battle and gets a 404 on stage.
+  const ready = new Set(PLAYABLE.flatMap(b => [b.a, b.b]));
+  for (const sel of [$('#selA'), $('#selB')])
+    for (const opt of sel.options)
+      if (ready.has(opt.value)) opt.textContent = '● ' + opt.textContent;
 
   draw();
   $('#selA').onchange = $('#selB').onchange = draw;
@@ -206,7 +217,19 @@ function draw(){
 
 async function playBattle(){
   const a = $('#selA').value, b = $('#selB').value;
-  if (a === b) return;
+
+  // Never fail silently. An empty select and "same bot twice" both used to
+  // hit `a === b` and return without a word, which looks exactly like a
+  // dead button — that is how the demo broke.
+  if (!a || !b){
+    $('#bars').innerHTML = `<div class="empty">No fighters selected.<br><br>
+      The roster changed after the last data ingest. Reload the page.</div>`;
+    return;
+  }
+  if (a === b){
+    $('#bars').innerHTML = `<div class="empty">Pick two <em>different</em> bots.</div>`;
+    return;
+  }
   $('#play').disabled = true;
   $('#bars').innerHTML = '<div class="empty">loading…</div>';
 

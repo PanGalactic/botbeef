@@ -19,6 +19,8 @@ front end never knows or cares which one produced a file.
 import hashlib
 import json
 import os
+import shutil
+import subprocess
 
 import requests
 
@@ -26,6 +28,8 @@ from . import store
 
 AUDIO = store.ROOT / "audio"
 AUDIO.mkdir(parents=True, exist_ok=True)
+
+FFMPEG = shutil.which("ffmpeg") or "/opt/homebrew/bin/ffmpeg"
 
 BACKEND = os.environ.get("BOTBEEF_VOICE", "chatterbox")
 
@@ -151,19 +155,41 @@ RENDERERS = {
 
 def render(text, voice, speed=1.0, backend=None):
     """Render one line. Cached on disk by content hash — never re-renders,
-    which matters when the backend bills per character."""
+    which matters when the backend bills per character.
+
+    Always lands as MP3. Chatterbox and Kokoro both hand back 24 kHz mono
+    PCM, which is ~4x the size for speech nobody can tell apart at 96 kbps —
+    and since these filenames are content-hashed, WAVs accumulate in git
+    forever rather than being replaced. Storing MP3 is what lets the audio
+    ship in the repo at all.
+    """
     backend = backend or BACKEND
-    ext = "mp3" if backend == "elevenlabs" else "wav"
-    path = AUDIO / f"{_key(text, voice, speed, backend)}.{ext}"
+    path = AUDIO / f"{_key(text, voice, speed, backend)}.mp3"
     if path.exists() and path.stat().st_size > 500:
         return path
 
     data = RENDERERS[backend](text, voice, speed, path)
 
-    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp = path.with_suffix(".tmp")
     tmp.write_bytes(data)
-    tmp.replace(path)
+
+    if data.startswith(b"RIFF"):          # PCM in, MP3 out
+        _to_mp3(tmp, path)
+        tmp.unlink(missing_ok=True)
+    else:                                  # ElevenLabs already returns MP3
+        tmp.replace(path)
     return path
+
+
+def _to_mp3(src, dst):
+    """96 kbps mono — inaudible on speech, a quarter of the bytes."""
+    r = subprocess.run(
+        [FFMPEG, "-y", "-loglevel", "error", "-i", str(src),
+         "-c:a", "libmp3lame", "-b:a", "96k", "-ac", "1", str(dst)],
+        capture_output=True, text=True,
+    )
+    if r.returncode != 0 or not dst.exists():
+        raise RuntimeError(f"mp3 encode failed: {r.stderr[-200:]}")
 
 
 def render_battle(battle, speed=1.0, backend=None):

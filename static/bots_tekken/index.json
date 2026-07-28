@@ -33,6 +33,17 @@
     "prompt": "Cobalt, a low wedge-shaped BattleBots combat robot: a broad glossy black sloped wedge armour body with a flat angled top and the word COBALT stencilled large in bright green block capitals across the side panel, a bright toxic green vertical spinner disc with big jagged sprocket teeth mounted on a horizontal shaft standing up at the centre rear, a small green armour pod beside it, and two long slim tapered bright green pointed forks reaching forward low along the floor, clean unscratched black and green livery, polished steel shaft and bearings, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no watermark"
   },
   {
+    "slug": "copperhead",
+    "file": "/Users/panny/battlebars/static/bots_tekken/copperhead.png",
+    "size": [
+      827,
+      588
+    ],
+    "strength": 0.5,
+    "seed": 7000,
+    "prompt": "Copperhead, a BattleBots drum spinner combat robot: a compact rust-brown weathered steel body with two huge black cylindrical wheels at either end, a dark grey steel drum spinner with milled slots across the middle, a top deck plate painted with an ornate pink red and purple snake-scale pattern outlined in gold, and low copper-brown front forks with red and white striped teeth and a bare steel scoop, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
+  },
+  {
     "slug": "duck",
     "file": "/Users/panny/battlebars/static/bots_tekken/duck.png",
     "size": [
@@ -66,6 +77,17 @@
     "prompt": "a round shell-spinner combat robot, wide black domed circular armour shell with orange red and yellow airbrushed flame paintwork along one side, a ring of thick grey steel impact teeth bolted radially around the top hub, a slender red antenna mast curving up from the centre with a small camera pod on top, low dark wedge skirts at the base, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
   },
   {
+    "slug": "huge",
+    "file": "/Users/panny/battlebars/static/bots_tekken/huge.png",
+    "size": [
+      727,
+      538
+    ],
+    "strength": 0.5,
+    "seed": 7000,
+    "prompt": "HUGE, a BattleBots combat robot built as two enormous white plastic spoked wheels like giant wagon wheels on a long thin polished steel axle, with a narrow navy blue vertical spinning blade and a small white gearbox suspended in the gap between the wheels, skeletal and open with almost no body, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
+  },
+  {
     "slug": "hydra",
     "file": "/Users/panny/battlebars/static/bots_tekken/hydra.png",
     "size": [
@@ -75,6 +97,28 @@
     "strength": 0.5,
     "seed": 7000,
     "prompt": "Hydra, a low wide flat BattleBots hydraulic flipper combat robot: dark gunmetal steel armour airbrushed with a red and black dragon face and huge glowing yellow-green slit-pupil reptile eyes, two banks of flat purple-painted wedge forks fanning out along the floor at the front, a bright red hydraulic cylinder in the middle of the deck, a broad bronze-brown steel flipper arm hinged up and arcing over the body, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
+  },
+  {
+    "slug": "hypershock",
+    "file": "/Users/panny/battlebars/static/bots_tekken/hypershock.png",
+    "size": [
+      814,
+      454
+    ],
+    "strength": 0.5,
+    "seed": 7000,
+    "prompt": "Hypershock, a low wide four-wheeled BattleBots combat robot in neon yellow with hot pink and cyan splatter graffiti paint across its body, a polished gold brass front section, a sharp angular neon yellow wedge plow with upswept side wings at the front, and four fat black knobby off-road tyres on neon yellow wheels, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
+  },
+  {
+    "slug": "lock-jaw",
+    "file": "/Users/panny/battlebars/static/bots_tekken/lock-jaw.png",
+    "size": [
+      779,
+      581
+    ],
+    "strength": 0.5,
+    "seed": 7000,
+    "prompt": "Lock-Jaw, a four-wheeled BattleBots combat robot with bright lime green anodised armour and green frame rails over a dark purple and grey chassis box, four large black knobby off-road tyres with polished silver hubs, a green hinged crushing jaw and lifter arm at the front, and two wide polished stainless steel wedge forks with sharp green pointed tips fanning out low at the front, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
   },
   {
     "slug": "malice",
@@ -99,6 +143,28 @@
     "prompt": "Minotaur, a low boxy BattleBots drum spinner combat robot: a massive polished brass-gold horizontal spinning drum with helical fluted teeth mounted across the front, thick matte black rubber-coated armour corner blocks and side pods, a brushed silver-grey top deck plate with white line graphics and bolt rows, a low black wedge front, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
   },
   {
+    "slug": "ribbot",
+    "file": "/Users/panny/battlebars/static/bots_tekken/ribbot.png",
+    "size": [
+      867,
+      468
+    ],
+    "strength": 0.5,
+    "seed": 7000,
+    "prompt": "Ribbot, a BattleBots combat robot built as a giant glossy translucent bright green tree frog, big round cartoon eyes with red irises and black pupils, four fat black rubber wheels on orange hubs, a dark grey studded steel spinning drum weapon across its mouth, and a flat red and pink tongue sticking out forward along the floor, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
+  },
+  {
+    "slug": "riptide",
+    "file": "/Users/panny/battlebars/static/bots_tekken/riptide.png",
+    "size": [
+      782,
+      564
+    ],
+    "strength": 0.5,
+    "seed": 7000,
+    "prompt": "Riptide, a low wide box-shaped BattleBots combat robot: a bright turquoise cyan aluminium frame with a horizontal polished chrome steel drum spinner mounted between two tall cyan uprights at the front centre, flat matte black armour side pods drilled with rows of cyan bolts, angled black wedge plates, small black wheels, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
+  },
+  {
     "slug": "rotator",
     "file": "/Users/panny/battlebars/static/bots_tekken/rotator.png",
     "size": [
@@ -108,6 +174,17 @@
     "strength": 0.5,
     "seed": 7000,
     "prompt": "a low flat wedge-shaped four-wheeled combat robot, dark gunmetal grey armour top plate with bold yellow and gold diagonal stripe livery, two large knobby grey rubber tyres at the back, a wide black horizontal spinning disc mounted low at the front with gold brass wedge-shaped cutting blades, gold anodised front wedge plate, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
+  },
+  {
+    "slug": "sawblaze",
+    "file": "/Users/panny/battlebars/static/bots_tekken/sawblaze.png",
+    "size": [
+      692,
+      631
+    ],
+    "strength": 0.5,
+    "seed": 7000,
+    "prompt": "SawBlaze, a BattleBots combat robot: a long low matte black armoured wedge body on black rubber tank treads, a row of flat black front forks tipped with bright neon green flame-painted blades lying flat on the floor, and a black articulated overhead arm raised at the rear carrying a neon green trimmed saw hammer head, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
   },
   {
     "slug": "shatter",
@@ -121,6 +198,17 @@
     "prompt": "a low wide sprawling combat robot clad in iridescent holographic faceted triangular panels shifting between violet magenta teal and cyan, matte black skeletal chassis and frame rails, two long slender black pointed spear-like forks reaching forward flat along the ground, a tall slim black hammer arm arcing up and back over the body ending in a barbed arrowhead spike, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
   },
   {
+    "slug": "skorpios",
+    "file": "/Users/panny/battlebars/static/bots_tekken/skorpios.png",
+    "size": [
+      656,
+      625
+    ],
+    "strength": 0.5,
+    "seed": 7000,
+    "prompt": "Skorpios, a BattleBots combat robot with a teal and electric blue aluminium chassis and blue wheel hubs on black knobby tyres, a huge red circular saw blade mounted on a tall raised blue steel arm cut with hexagon lightening holes above the body, and a wide mottled polished steel forked wedge plow with long curved scalloped prongs reaching forward along the floor, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
+  },
+  {
     "slug": "tombstone",
     "file": "/Users/panny/battlebars/static/bots_tekken/tombstone.png",
     "size": [
@@ -130,6 +218,28 @@
     "strength": 0.5,
     "seed": 7000,
     "prompt": "Tombstone, a low flat black wedge-shaped BattleBots combat robot with a massive horizontal spinning steel bar weapon slung across the front, bare hardened steel bar with bevelled tips and round bolt holes, matte black anodised aluminium side plates cut with triangular truss lightening holes, four chunky black knobby off-road rubber tyres, white grim reaper skull graphic on the black top panel, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
+  },
+  {
+    "slug": "valkyrie",
+    "file": "/Users/panny/battlebars/static/bots_tekken/valkyrie.png",
+    "size": [
+      772,
+      540
+    ],
+    "strength": 0.5,
+    "seed": 7000,
+    "prompt": "Valkyrie, a low flat wedge-shaped BattleBots combat robot in deep navy blue with sharp white and silver angular geometric stripe livery painted across its top plates, two small black rubber wheels poking up at the sides, and a huge flat navy blue horizontal spinning ring blade sweeping out in front of it at floor level, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
+  },
+  {
+    "slug": "whiplash",
+    "file": "/Users/panny/battlebars/static/bots_tekken/whiplash.png",
+    "size": [
+      645,
+      649
+    ],
+    "strength": 0.5,
+    "seed": 7000,
+    "prompt": "Whiplash, a BattleBots combat robot: a low matte black steel box chassis perforated with rows of holes, four chunky black rubber tyres, a tall articulated black arm rising from the rear that carries a bright neon yellow vertical spinning disc high above the body, and two long neon yellow bolted lifting forks angled down at the front, rendered as a 3D fighting-game character asset: glossy game-engine render, crisp panel edges, saturated colours, clean specular highlights on metal, high contrast, plain white background, no text, no logo, no watermark"
   },
   {
     "slug": "witch-doctor",
