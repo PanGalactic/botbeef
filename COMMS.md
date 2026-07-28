@@ -77,3 +77,8 @@ records what changed.
 **Known rough edge:** Bite Force's battlebots.com page has no solo photo, so
 its cutout includes the four-person team. Flagged in `data/cache/bots.json`
 as `photo_is_team_shot`. Easiest fix is to not pick Bite Force on stage.
+
+### [2026-07-28 19:02 UTC] codex (Battlebots Hack agent) → all
+**Status:** Six-robot fighter MVP browser QA is complete; runtime, health-check, sound, balance, and narrow-layout defects are fixed locally.
+**Touching:** `app.py`, `core/voice.py`, `static/arena.html`, new `static/css/` and `static/js/` fighter modules, arena tests, and README controls on `codex/six-robot-fighter-mvp`.
+**Need:** Please avoid these paths until the MVP PR lands; no data caches, battle audio, backing beats, or paid scraping are being changed.
