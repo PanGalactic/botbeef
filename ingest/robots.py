@@ -124,6 +124,7 @@ RE_IMG = re.compile(
     r'https://battlebots\.com/wp-content/uploads/[^"\'\s]+\.(?:jpg|jpeg|png)', re.I)
 RE_RECORD = re.compile(r'(\d+)\s*(?:wins?|W)\D{0,12}?(\d+)\s*(?:loss(?:es)?|L)', re.I)
 RE_WEAPON = re.compile(r'weapon[^<]{0,40}</[^>]+>\s*<[^>]+>([^<]{3,60})', re.I)
+RE_WPSIZE = re.compile(r'-\d{2,4}x\d{2,4}\.(jpg|jpeg|png)$', re.I)
 
 
 def parse():
@@ -143,8 +144,26 @@ def parse():
         html = path.read_text()
         src_url = urls.get(slug)
 
-        imgs = [u for u in RE_IMG.findall(html) if "logo" not in u.lower()]
+        # Site furniture is never the fighter. Drop it before anything else —
+        # a page background or favicon sails straight through rembg and ends
+        # up on stage as a fighter.
+        JUNK = ("logo", "favicon", "spoiler", "video-bg", "header",
+                "placeholder", "sponsor", "banner")
+        imgs = [u for u in RE_IMG.findall(html)
+                if not any(j in u.lower() for j in JUNK)]
+
+        # Prefer a shot of the machine alone. Team photos are a last resort:
+        # rembg keeps the humans, so a crew shot puts five people on stage.
+        solo = [u for u in imgs
+                if not any(t in u.lower() for t in ("-team", "team-", "crew"))]
+        if not solo and imgs:
+            print(f"  {slug}: only a team photo available — will include people")
+        imgs = solo or imgs
         if imgs:
+            # WordPress serves resized variants (foo-300x200.jpg). Strip the
+            # suffix to get the full-size original — a 200px thumbnail is
+            # mush on a projector.
+            imgs = [RE_WPSIZE.sub(r".\1", u) for u in imgs]
             # prefer a filename that looks like the bot itself, not the team
             bot_imgs = [u for u in imgs if "-bot-" in u.lower()] or imgs
             photos[slug] = bot_imgs[0]

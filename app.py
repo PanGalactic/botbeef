@@ -21,11 +21,17 @@ def index():
     return send_from_directory("static", "index.html")
 
 
+@app.route("/arena")
+def arena():
+    """The Tekken-style stage. Same data, different room."""
+    return send_from_directory("static", "arena.html")
+
+
 @app.route("/health")
 def health():
     return jsonify({
         "ok": True,
-        "kokoro": voice.health(),
+        "voice": voice.health(),
         "bots": len(store.bots()),
         "battles_cached": len(rap.list_cached()),
         "provenance": store.provenance(),

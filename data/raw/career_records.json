@@ -1,0 +1,17 @@
+{
+  "records": [
+    {
+      "slug": "duck",
+      "wins": 8,
+      "losses": 48,
+      "source_url": "https://battlebots.com/robot/duck-2021/"
+    },
+    {
+      "slug": "hydra",
+      "wins": 2,
+      "losses": 7,
+      "source_url": "https://battlebots.com/robot/hydra-wcvii/"
+    }
+  ],
+  "at": "2026-07-28T17:16:17.519560+00:00"
+}

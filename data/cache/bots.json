@@ -1,0 +1,174 @@
+{
+  "bots": [
+    {
+      "slug": "bite-force",
+      "name": "Bite Force",
+      "weapon": "vertical_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/bite-force/",
+      "photo_is_team_shot": true
+    },
+    {
+      "slug": "black-dragon",
+      "name": "Black Dragon",
+      "weapon": "drum",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/black-dragon-wcvii/"
+    },
+    {
+      "slug": "blip",
+      "name": "Blip",
+      "weapon": "flipper",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/blip-wcvii/"
+    },
+    {
+      "slug": "cobalt",
+      "name": "Cobalt",
+      "weapon": "vertical_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/cobalt-wcvii/"
+    },
+    {
+      "slug": "copperhead",
+      "name": "Copperhead",
+      "weapon": "drum",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/copperhead-wcvii/"
+    },
+    {
+      "slug": "duck",
+      "name": "Duck!",
+      "weapon": "control",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/duck-2021/"
+    },
+    {
+      "slug": "end-game",
+      "name": "End Game",
+      "weapon": "vertical_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/end-game-wcvii/"
+    },
+    {
+      "slug": "gigabyte",
+      "name": "Gigabyte",
+      "weapon": "horizontal_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/gigabyte-wcvii/"
+    },
+    {
+      "slug": "huge",
+      "name": "HUGE",
+      "weapon": "vertical_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/huge-wcvii/"
+    },
+    {
+      "slug": "hydra",
+      "name": "Hydra",
+      "weapon": "flipper",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/hydra-wcvii/"
+    },
+    {
+      "slug": "hypershock",
+      "name": "HyperShock",
+      "weapon": "horizontal_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/hypershock-wcvii/"
+    },
+    {
+      "slug": "lock-jaw",
+      "name": "Lock-Jaw",
+      "weapon": "vertical_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/lock-jaw-wcvii/"
+    },
+    {
+      "slug": "malice",
+      "name": "Malice",
+      "weapon": "horizontal_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/malice-wcvii/"
+    },
+    {
+      "slug": "minotaur",
+      "name": "Minotaur",
+      "weapon": "drum",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/minotaur-wcvii/"
+    },
+    {
+      "slug": "ribbot",
+      "name": "Ribbot",
+      "weapon": "vertical_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/ribbot-wcvii/"
+    },
+    {
+      "slug": "riptide",
+      "name": "Riptide",
+      "weapon": "vertical_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/riptide-wcvii/"
+    },
+    {
+      "slug": "rotator",
+      "name": "Rotator",
+      "weapon": "horizontal_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/rotator-wcvii/"
+    },
+    {
+      "slug": "sawblaze",
+      "name": "SawBlaze",
+      "weapon": "hammer",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/sawblaze-wcvii/"
+    },
+    {
+      "slug": "shatter",
+      "name": "Shatter",
+      "weapon": "hammer",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/shatter-wcvii/"
+    },
+    {
+      "slug": "skorpios",
+      "name": "Skorpios",
+      "weapon": "hammer",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/skorpios-wcvii/"
+    },
+    {
+      "slug": "tombstone",
+      "name": "Tombstone",
+      "weapon": "horizontal_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/tombstone-2021/"
+    },
+    {
+      "slug": "valkyrie",
+      "name": "Valkyrie",
+      "weapon": "horizontal_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/valkyrie-wcvii/"
+    },
+    {
+      "slug": "whiplash",
+      "name": "Whiplash",
+      "weapon": "vertical_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/whiplash-wcvii/"
+    },
+    {
+      "slug": "witch-doctor",
+      "name": "Witch Doctor",
+      "weapon": "vertical_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/witch-doctor-wcvii/"
+    }
+  ],
+  "ingested_at": "2026-07-28T17:16:17.518733+00:00"
+}
