@@ -116,19 +116,68 @@
 </main>
 
 <audio id="au"></audio>
+<audio id="beat" loop></audio>
 
 <script>
 const $ = s => document.querySelector(s);
-let TABLE = null, BATTLE = null, QUEUE = [], qi = 0;
+let TABLE = null, BATTLE = null, QUEUE = [], qi = 0, BEATS = [];
 
 const fmt = n => (n > 0 ? '+' : '') + n.toFixed(1);
 
+/* ---- instrumental bed: static/beats/*.mp3, generated on Suno, sat unused
+   until now. Runs under the bars at low volume so a silent voice fallback
+   (missing/unrendered WAV) still has something playing instead of dead air. */
+let beatFadeTimer = null;
+
+function hashSlugs(a, b){
+  let h = 0;
+  for (const ch of `${a}::${b}`) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  return h;
+}
+
+function pickBeat(a, b){
+  if (!BEATS.length) return null;
+  // Deterministic per matchup, not per play — replaying the same pair gets
+  // the same track instead of a jarring re-roll, but different matchups get
+  // variety across a demo session.
+  return BEATS[hashSlugs(a, b) % BEATS.length];
+}
+
+function startBeat(a, b){
+  const track = pickBeat(a, b);
+  const beat = $('#beat');
+  if (beatFadeTimer) clearInterval(beatFadeTimer);
+  if (!track){ beat.pause(); return; }
+  beat.src = `/beats/${track.file}`;
+  beat.volume = 0.16;
+  beat.currentTime = 0;
+  beat.play().catch(() => {});
+}
+
+function stopBeat(){
+  const beat = $('#beat');
+  if (beatFadeTimer) clearInterval(beatFadeTimer);
+  if (beat.paused) return;
+  // Fade rather than cut, so the loop point never pops when a battle ends
+  // mid-bar.
+  beatFadeTimer = setInterval(() => {
+    beat.volume = Math.max(0, beat.volume - 0.02);
+    if (beat.volume <= 0.001){
+      clearInterval(beatFadeTimer);
+      beatFadeTimer = null;
+      beat.pause();
+    }
+  }, 60);
+}
+
 async function boot(){
-  const [t, cached] = await Promise.all([
+  const [t, cached, beats] = await Promise.all([
     fetch('/api/table').then(r => r.json()),
-    fetch('/api/battles').then(r => r.json())
+    fetch('/api/battles').then(r => r.json()),
+    fetch('/beats/beats.json').then(r => r.json()).catch(() => ({ beats: [] }))
   ]);
   TABLE = t;
+  BEATS = beats.beats || [];
 
   const p = t.provenance;
   const prov = $('#prov');
@@ -223,6 +272,7 @@ async function playBattle(){
   }
 
   BATTLE = d;
+  startBeat(a, b);
   const ra = TABLE.rows.find(r => r.slug === a), rb = TABLE.rows.find(r => r.slug === b);
   $('#battleSub').innerHTML =
     `<b>${d.names[a]}</b> ${ra ? fmt(ra.residual) : ''} hype residual · ` +
@@ -244,11 +294,15 @@ async function playBattle(){
   }
   qi = 0;
   if (QUEUE.length) next();
-  else { d.bars.forEach((_, i) => $('#bar' + i).classList.add('on')); $('#play').disabled = false; }
+  else {
+    d.bars.forEach((_, i) => $('#bar' + i).classList.add('on'));
+    $('#play').disabled = false;
+    setTimeout(stopBeat, 6000);   // no per-bar timeline here, so just fade after a read
+  }
 }
 
 function next(){
-  if (qi >= QUEUE.length){ $('#play').disabled = false; return; }
+  if (qi >= QUEUE.length){ $('#play').disabled = false; stopBeat(); return; }
   const step = QUEUE[qi++];
   document.querySelectorAll('.bar.on').forEach(e => e.classList.remove('on'));
   if (step.i >= 0){
