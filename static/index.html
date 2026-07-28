@@ -255,11 +255,17 @@ function next(){
     const el = $('#bar' + step.i);
     if (el){ el.classList.add('on'); el.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
   }
+  // See arena.html: rendered WAVs aren't committed, so on a fresh clone the
+  // manifest points at 404s. Advancing on the error event would flash the
+  // battle past — pace it to reading speed instead.
+  const bar = step.i >= 0 ? BATTLE.bars[step.i] : null;
+  const hold = bar ? Math.max(2600, 380 * bar.text.split(/\s+/).length) : 3200;
+
   const au = $('#au');
   au.src = '/audio/' + step.f;
   au.onended = next;
-  au.onerror = next;
-  au.play().catch(next);
+  au.onerror = () => setTimeout(next, hold);
+  au.play().catch(() => setTimeout(next, hold));
 }
 
 function esc(s){ return String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c])); }

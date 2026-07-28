@@ -404,11 +404,19 @@ function next(){
     $('#sub').classList.add('on');
   }
 
-  if (!step.f){ setTimeout(next, 2600); return; }
+  // Silent mode has to stay READABLE. The audio manifests are committed but
+  // the rendered WAVs are not (77 MB), so a fresh clone — a Codespace, a
+  // teammate's laptop — has manifest entries pointing at files that 404.
+  // Advancing on the error event would flash the whole battle past in a
+  // second, so fall back to a reading-paced timer instead.
+  const hold = step.i < 0 ? 3200
+    : Math.max(2600, 380 * (BATTLE.bars[step.i].text.split(/\s+/).length));
+
+  if (!step.f){ setTimeout(next, hold); return; }
   au.src = '/audio/' + step.f;
   au.onended = next;
-  au.onerror = next;
-  au.play().catch(next);
+  au.onerror = () => setTimeout(next, hold);
+  au.play().catch(() => setTimeout(next, hold));
 }
 
 function esc(s){ return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
