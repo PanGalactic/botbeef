@@ -35,9 +35,11 @@ It only works because two separately-scraped datasets are joined on bot name.
 ## Every bar is sourced
 
 The model never freestyles. It receives a numbered list of facts derived from
-the scraped data and must cite one per bar. `core/rap.py:validate()` then drops
-any bar whose `fact_id` doesn't exist. The citation is rendered under each bar
-on screen, so a judge can check our working live.
+the scraped data and must cite one per bar. Aggregate facts retain the HTTP(S)
+URLs of their contributing fight or fan-comment records. `core/rap.py:validate()`
+then drops any bar whose `fact_id` doesn't exist or whose fact has no usable
+source URL. The citation is rendered under each bar on screen, so a judge can
+check our working live.
 
 ```
 TOMBSTONE
@@ -64,14 +66,32 @@ demo fake numbers by forgetting to swap the data, because the screen says so.
 ```bash
 export BRIGHTDATA_API_TOKEN=...
 
-# Official per-bot pages: career records + photos (Web Unlocker)
-python3 ingest/robots.py discover && python3 ingest/robots.py scrape
-python3 ingest/robots.py parse
+# One credit-capped bulk run. Defaults: 12 Reddit threads, 5 official
+# YouTube videos, and at most 6,000 predicted comment records.
+python3 ingest/brightdata.py bulk \
+  --max-reddit-posts 12 \
+  --max-youtube-videos 5 \
+  --max-records 6000
 
-# Fan chatter (Scraper Library, async — fire these FIRST and let them cook)
-python3 ingest/brightdata.py chatter-trigger
-python3 ingest/brightdata.py chatter-collect --wait
+# Resume only if Bright Data is still preparing an asynchronous snapshot.
+python3 ingest/brightdata.py resume
+
+# Inspect the durable corpus and exported-cache provenance.
+python3 ingest/brightdata.py status
 ```
+
+The one-time job discovers sources, applies the record cap before comment
+collection, and writes deduplicated comments plus robot associations to
+`data/botbeef.sqlite3`. It then exports `data/cache/chatter.json`, preserving
+the JSON contract already consumed by Flask. The database deduplicates source
+records and robot links during collection or resume. After a successful run,
+another `bulk` command fails closed while `data/raw/snapshots.json` exists, so
+an accidental rerun cannot spend more Bright Data credits.
+
+There is deliberately **no scheduler, daemon, polling service, request-time
+scrape, or background refresh**. Run `bulk` once (and `resume` only when an
+already-triggered Bright Data snapshot is unfinished), then demo entirely from
+SQLite-derived local caches.
 
 ### Battles and audio
 
@@ -119,9 +139,10 @@ likeness to preserve.
 ## Architecture
 
 ```
-ingest/     scrape once, cache to disk, never touch the network again
+ingest/     scrape once, persist in SQLite, export cache, never scrape in Flask
   robots.py      battlebots.com/robot/<slug>/ -> records + photo URLs
-  brightdata.py  Web Unlocker (official pages) + Scraper Library (chatter)
+  brightdata.py  credit-capped, one-time Reddit + YouTube bulk collection
+  corpus.py      SQLite schema, normalization, dedupe, robot links, JSON export
   images.py      photos -> cutouts; FLUX -> arena
   pregen.py      battles + TTS, rendered ahead of the demo
   seed.py        PLACEHOLDER data so the app runs before any scrape

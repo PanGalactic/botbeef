@@ -5,6 +5,10 @@ audio/*.wav
 data/raw/*.html
 data/raw/robots/
 data/raw/photos/
+data/raw/chatter_*.json
+data/raw/snapshots.json
+data/*.sqlite3
+data/*.sqlite3-*
 
 # Secrets. Never commit a Bright Data or Anthropic token.
 .env
@@ -13,6 +17,8 @@ secrets.json
 
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.pytest-tmp*/
 .venv/
 venv/
 .DS_Store
