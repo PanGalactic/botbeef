@@ -2,427 +2,614 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BOT BEEF — ARENA</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#05070a">
+<title>BOT BEEF — Robot Combat Arena</title>
+<link rel="stylesheet" href="/css/arena-fighter.css">
 <style>
-  :root{ --a:#ff6b35; --b:#35c8ff; --ink:#fff; }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%;overflow:hidden;background:#05060a;color:var(--ink);
-    font:16px/1.4 ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif}
-  canvas{display:block;position:fixed;inset:0}
-
-  #ui{position:fixed;inset:0;pointer-events:none;display:flex;flex-direction:column}
-
-  /* ---- Tekken-style top HUD: two bars closing toward the centre ---- */
-  .hud{display:flex;align-items:flex-start;gap:18px;padding:20px 26px 0}
-  .side{flex:1;min-width:0}
-  .side.r{text-align:right}
-  .nm{font-size:26px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;
-      text-shadow:0 2px 14px #000,0 0 30px rgba(0,0,0,.9)}
-  .side.l .nm{color:var(--a)} .side.r .nm{color:var(--b)}
-  .meter{height:19px;margin-top:7px;background:rgba(0,0,0,.62);
-         border:2px solid rgba(255,255,255,.28);position:relative;overflow:hidden;
-         transform:skewX(-22deg)}
-  .meter i{position:absolute;inset:0;width:0;transition:width 1.1s cubic-bezier(.2,.9,.2,1)}
-  .side.l .meter i{background:linear-gradient(90deg,#ffb347,var(--a));right:0;left:auto}
-  .side.r .meter i{background:linear-gradient(90deg,var(--b),#7ae7ff)}
-  .meter.small{height:11px;margin-top:5px;opacity:.85}
-  .lg{font:10px/1 ui-monospace,Menlo,monospace;letter-spacing:.16em;opacity:.68;
-      margin-top:6px;text-transform:uppercase}
-  .mid{flex:0 0 130px;text-align:center;padding-top:4px}
-  .round{font:11px/1 ui-monospace,Menlo,monospace;letter-spacing:.3em;opacity:.6}
-  .vs{font-size:40px;font-weight:900;font-style:italic;letter-spacing:-.03em;
-      text-shadow:0 0 26px rgba(255,107,53,.75)}
-
-  /* ---- subtitle: the bar being spoken, plus its citation ---- */
-  .foot{margin-top:auto;padding:0 0 30px;display:flex;justify-content:center}
-  .sub{max-width:1180px;padding:0 40px;text-align:center;opacity:0;
-       transform:translateY(14px);transition:opacity .3s,transform .3s}
-  .sub.on{opacity:1;transform:none}
-  .who{font:12px/1 ui-monospace,Menlo,monospace;letter-spacing:.24em;
-       text-transform:uppercase;margin-bottom:11px}
-  .who.a{color:var(--a)} .who.b{color:var(--b)}
-  .line{font-size:39px;line-height:1.22;font-weight:800;
-        text-shadow:0 3px 22px #000,0 0 46px rgba(0,0,0,.95)}
-  .cite{margin-top:14px;font:13px/1.5 ui-monospace,Menlo,monospace;
-        color:#a8b0c2;background:rgba(0,0,0,.55);display:inline-block;
-        padding:7px 15px;border-radius:5px;border:1px solid rgba(255,255,255,.13)}
-  .cite b{color:#2ee6a8}
-
-  /* ---- splash + controls ---- */
-  #splash{position:fixed;inset:0;display:flex;flex-direction:column;
-          align-items:center;justify-content:center;gap:26px;
-          background:radial-gradient(ellipse at center,#10131c,#05060a 70%);
-          transition:opacity .5s}
-  #splash.gone{opacity:0;pointer-events:none}
-  #splash h1{font-size:72px;font-weight:900;letter-spacing:.1em}
-  #splash h1 em{font-style:normal;color:var(--a)}
-  .pick{display:flex;gap:14px;align-items:center;pointer-events:auto}
-  select,button{font:inherit;font-size:16px;color:#fff;background:#14171f;
-    border:1px solid #2a2f3c;border-radius:8px;padding:11px 14px;cursor:pointer}
-  button.go{background:var(--a);color:#05060a;border-color:var(--a);
-    font-weight:900;letter-spacing:.1em;padding:11px 30px}
-  .hint{font:12px/1.6 ui-monospace,Menlo,monospace;color:#6d768a;text-align:center}
-  a.back{position:fixed;bottom:16px;left:20px;pointer-events:auto;color:#8b93a6;
-    font:11px/1 ui-monospace,Menlo,monospace;letter-spacing:.14em;text-decoration:none;
-    text-transform:uppercase;border:1px solid #2a2f3c;padding:9px 13px;border-radius:6px;
-    background:rgba(0,0,0,.5)}
-  a.back:hover{color:#fff}
+  *{box-sizing:border-box}
+  html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#030507}
+  body{color:#fff;font-family:"Arial Narrow","Roboto Condensed","Segoe UI",sans-serif}
+  #stage{position:fixed;inset:0;background:#030507}
+  #stage canvas{display:block;width:100%;height:100%;touch-action:none}
+  #stage-loading{position:fixed;z-index:10;inset:0;display:grid;place-items:center;
+    color:#aab8c4;background:#030507;font:700 12px/1.2 ui-monospace,monospace;
+    letter-spacing:.28em;text-transform:uppercase;transition:opacity .35s}
+  #stage-loading.is-ready{opacity:0;pointer-events:none}
+  .arena-back{position:fixed;z-index:80;left:14px;bottom:14px;padding:8px 11px;
+    color:#a9b5bf;background:#06090dbd;border:1px solid #8b98a64d;
+    font:700 10px/1 ui-monospace,monospace;letter-spacing:.12em;
+    text-decoration:none;text-transform:uppercase;pointer-events:auto}
+  .arena-back:hover,.arena-back:focus-visible{color:#fff;border-color:#fff}
+  @media (max-width:620px){.arena-back{display:none}}
+  @media (pointer:coarse) and (max-width:1000px){.arena-back{display:none}}
 </style>
 </head>
 <body>
-
-<div id="ui">
-  <div class="hud">
-    <div class="side l">
-      <div class="nm" id="nmA">—</div>
-      <div class="meter"><i id="hypeA"></i></div>
-      <div class="lg">Fan hype</div>
-      <div class="meter small"><i id="perfA"></i></div>
-      <div class="lg">Record</div>
-    </div>
-    <div class="mid">
-      <div class="round" id="round">ROUND 1</div>
-      <div class="vs">VS</div>
-    </div>
-    <div class="side r">
-      <div class="nm" id="nmB">—</div>
-      <div class="meter"><i id="hypeB"></i></div>
-      <div class="lg">Fan hype</div>
-      <div class="meter small"><i id="perfB"></i></div>
-      <div class="lg">Record</div>
-    </div>
-  </div>
-
-  <div class="foot">
-    <div class="sub" id="sub">
-      <div class="who" id="subWho"></div>
-      <div class="line" id="subLine"></div>
-      <div class="cite" id="subCite"></div>
-    </div>
-  </div>
-</div>
-
-<a class="back" href="/">◀ data view</a>
-
-<div id="splash">
-  <h1>BOT <em>BEEF</em></h1>
-  <div class="pick">
-    <select id="selA"></select>
-    <span style="color:#6d768a">VS</span>
-    <select id="selB"></select>
-    <button class="go" id="go">FIGHT</button>
-  </div>
-  <div class="hint" id="hint">loading…</div>
-</div>
-
-<audio id="au"></audio>
+<main id="stage" aria-label="3D robot combat arena"></main>
+<div id="stage-loading">Powering the BattleBox…</div>
+<div id="fighter-ui-root"></div>
+<a class="arena-back" href="/" aria-label="Return to data view">Data view</a>
 
 <script type="module">
-import * as THREE from '/vendor/three.module.js';
+import * as THREE from "/vendor/three.module.js";
+import { CombatEngine } from "/js/combat-engine.js";
+import { ROBOT_LIST, getRobotById } from "/js/roster.js";
+import { createFighterUI } from "/js/fighter-select.js";
 
-const $ = s => document.querySelector(s);
-let TABLE=null, BATTLE=null, QUEUE=[], qi=0;
-let scene, cam, renderer, fighters={}, clock;
-const tex = new THREE.TextureLoader();
+const stage = document.querySelector("#stage");
+const loading = document.querySelector("#stage-loading");
+const textureLoader = new THREE.TextureLoader();
+const clock = new THREE.Clock();
 
-/* ---------------------------------------------------------------- scene */
+let scene;
+let camera;
+let renderer;
+let engine = null;
+let ui = null;
+let paused = false;
+let roundFreezeUntil = 0;
+let shake = 0;
+let currentMatchToken = 0;
+let fighterVisuals = {};
+const sparks = [];
+const cameraTarget = new THREE.Vector3();
+const desiredCamera = new THREE.Vector3();
+const sparkGeometry = new THREE.BoxGeometry(.12, .035, .035);
+const sparkMaterial = new THREE.MeshBasicMaterial({color:0xffb02e});
+const combo = {
+  p1: {count:0, last:0},
+  p2: {count:0, last:0},
+};
+const audioState = {
+  context:null,
+  muted:false,
+};
+
+function ensureAudio(){
+  if (audioState.muted) return null;
+  const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContextClass) return null;
+  if (!audioState.context) audioState.context = new AudioContextClass();
+  if (audioState.context.state === "suspended"){
+    audioState.context.resume().catch(() => {});
+  }
+  return audioState.context;
+}
+
+function playTone(frequency, duration=.12, options={}){
+  const context = ensureAudio();
+  if (!context) return;
+  const now = context.currentTime;
+  const oscillator = context.createOscillator();
+  const gain = context.createGain();
+  const volume = options.volume ?? .045;
+  oscillator.type = options.type || "square";
+  oscillator.frequency.setValueAtTime(Math.max(30, frequency), now);
+  oscillator.frequency.exponentialRampToValueAtTime(
+    Math.max(30, options.endFrequency || frequency),
+    now + duration,
+  );
+  gain.gain.setValueAtTime(.0001, now);
+  gain.gain.exponentialRampToValueAtTime(volume, now + .008);
+  gain.gain.exponentialRampToValueAtTime(.0001, now + duration);
+  oscillator.connect(gain);
+  gain.connect(context.destination);
+  oscillator.start(now);
+  oscillator.stop(now + duration + .015);
+}
+
+function playCombatSound(event){
+  if (event.type === "match-start"){
+    ensureAudio();
+  } else if (event.type === "round-start"){
+    playTone(170, .18, {endFrequency:260, type:"triangle", volume:.035});
+  } else if (event.type === "attack-start"){
+    const frequencies = [150, 115, 88, 62];
+    playTone(frequencies[event.attack?.index] || 100, .09, {
+      endFrequency:45,
+      type:"sawtooth",
+      volume:.025,
+    });
+  } else if (event.type === "hit"){
+    playTone(80 + Math.min(120, event.damage * 4), .13, {
+      endFrequency:42,
+      type:"square",
+      volume:.055,
+    });
+  } else if (event.type === "block"){
+    playTone(560, .1, {endFrequency:230, type:"triangle", volume:.045});
+  } else if (event.type === "ko"){
+    playTone(95, .62, {endFrequency:32, type:"sawtooth", volume:.07});
+  } else if (event.type === "match-end"){
+    playTone(185, .24, {endFrequency:245, type:"triangle", volume:.04});
+    setTimeout(() => playTone(280, .32, {endFrequency:390, type:"triangle", volume:.04}), 210);
+  }
+}
+
+function toggleAudio(){
+  audioState.muted = !audioState.muted;
+  if (!audioState.muted) ensureAudio();
+  ui?.setStatus("player", audioState.muted ? "SOUND OFF" : "SOUND ON", "neutral", 900);
+}
+
 function initScene(){
   scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x05060a, 0.031);
+  scene.background = new THREE.Color(0x030507);
+  scene.fog = new THREE.FogExp2(0x05080d, .027);
 
-  cam = new THREE.PerspectiveCamera(46, innerWidth/innerHeight, 0.1, 260);
-  cam.position.set(0, 3.1, 15.5);
+  camera = new THREE.PerspectiveCamera(44, innerWidth / innerHeight, .1, 180);
+  camera.position.set(0, 5.8, 15.5);
 
-  renderer = new THREE.WebGLRenderer({antialias:true});
+  renderer = new THREE.WebGLRenderer({antialias:true, powerPreference:"high-performance"});
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
   renderer.setSize(innerWidth, innerHeight);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.18;
-  document.body.prepend(renderer.domElement);
+  renderer.toneMappingExposure = 1.16;
+  stage.append(renderer.domElement);
 
-  // floor — FLUX-generated plate texture, tiled
-  const floorTex = tex.load('/arena/floor.png', t => {
-    t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(7,7);
+  const floorMaterial = new THREE.MeshStandardMaterial({
+    color:0x6d7783,
+    roughness:.68,
+    metalness:.42,
   });
-  const floor = new THREE.Mesh(
-    new THREE.PlaneGeometry(150,150),
-    new THREE.MeshStandardMaterial({map:floorTex, roughness:.72, metalness:.45,
-      color:0x8892a4})
-  );
-  floor.rotation.x = -Math.PI/2;
+  textureLoader.load("/arena/floor.png", (map) => {
+    map.colorSpace = THREE.SRGBColorSpace;
+    map.wrapS = map.wrapT = THREE.RepeatWrapping;
+    map.repeat.set(3.6, 2.2);
+    floorMaterial.map = map;
+    floorMaterial.needsUpdate = true;
+  });
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(19, 11), floorMaterial);
+  floor.rotation.x = -Math.PI / 2;
+  floor.position.y = -.03;
   scene.add(floor);
 
-  // Backdrop — FLUX arena interior wrapped on the inside of a cylinder, so
-  // it reads as surrounding depth rather than flat wallpaper.
-  // fog:false is load-bearing: at this radius exponential fog would erase it
-  // completely and the stage goes black above the floor line.
-  tex.load('/arena/arena.png', t => {
-    t.colorSpace = THREE.SRGBColorSpace;
-    t.wrapS = THREE.RepeatWrapping; t.repeat.x = 2;
-    const back = new THREE.Mesh(
-      new THREE.CylinderGeometry(40, 40, 34, 64, 1, true),
-      new THREE.MeshBasicMaterial({map:t, side:THREE.BackSide,
-        color:0x7f8ba6, fog:false})
+  const grid = new THREE.GridHelper(18, 18, 0xaab7c6, 0x4c5967);
+  grid.position.y = .015;
+  grid.material.transparent = true;
+  grid.material.opacity = .18;
+  scene.add(grid);
+
+  textureLoader.load("/arena/arena.png", (map) => {
+    map.colorSpace = THREE.SRGBColorSpace;
+    map.wrapS = THREE.RepeatWrapping;
+    map.repeat.x = 2;
+    const backdrop = new THREE.Mesh(
+      new THREE.CylinderGeometry(35, 35, 26, 64, 1, true),
+      new THREE.MeshBasicMaterial({
+        map,
+        side:THREE.BackSide,
+        color:0x8996a8,
+        fog:false,
+      }),
     );
-    back.position.y = 15;
-    scene.add(back);
+    backdrop.position.y = 11;
+    scene.add(backdrop);
   });
 
-  scene.add(new THREE.AmbientLight(0x35406a, 1.5));
+  addArenaWalls();
+  scene.add(new THREE.HemisphereLight(0x93b8ff, 0x160b08, 2.35));
 
-  const key = new THREE.SpotLight(0xffffff, 320, 60, 0.44, 0.55, 1.6);
-  key.position.set(0, 21, 9); scene.add(key);
+  const key = new THREE.SpotLight(0xffffff, 360, 50, .54, .55, 1.4);
+  key.position.set(0, 17, 8);
+  scene.add(key);
 
-  const rimA = new THREE.PointLight(0xff6b35, 190, 40, 2);
-  rimA.position.set(-9, 4.2, 3); scene.add(rimA);
-  const rimB = new THREE.PointLight(0x35c8ff, 190, 40, 2);
-  rimB.position.set(9, 4.2, 3); scene.add(rimB);
+  const redRim = new THREE.PointLight(0xff2b1f, 210, 26, 2);
+  redRim.position.set(-8, 3.2, 1);
+  scene.add(redRim);
+  const blueRim = new THREE.PointLight(0x22d8ff, 210, 26, 2);
+  blueRim.position.set(8, 3.2, 1);
+  scene.add(blueRim);
 
-  // hanging truss lights for the stage read
-  for (let i=-2;i<=2;i++){
-    const l = new THREE.PointLight(0x6f7fbf, 46, 46, 2);
-    l.position.set(i*11, 15, -6); scene.add(l);
+  for (let x = -8; x <= 8; x += 4){
+    const lamp = new THREE.PointLight(x < 0 ? 0xff3c27 : 0x36cfff, 30, 16, 2);
+    lamp.position.set(x, 9.5, -4.5);
+    scene.add(lamp);
   }
 
-  clock = new THREE.Clock();
-  addEventListener('resize', () => {
-    cam.aspect = innerWidth/innerHeight; cam.updateProjectionMatrix();
-    renderer.setSize(innerWidth, innerHeight);
-  });
-  animate();
+  addEventListener("resize", resize);
+  loading.classList.add("is-ready");
 }
 
-/* A fighter is a lit billboard carrying the bot's real photo cutout.
-   Real photography is the point — the bots must read as their actual
-   real-world machines, which no text-to-image model can fake. */
-function makeFighter(slug, side){
+function addArenaWalls(){
+  const railMaterial = new THREE.MeshStandardMaterial({
+    color:0x26303a,
+    roughness:.33,
+    metalness:.86,
+    emissive:0x080b0f,
+  });
+  const stripeMaterial = new THREE.MeshBasicMaterial({color:0xff9f17});
+  const rails = [
+    {x:0, z:-5.25, w:19, d:.18},
+    {x:0, z:5.25, w:19, d:.18},
+    {x:-9.25, z:0, w:.18, d:10.5},
+    {x:9.25, z:0, w:.18, d:10.5},
+  ];
+  for (const rail of rails){
+    const mesh = new THREE.Mesh(new THREE.BoxGeometry(rail.w, .65, rail.d), railMaterial);
+    mesh.position.set(rail.x, .32, rail.z);
+    scene.add(mesh);
+    const stripe = new THREE.Mesh(new THREE.BoxGeometry(rail.w, .04, rail.d + .03), stripeMaterial);
+    stripe.position.set(rail.x, .67, rail.z);
+    scene.add(stripe);
+  }
+  const cornerGeometry = new THREE.CylinderGeometry(.22, .3, 2.8, 8);
+  for (const x of [-9.1, 9.1]){
+    for (const z of [-5.1, 5.1]){
+      const post = new THREE.Mesh(cornerGeometry, railMaterial);
+      post.position.set(x, 1.4, z);
+      scene.add(post);
+    }
+  }
+}
+
+function resize(){
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+}
+
+function clearFighters(){
+  for (const visual of Object.values(fighterVisuals)){
+    scene.remove(visual.group);
+  }
+  fighterVisuals = {};
+}
+
+function makeFighterVisual(definition, side){
   const group = new THREE.Group();
-  const x = side * 5.0;
+  group.userData.side = side;
 
-  const plane = new THREE.Mesh(
-    new THREE.PlaneGeometry(6.2, 4.2),
-    new THREE.MeshBasicMaterial({transparent:true, opacity:0,
-      side:THREE.DoubleSide, depthWrite:false})
-  );
-  plane.position.y = 2.1;
-  group.add(plane);
-
-  tex.load(`/bots/${slug}.png`,
-    t => {
-      t.colorSpace = THREE.SRGBColorSpace;
-      // Fit every fighter into the same box. Normalising on height alone
-      // makes a wide bot (Black Dragon) tower over a tall one (Bite Force);
-      // fitting both dimensions keeps the matchup looking like a matchup.
-      const ar = t.image.width / t.image.height;
-      const BOX_W = 6.4, BOX_H = 4.0;
-      const w = (ar > BOX_W / BOX_H) ? BOX_W : BOX_H * ar;
-      const h = (ar > BOX_W / BOX_H) ? BOX_W / ar : BOX_H;
-      plane.geometry.dispose();
-      plane.geometry = new THREE.PlaneGeometry(w, h);
-      plane.position.y = h/2 * 0.98;
-      plane.material.map = t;
-      plane.material.opacity = 1;
-      plane.material.needsUpdate = true;
-      group.userData.hasPhoto = true;
-    },
-    undefined,
-    () => {
-      // No photo scraped yet: a lit silhouette block, so the scene still
-      // stages correctly and it's obvious what's missing.
-      plane.material.opacity = 0;
-      // Low metalness + emissive on purpose. A MeshStandardMaterial with high
-      // metalness and NO environment map renders black however many lights you
-      // point at it — metals show reflections, and there's nothing to reflect.
-      // A placeholder nobody can see is worse than no placeholder.
-      const box = new THREE.Mesh(
-        new THREE.BoxGeometry(3.1, 2.0, 2.4),
-        new THREE.MeshStandardMaterial({
-          color: side < 0 ? 0x8a4a24 : 0x1f6f92,
-          emissive: side < 0 ? 0x2a1206 : 0x06202a,
-          emissiveIntensity: 0.9,
-          roughness: 0.55, metalness: 0.1})
-      );
-      box.position.y = 1.0;
-      group.add(box);
-      group.userData.hasPhoto = false;
-    });
-
-  // contact shadow so the fighter sits on the floor rather than hovering
   const shadow = new THREE.Mesh(
-    new THREE.CircleGeometry(2.5, 32),
-    new THREE.MeshBasicMaterial({color:0x000000, transparent:true, opacity:.5})
+    new THREE.CircleGeometry(1.55, 32),
+    new THREE.MeshBasicMaterial({color:0x000000, transparent:true, opacity:.57}),
   );
-  shadow.rotation.x = -Math.PI/2;
-  shadow.position.y = 0.02;
+  shadow.rotation.x = -Math.PI / 2;
+  shadow.position.y = .025;
   group.add(shadow);
 
-  group.position.set(x, 0, 0);
-  group.rotation.y = side * -0.19;
+  const colour = new THREE.Color(side === "p1" ? definition.palette.primary : definition.palette.accent);
+  const ring = new THREE.Mesh(
+    new THREE.TorusGeometry(1.48, .045, 6, 48),
+    new THREE.MeshBasicMaterial({color:colour, transparent:true, opacity:.9}),
+  );
+  ring.rotation.x = Math.PI / 2;
+  ring.position.y = .055;
+  group.add(ring);
+
+  const spriteMaterial = new THREE.SpriteMaterial({
+    color:0xffffff,
+    transparent:true,
+    opacity:0,
+    depthWrite:false,
+  });
+  const sprite = new THREE.Sprite(spriteMaterial);
+  sprite.center.set(.5, 0);
+  sprite.scale.set(4.4, 3, 1);
+  sprite.position.y = .05;
+  group.add(sprite);
+
+  const fallback = new THREE.Mesh(
+    new THREE.BoxGeometry(2.6, 1.25, 1.9),
+    new THREE.MeshStandardMaterial({color:colour, roughness:.38, metalness:.82}),
+  );
+  fallback.position.y = .65;
+  group.add(fallback);
+
+  textureLoader.load(definition.image, (map) => {
+    map.colorSpace = THREE.SRGBColorSpace;
+    const aspect = map.image.width / map.image.height;
+    const maxWidth = definition.id === "huge" ? 4.8 : 4.45;
+    const maxHeight = definition.id === "huge" ? 3.75 : 3.1;
+    const width = Math.min(maxWidth, maxHeight * aspect);
+    const height = width / aspect;
+    sprite.scale.set(width, height, 1);
+    spriteMaterial.map = map;
+    spriteMaterial.opacity = 1;
+    spriteMaterial.needsUpdate = true;
+    fallback.visible = false;
+  });
+
+  group.position.set(side === "p1" ? -4.5 : 4.5, 0, 0);
   scene.add(group);
-  return group;
+  return {
+    group,
+    sprite,
+    ring,
+    definition,
+    attackPulse:0,
+    hitFlashUntil:0,
+  };
 }
 
-let camTarget = new THREE.Vector3(0, 2.4, 0);
-let camPos = new THREE.Vector3(0, 3.1, 15.5);
-let speaking = null;
+function beginMatch({playerId, opponentId}){
+  currentMatchToken += 1;
+  engine?.destroy();
+  clearFighters();
+  paused = false;
+  const player = getRobotById(playerId);
+  const opponent = getRobotById(opponentId);
+  if (!player || !opponent) return;
+
+  fighterVisuals.p1 = makeFighterVisual(player, "p1");
+  fighterVisuals.p2 = makeFighterVisual(opponent, "p2");
+  engine = new CombatEngine(player, opponent, {
+    roundDuration:60,
+    roundBreakDuration:2.15,
+    bounds:{x:8.25, z:4.35},
+    spawnDistance:4.5,
+    aiEnabled:true,
+    onEvent:handleCombatEvent,
+  });
+  engine.bindKeyboard(window);
+  engine.start();
+}
+
+function handleCombatEvent(event){
+  const actorSide = event.actor?.side;
+  const targetSide = event.target?.side;
+  const actorUI = actorSide === "p1" ? "player" : "opponent";
+  const targetUI = targetSide === "p1" ? "player" : "opponent";
+  playCombatSound(event);
+
+  if (event.type === "match-start"){
+    ui.hideOverlay();
+    combo.p1.count = combo.p2.count = 0;
+  }
+
+  if (event.type === "round-start"){
+    roundFreezeUntil = performance.now() + 900;
+    ui.showRound(event.round);
+    ui.updateHUD({
+      playerHealth:100,
+      opponentHealth:100,
+      timer:60,
+      round:event.round,
+      playerRounds:event.score.p1,
+      opponentRounds:event.score.p2,
+      matchState:"READY",
+      immediate:true,
+    });
+  }
+
+  if (event.type === "attack-start" && actorSide){
+    fighterVisuals[actorSide].attackPulse = 1;
+    ui.setStatus(actorUI, event.attack.name.toUpperCase(), "attack", 650);
+  }
+
+  if (event.type === "hit" && actorSide && targetSide){
+    registerCombo(actorSide);
+    fighterVisuals[targetSide].hitFlashUntil = performance.now() + 115;
+    spawnHitBurst(event.position, actorSide);
+    shake = Math.min(.58, shake + .18 + event.damage / 90);
+    ui.setStatus(targetUI, `-${Math.round(event.damage)} DAMAGE`, "danger", 720);
+  }
+
+  if (event.type === "block" && targetSide){
+    fighterVisuals[targetSide].hitFlashUntil = performance.now() + 65;
+    spawnHitBurst(event.position, targetSide, true);
+    shake = Math.min(.28, shake + .08);
+    ui.setStatus(targetUI, "GUARD", "block", 500);
+  }
+
+  if (event.type === "ko"){
+    ui.showKO(event.actor?.name || "");
+    shake = .85;
+  }
+
+  if (event.type === "round-end"){
+    ui.updateHUD({
+      playerRounds:event.score.p1,
+      opponentRounds:event.score.p2,
+      matchState:event.reason === "ko" ? "K.O." : "TIME",
+    });
+    if (event.reason === "time"){
+      ui.showOverlay(
+        "time",
+        "TIME",
+        event.winner ? `${event.winner.name} TAKES THE ROUND` : "DRAW ROUND",
+        {duration:1900, kicker:"60 SECONDS EXPIRED"},
+      );
+    }
+  }
+
+  if (event.type === "match-end"){
+    const token = currentMatchToken;
+    setTimeout(() => {
+      if (token !== currentMatchToken || !engine || engine.getState().phase !== "match-over") return;
+      ui.showMatchResult(event.winner?.name || "DRAW");
+      ui.setStatus("player", "R — REMATCH", "neutral");
+      ui.setStatus("opponent", "ESC — MENU", "neutral");
+    }, 1450);
+  }
+}
+
+function registerCombo(side){
+  const now = performance.now();
+  const record = combo[side];
+  record.count = now - record.last < 1350 ? record.count + 1 : 1;
+  record.last = now;
+  ui.setCombo(side === "p1" ? "player" : "opponent", record.count);
+  setTimeout(() => {
+    if (performance.now() - record.last >= 1300){
+      record.count = 0;
+      ui.setCombo(side === "p1" ? "player" : "opponent", 0);
+    }
+  }, 1400);
+}
+
+function spawnHitBurst(position, side, blocked=false){
+  const base = side === "p1" ? 0xff542f : 0x35d8ff;
+  for (let index = 0; index < (blocked ? 8 : 15); index += 1){
+    const material = sparkMaterial.clone();
+    material.color.set(blocked ? 0xffffff : base);
+    const mesh = new THREE.Mesh(sparkGeometry, material);
+    mesh.position.set(position.x, .75 + Math.random() * .65, position.z);
+    mesh.rotation.z = Math.random() * Math.PI;
+    scene.add(mesh);
+    sparks.push({
+      mesh,
+      life:.28 + Math.random() * .35,
+      velocity:new THREE.Vector3(
+        (Math.random() - .5) * 7,
+        2.4 + Math.random() * 4.8,
+        (Math.random() - .5) * 5,
+      ),
+    });
+  }
+}
+
+function updateSparks(dt){
+  for (let index = sparks.length - 1; index >= 0; index -= 1){
+    const spark = sparks[index];
+    spark.life -= dt;
+    spark.velocity.y -= 9 * dt;
+    spark.mesh.position.addScaledVector(spark.velocity, dt);
+    spark.mesh.scale.x = Math.max(.05, spark.life * 2.4);
+    spark.mesh.material.opacity = Math.max(0, spark.life * 2.2);
+    spark.mesh.material.transparent = true;
+    if (spark.life <= 0){
+      scene.remove(spark.mesh);
+      spark.mesh.material.dispose();
+      sparks.splice(index, 1);
+    }
+  }
+}
+
+function renderFighters(state, dt, now){
+  for (const side of ["p1", "p2"]){
+    const fighter = state.fighters[side];
+    const visual = fighterVisuals[side];
+    if (!fighter || !visual) continue;
+
+    visual.attackPulse = Math.max(0, visual.attackPulse - dt * 2.8);
+    const action = fighter.attack;
+    let lunge = 0;
+    if (action){
+      const total = action.startup + action.active + action.recovery;
+      const progress = Math.min(1, action.elapsed / Math.max(.01, total));
+      lunge = Math.sin(progress * Math.PI) * (.22 + action.damage / 42);
+      visual.sprite.material.rotation =
+        Math.sin(progress * Math.PI * 2) * (side === "p1" ? -.1 : .1);
+    } else {
+      visual.sprite.material.rotation *= .82;
+    }
+
+    const jitter = fighter.stunned ? Math.sin(now * .065) * .1 : 0;
+    visual.group.position.x = fighter.position.x + Math.cos(fighter.facing) * lunge + jitter;
+    visual.group.position.z = fighter.position.z + Math.sin(fighter.facing) * lunge;
+    visual.group.position.y = Math.sin(now * .0022 + (side === "p1" ? 0 : 2)) * .035;
+    const targetScale = 1 + visual.attackPulse * .055;
+    visual.group.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), .2);
+
+    visual.ring.material.opacity = fighter.blocking ? 1 : .62 + visual.attackPulse * .35;
+    visual.ring.scale.setScalar(fighter.blocking ? 1.12 : 1);
+    visual.sprite.material.color.set(now < visual.hitFlashUntil ? 0xffc56b : 0xffffff);
+  }
+}
+
+function updateCamera(state, dt){
+  const p1 = state?.fighters.p1.position || {x:-4.5, z:0};
+  const p2 = state?.fighters.p2.position || {x:4.5, z:0};
+  const centreX = (p1.x + p2.x) / 2;
+  const centreZ = (p1.z + p2.z) / 2;
+  const separation = Math.hypot(p2.x - p1.x, p2.z - p1.z);
+  cameraTarget.set(centreX, 1.35, centreZ);
+  desiredCamera.set(centreX * .2, 5.2 + Math.min(1.25, separation * .08), 12.6 + separation * .46 + centreZ);
+  camera.position.lerp(desiredCamera, 1 - Math.exp(-3.8 * dt));
+  if (shake > .001){
+    camera.position.x += (Math.random() - .5) * shake;
+    camera.position.y += (Math.random() - .5) * shake * .45;
+    shake *= Math.exp(-8 * dt);
+  }
+  camera.lookAt(cameraTarget);
+}
+
+function handleTouchControl(action, pressed){
+  if (!engine) return;
+  if (action === "restart" && pressed){
+    engine.restart();
+    return;
+  }
+  if (action.startsWith("attack")){
+    if (pressed) engine.tryAttack("p1", Number(action.at(-1)));
+    return;
+  }
+  const codes = {
+    forward:"KeyW",
+    backward:"KeyS",
+    sidestepLeft:"KeyA",
+    sidestepRight:"KeyD",
+    block:"Space",
+  };
+  const code = codes[action];
+  if (!code) return;
+  const event = {code, repeat:false, preventDefault(){}};
+  if (pressed) engine.handleKeyDown(event);
+  else engine.handleKeyUp(event);
+}
+
+function returnToSelect(){
+  currentMatchToken += 1;
+  engine?.destroy();
+  engine = null;
+  paused = false;
+  clearFighters();
+  ui.hideOverlay();
+}
 
 function animate(){
   requestAnimationFrame(animate);
-  const t = clock.getElapsedTime();
+  const dt = Math.min(clock.getDelta(), .05);
+  const now = performance.now();
+  if (engine && !paused && now >= roundFreezeUntil) engine.update(dt);
+  const state = engine?.getState() || null;
 
-  for (const [slug, g] of Object.entries(fighters)){
-    const lead = speaking === slug;
-    // idle bob; the bot on the mic leans in and rides higher
-    g.position.y = Math.sin(t*1.7 + g.position.x) * 0.09 + (lead ? 0.3 : 0);
-    const want = lead ? Math.sign(g.position.x) * 4.1 : Math.sign(g.position.x) * 5.0;
-    g.position.x += (want - g.position.x) * 0.05;
-    g.scale.setScalar(g.scale.x + ((lead ? 1.1 : 1.0) - g.scale.x) * 0.07);
+  if (state){
+    renderFighters(state, dt, now);
+    ui.updateHUD({
+      playerHealth:state.fighters.p1.healthRatio * 100,
+      opponentHealth:state.fighters.p2.healthRatio * 100,
+      timer:state.roundTime,
+      round:state.round,
+      playerRounds:state.fighters.p1.roundsWon,
+      opponentRounds:state.fighters.p2.roundsWon,
+      matchState:paused ? "PAUSED" : state.phase === "fighting" ? "FIGHT" : state.phase.toUpperCase(),
+    });
   }
-
-  cam.position.lerp(camPos, 0.035);
-  cam.lookAt(camTarget);
-  cam.position.y += Math.sin(t*0.7) * 0.006;
-  renderer.render(scene, cam);
+  updateSparks(dt);
+  updateCamera(state, dt);
+  renderer.render(scene, camera);
 }
 
-function cutTo(slug){
-  speaking = slug;
-  const g = fighters[slug];
-  if (!g){ camPos.set(0,3.4,15.5); camTarget.set(0,2.4,0); return; }
-  const side = Math.sign(g.position.x);
-  // over-the-shoulder from the opponent's side — the fighting-game angle
-  camPos.set(side * 6.4, 3.0, 8.4);
-  camTarget.set(side * 3.2, 2.3, 0);
-}
-
-function wideShot(){
-  speaking = null;
-  camPos.set(0, 3.6, 15.0);
-  camTarget.set(0, 2.5, 0);
-}
-
-/* ----------------------------------------------------------------- data */
-async function boot(){
-  const [t, cached, sprites] = await Promise.all([
-    fetch('/api/table').then(r=>r.json()),
-    fetch('/api/battles').then(r=>r.json()),
-    fetch('/bots/sprites.json').then(r=>r.json()).catch(()=>[])
-  ]);
-  TABLE = t;
-
-  // Only offer fighters we can actually show. A bot with no photo renders as
-  // a placeholder block, and a placeholder on stage reads as a broken app —
-  // better that it simply isn't on the menu.
-  const haveSprite = new Set(sprites.map(s => s.slug));
-  const rows = t.rows.filter(r => haveSprite.has(r.slug));
-  const benched = t.rows.filter(r => !haveSprite.has(r.slug)).map(r => r.name);
-
-  for (const sel of [$('#selA'), $('#selB')])
-    sel.innerHTML = rows.map(r=>`<option value="${r.slug}">${r.name}</option>`).join('');
-
-  const first = (cached.battles||[])[0];
-  $('#selA').value = first ? first.a : rows[0].slug;
-  $('#selB').value = first ? first.b : rows[rows.length-1].slug;
-
-  const n = (cached.battles||[]).length;
-  const prov = t.provenance.is_real
-    ? 'data scraped'
-    : '<span style="color:#ff2e4d">PLACEHOLDER DATA</span>';
-  const bench = benched.length
-    ? `<br><span style="opacity:.7">${benched.join(', ')} benched — no usable photo</span>`
-    : '';
-  $('#hint').innerHTML = `${rows.length} fighters · ${n} battles ready · ${prov}${bench}`;
-
-  initScene();
-}
-
-function meter(el, v){ el.style.width = Math.max(4, Math.min(100, v)) + '%'; }
-
-async function fight(){
-  const a = $('#selA').value, b = $('#selB').value;
-  if (a === b) return;
-
-  let d;
-  try {
-    const res = await fetch(`/api/battle/${a}/${b}`);
-    if (!res.ok) throw 0;
-    d = await res.json();
-  } catch {
-    $('#hint').innerHTML = `<span style="color:#ff2e4d">no battle cached for that pair</span> —
-      run: python3 ingest/pregen.py ${a} ${b}`;
-    return;
+initScene();
+ui = createFighterUI({
+  root:"#fighter-ui-root",
+  roster:ROBOT_LIST,
+  initialPlayer:0,
+  initialOpponent:1,
+  onStart:beginMatch,
+  onPause(nextPaused){
+    paused = nextPaused;
+    if (!engine) return;
+    if (paused) engine.unbindKeyboard();
+    else engine.bindKeyboard(window);
+  },
+  onRestart(){
+    engine?.restart();
+  },
+  onReturnToSelect:returnToSelect,
+  onControl:handleTouchControl,
+});
+addEventListener("keydown", (event) => {
+  if (event.code === "KeyM" && !event.repeat){
+    event.preventDefault();
+    toggleAudio();
   }
-  BATTLE = d;
-
-  const ra = TABLE.rows.find(r=>r.slug===a), rb = TABLE.rows.find(r=>r.slug===b);
-  $('#nmA').textContent = d.names[a];
-  $('#nmB').textContent = d.names[b];
-  meter($('#hypeA'), ra.hype); meter($('#perfA'), ra.performance);
-  meter($('#hypeB'), rb.hype); meter($('#perfB'), rb.performance);
-
-  for (const g of Object.values(fighters)) scene.remove(g);
-  fighters = { [a]: makeFighter(a, -1), [b]: makeFighter(b, +1) };
-
-  $('#splash').classList.add('gone');
-  wideShot();
-
-  QUEUE = [];
-  if (d.audio){
-    if (d.audio.intro) QUEUE.push({i:-1, f:d.audio.intro});
-    for (const m of d.audio.bars) QUEUE.push({i:m.index, f:m.file});
-  } else {
-    d.bars.forEach((_,i)=>QUEUE.push({i, f:null}));
-  }
-  qi = 0;
-  next();
-}
-
-function next(){
-  if (qi >= QUEUE.length){
-    wideShot();
-    $('#sub').classList.remove('on');
-    $('#round').textContent = 'K.O.';
-    setTimeout(()=>$('#splash').classList.remove('gone'), 2600);
-    return;
-  }
-  const step = QUEUE[qi++];
-  const au = $('#au');
-
-  if (step.i < 0){
-    wideShot();
-    $('#sub').classList.remove('on');
-  } else {
-    const bar = BATTLE.bars[step.i];
-    const isA = bar.bot === BATTLE.a;
-    cutTo(bar.bot);
-    $('#round').textContent = `ROUND ${step.i < 8 ? 1 : 2}`;
-    $('#subWho').className = 'who ' + (isA ? 'a' : 'b');
-    $('#subWho').textContent = BATTLE.names[bar.bot];
-    $('#subLine').textContent = bar.text;
-    $('#subCite').innerHTML = `<b>${bar.fact_id}</b> ${esc(bar.fact)}`;
-    $('#sub').classList.add('on');
-  }
-
-  // Silent mode has to stay READABLE. The audio manifests are committed but
-  // the rendered WAVs are not (77 MB), so a fresh clone — a Codespace, a
-  // teammate's laptop — has manifest entries pointing at files that 404.
-  // Advancing on the error event would flash the whole battle past in a
-  // second, so fall back to a reading-paced timer instead.
-  const hold = step.i < 0 ? 3200
-    : Math.max(2600, 380 * (BATTLE.bars[step.i].text.split(/\s+/).length));
-
-  if (!step.f){ setTimeout(next, hold); return; }
-  au.src = '/audio/' + step.f;
-  au.onended = next;
-  au.onerror = () => setTimeout(next, hold);
-  au.play().catch(() => setTimeout(next, hold));
-}
-
-function esc(s){ return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
-
-$('#go').onclick = fight;
-boot();
+});
+animate();
 </script>
 </body>
 </html>
