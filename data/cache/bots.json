@@ -1,61 +1,23 @@
 {
   "bots": [
     {
-      "slug": "bite-force",
-      "name": "Bite Force",
-      "weapon": "vertical_spinner",
-      "provisional": false,
-      "source_url": "https://battlebots.com/robot/bite-force/",
-      "photo_is_team_shot": true
+      "slug": "mad-catter",
+      "name": "MaDCatTer",
+      "source_url": "https://battlebots.com/robot/mad-catter-wcvii/",
+      "provisional": false
     },
     {
-      "slug": "black-dragon",
-      "name": "Black Dragon",
-      "weapon": "drum",
-      "provisional": false,
-      "source_url": "https://battlebots.com/robot/black-dragon-wcvii/"
+      "slug": "claw-viper",
+      "name": "Claw Viper",
+      "source_url": "https://battlebots.com/robot/claw-viper-wcvii/",
+      "provisional": false
     },
     {
-      "slug": "blip",
-      "name": "Blip",
-      "weapon": "flipper",
+      "slug": "skorpios",
+      "name": "Skorpios",
+      "weapon": "hammer",
       "provisional": false,
-      "source_url": "https://battlebots.com/robot/blip-wcvii/"
-    },
-    {
-      "slug": "cobalt",
-      "name": "Cobalt",
-      "weapon": "vertical_spinner",
-      "provisional": false,
-      "source_url": "https://battlebots.com/robot/cobalt-wcvii/"
-    },
-    {
-      "slug": "copperhead",
-      "name": "Copperhead",
-      "weapon": "drum",
-      "provisional": false,
-      "source_url": "https://battlebots.com/robot/copperhead-wcvii/"
-    },
-    {
-      "slug": "duck",
-      "name": "Duck!",
-      "weapon": "control",
-      "provisional": false,
-      "source_url": "https://battlebots.com/robot/duck-2021/"
-    },
-    {
-      "slug": "end-game",
-      "name": "End Game",
-      "weapon": "vertical_spinner",
-      "provisional": false,
-      "source_url": "https://battlebots.com/robot/end-game-wcvii/"
-    },
-    {
-      "slug": "gigabyte",
-      "name": "Gigabyte",
-      "weapon": "horizontal_spinner",
-      "provisional": false,
-      "source_url": "https://battlebots.com/robot/gigabyte-wcvii/"
+      "source_url": "https://battlebots.com/robot/skorpios-wcvii/"
     },
     {
       "slug": "huge",
@@ -65,18 +27,10 @@
       "source_url": "https://battlebots.com/robot/huge-wcvii/"
     },
     {
-      "slug": "hydra",
-      "name": "Hydra",
-      "weapon": "flipper",
-      "provisional": false,
-      "source_url": "https://battlebots.com/robot/hydra-wcvii/"
-    },
-    {
-      "slug": "hypershock",
-      "name": "HyperShock",
-      "weapon": "horizontal_spinner",
-      "provisional": false,
-      "source_url": "https://battlebots.com/robot/hypershock-wcvii/"
+      "slug": "bloodsport",
+      "name": "Bloodsport",
+      "source_url": "https://battlebots.com/robot/bloodsport-wcvii/",
+      "provisional": false
     },
     {
       "slug": "lock-jaw",
@@ -86,25 +40,64 @@
       "source_url": "https://battlebots.com/robot/lock-jaw-wcvii/"
     },
     {
-      "slug": "malice",
-      "name": "Malice",
-      "weapon": "horizontal_spinner",
-      "provisional": false,
-      "source_url": "https://battlebots.com/robot/malice-wcvii/"
+      "slug": "jackpot",
+      "name": "Jackpot",
+      "source_url": "https://battlebots.com/robot/jackpot-wcvii/",
+      "provisional": false
     },
     {
-      "slug": "minotaur",
-      "name": "Minotaur",
-      "weapon": "drum",
-      "provisional": false,
-      "source_url": "https://battlebots.com/robot/minotaur-wcvii/"
-    },
-    {
-      "slug": "ribbot",
-      "name": "Ribbot",
+      "slug": "witch-doctor",
+      "name": "Witch Doctor",
       "weapon": "vertical_spinner",
       "provisional": false,
-      "source_url": "https://battlebots.com/robot/ribbot-wcvii/"
+      "source_url": "https://battlebots.com/robot/witch-doctor-wcvii/"
+    },
+    {
+      "slug": "rotator",
+      "name": "ROTATOR",
+      "weapon": "horizontal_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/rotator-wcvii/"
+    },
+    {
+      "slug": "copperhead",
+      "name": "Copperhead",
+      "weapon": "drum",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/copperhead-wcvii/"
+    },
+    {
+      "slug": "tantrum",
+      "name": "Tantrum",
+      "source_url": "https://battlebots.com/robot/tantrum-wcvii/",
+      "provisional": false
+    },
+    {
+      "slug": "end-game",
+      "name": "End Game",
+      "weapon": "vertical_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/end-game-wcvii/"
+    },
+    {
+      "slug": "hypershock",
+      "name": "HyperShock",
+      "weapon": "horizontal_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/hypershock-wcvii/"
+    },
+    {
+      "slug": "lucky",
+      "name": "LUCKY!",
+      "source_url": "https://battlebots.com/robot/lucky-wcvii/",
+      "provisional": false
+    },
+    {
+      "slug": "shatter",
+      "name": "Shatter!",
+      "weapon": "hammer",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/shatter-wcvii/"
     },
     {
       "slug": "riptide",
@@ -114,11 +107,76 @@
       "source_url": "https://battlebots.com/robot/riptide-wcvii/"
     },
     {
-      "slug": "rotator",
-      "name": "Rotator",
-      "weapon": "horizontal_spinner",
+      "slug": "black-dragon",
+      "name": "Black Dragon",
+      "weapon": "drum",
       "provisional": false,
-      "source_url": "https://battlebots.com/robot/rotator-wcvii/"
+      "source_url": "https://battlebots.com/robot/black-dragon-wcvii/"
+    },
+    {
+      "slug": "ripperoni",
+      "name": "RIPperoni",
+      "source_url": "https://battlebots.com/robot/ripperoni-wcvii/",
+      "provisional": false
+    },
+    {
+      "slug": "ribbot",
+      "name": "Ribbot",
+      "weapon": "vertical_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/ribbot-wcvii/"
+    },
+    {
+      "slug": "quantum",
+      "name": "Quantum",
+      "source_url": "https://battlebots.com/robot/quantum-wcvii/",
+      "provisional": false
+    },
+    {
+      "slug": "whiplash",
+      "name": "Whiplash",
+      "weapon": "vertical_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/whiplash-wcvii/"
+    },
+    {
+      "slug": "beta",
+      "name": "Beta",
+      "source_url": "https://battlebots.com/robot/beta-wcvii/",
+      "provisional": false
+    },
+    {
+      "slug": "death-roll",
+      "name": "Death Roll",
+      "source_url": "https://battlebots.com/robot/death-roll-wcvii/",
+      "provisional": false
+    },
+    {
+      "slug": "hydra",
+      "name": "HYDRA",
+      "weapon": "flipper",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/hydra-wcvii/"
+    },
+    {
+      "slug": "monsoon",
+      "name": "Monsoon",
+      "source_url": "https://battlebots.com/robot/monsoon-wcvii/",
+      "provisional": false
+    },
+    {
+      "slug": "cobalt",
+      "name": "Cobalt",
+      "weapon": "vertical_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/cobalt-wcvii/"
+    },
+    {
+      "slug": "blip",
+      "name": "Blip",
+      "weapon": "flipper",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/blip-wcvii/"
     },
     {
       "slug": "sawblaze",
@@ -128,18 +186,55 @@
       "source_url": "https://battlebots.com/robot/sawblaze-wcvii/"
     },
     {
-      "slug": "shatter",
-      "name": "Shatter",
-      "weapon": "hammer",
+      "slug": "malice",
+      "name": "Malice",
+      "weapon": "horizontal_spinner",
       "provisional": false,
-      "source_url": "https://battlebots.com/robot/shatter-wcvii/"
+      "source_url": "https://battlebots.com/robot/malice-wcvii/"
     },
     {
-      "slug": "skorpios",
-      "name": "Skorpios",
-      "weapon": "hammer",
+      "slug": "switchback",
+      "name": "Switchback",
+      "source_url": "https://battlebots.com/robot/switchback-wcvii/",
+      "provisional": false
+    },
+    {
+      "slug": "fusion",
+      "name": "Fusion",
+      "source_url": "https://battlebots.com/robot/fusion-wcvii/",
+      "provisional": false
+    },
+    {
+      "slug": "minotaur",
+      "name": "Minotaur",
+      "weapon": "drum",
       "provisional": false,
-      "source_url": "https://battlebots.com/robot/skorpios-wcvii/"
+      "source_url": "https://battlebots.com/robot/minotaur-wcvii/"
+    },
+    {
+      "slug": "gigabyte",
+      "name": "Gigabyte",
+      "weapon": "horizontal_spinner",
+      "provisional": false,
+      "source_url": "https://battlebots.com/robot/gigabyte-2021/"
+    },
+    {
+      "slug": "captain-shrederator",
+      "name": "Captain Shrederator",
+      "source_url": "https://battlebots.com/robot/captain-shrederator-2021/",
+      "provisional": false
+    },
+    {
+      "slug": "yeti",
+      "name": "Yeti",
+      "source_url": "https://battlebots.com/robot/yeti-2021/",
+      "provisional": false
+    },
+    {
+      "slug": "icewave",
+      "name": "Icewave",
+      "source_url": "https://battlebots.com/robot/icewave-2021/",
+      "provisional": false
     },
     {
       "slug": "tombstone",
@@ -153,22 +248,352 @@
       "name": "Valkyrie",
       "weapon": "horizontal_spinner",
       "provisional": false,
-      "source_url": "https://battlebots.com/robot/valkyrie-wcvii/"
+      "source_url": "https://battlebots.com/robot/valkyrie-2021/"
     },
     {
-      "slug": "whiplash",
-      "name": "Whiplash",
-      "weapon": "vertical_spinner",
-      "provisional": false,
-      "source_url": "https://battlebots.com/robot/whiplash-wcvii/"
+      "slug": "madcatter",
+      "name": "MadCatter",
+      "source_url": "https://battlebots.com/robot/madcatter-2021/",
+      "provisional": false
     },
     {
-      "slug": "witch-doctor",
+      "slug": "defender",
+      "name": "Defender",
+      "source_url": "https://battlebots.com/robot/defender-2021/",
+      "provisional": false
+    },
+    {
+      "slug": "uppercut",
+      "name": "Uppercut",
+      "source_url": "https://battlebots.com/robot/uppercut-2021/",
+      "provisional": false
+    },
+    {
+      "slug": "p1",
+      "name": "P1",
+      "source_url": "https://battlebots.com/robot/p1-2021/",
+      "provisional": false
+    },
+    {
+      "slug": "hijinx",
+      "name": "HiJinx",
+      "source_url": "https://battlebots.com/robot/hijinx-2021/",
+      "provisional": false
+    },
+    {
+      "slug": "mammoth",
+      "name": "Mammoth (alt)",
+      "source_url": "https://battlebots.com/robot/mammoth-2021/",
+      "provisional": false
+    },
+    {
+      "slug": "glitch",
+      "name": "Glitch",
+      "source_url": "https://battlebots.com/robot/glitch-2021/",
+      "provisional": false
+    },
+    {
+      "slug": "perfect-phoenix",
+      "name": "Perfect Phoenix",
+      "source_url": "https://battlebots.com/robot/perfect-phoenix-2020/",
+      "provisional": false
+    },
+    {
+      "slug": "kraken",
+      "name": "Kraken",
+      "source_url": "https://battlebots.com/robot/kraken-2020/",
+      "provisional": false
+    },
+    {
+      "slug": "gruff",
+      "name": "Gruff",
+      "source_url": "https://battlebots.com/robot/gruff-2020/",
+      "provisional": false
+    },
+    {
+      "slug": "slammow",
+      "name": "SlamMow",
+      "source_url": "https://battlebots.com/robot/slammow-2020/",
+      "provisional": false
+    },
+    {
+      "slug": "subzero",
+      "name": "SubZero",
+      "source_url": "https://battlebots.com/robot/subzero-2020/",
+      "provisional": false
+    },
+    {
+      "slug": "deathroll",
+      "name": "Death Roll",
+      "source_url": "https://battlebots.com/robot/deathroll-2019/",
+      "provisional": false
+    },
+    {
+      "slug": "son-of-whyachi",
+      "name": "SOW",
+      "source_url": "https://battlebots.com/robot/son-of-whyachi-2019/",
+      "provisional": false
+    },
+    {
+      "slug": "blacksmith",
+      "name": "Blacksmith",
+      "source_url": "https://battlebots.com/robot/blacksmith-2019/",
+      "provisional": false
+    },
+    {
+      "slug": "25345",
       "name": "Witch Doctor",
+      "source_url": "https://battlebots.com/robot/25345/",
+      "provisional": false
+    },
+    {
+      "slug": "bite-force",
+      "name": "Bite Force",
       "weapon": "vertical_spinner",
       "provisional": false,
-      "source_url": "https://battlebots.com/robot/witch-doctor-wcvii/"
+      "source_url": "https://battlebots.com/robot/bite-force-2019/",
+      "photo_is_team_shot": true
+    },
+    {
+      "slug": "rotato\u044f",
+      "name": "Rotato\u042f",
+      "source_url": "https://battlebots.com/robot/rotato\u044f-s3/",
+      "provisional": false
+    },
+    {
+      "slug": "icewave-3",
+      "name": "Icewave",
+      "source_url": "https://battlebots.com/robot/icewave-3/",
+      "provisional": false
+    },
+    {
+      "slug": "yeti-2",
+      "name": "Yeti",
+      "source_url": "https://battlebots.com/robot/yeti-2/",
+      "provisional": false
+    },
+    {
+      "slug": "war-hawk",
+      "name": "WAR Hawk",
+      "source_url": "https://battlebots.com/robot/war-hawk/",
+      "provisional": false
+    },
+    {
+      "slug": "bronco-3",
+      "name": "Bronco",
+      "source_url": "https://battlebots.com/robot/bronco-3/",
+      "provisional": false
+    },
+    {
+      "slug": "bombshell-2",
+      "name": "Bombshell",
+      "source_url": "https://battlebots.com/robot/bombshell-2/",
+      "provisional": false
+    },
+    {
+      "slug": "the-ringmaster",
+      "name": "The Ringmaster (S2)",
+      "source_url": "http://battlebots.com/robot/the-ringmaster/",
+      "provisional": false
+    },
+    {
+      "slug": "sow",
+      "name": "SOW (S2)",
+      "source_url": "http://battlebots.com/robot/sow/",
+      "provisional": false
+    },
+    {
+      "slug": "red-devil",
+      "name": "Red Devil (S2)",
+      "source_url": "http://battlebots.com/robot/red-devil-s2/",
+      "provisional": false
+    },
+    {
+      "slug": "poison-arrow",
+      "name": "Poison Arrow (S2)",
+      "source_url": "http://battlebots.com/robot/poison-arrow-s2/",
+      "provisional": false
+    },
+    {
+      "slug": "mega-tento",
+      "name": "Mega Tento (S2)",
+      "source_url": "http://battlebots.com/robot/mega-tento/",
+      "provisional": false
+    },
+    {
+      "slug": "hypershock-2",
+      "name": "HyperShock (S2) (Copy)",
+      "source_url": "http://battlebots.com/robot/hypershock-2/",
+      "provisional": false
+    },
+    {
+      "slug": "escape-velocity",
+      "name": "Escape Velocity (S2)",
+      "source_url": "http://battlebots.com/robot/escape-velocity/",
+      "provisional": false
+    },
+    {
+      "slug": "chromefly",
+      "name": "ChromeFly (S2)",
+      "source_url": "http://battlebots.com/robot/chromefly-s2/",
+      "provisional": false
+    },
+    {
+      "slug": "brutus",
+      "name": "Brutus (S2)",
+      "source_url": "http://battlebots.com/robot/brutus/",
+      "provisional": false
+    },
+    {
+      "slug": "bombshell",
+      "name": "Bombshell (S2)",
+      "source_url": "http://battlebots.com/robot/bombshell/",
+      "provisional": false
+    },
+    {
+      "slug": "beta-2",
+      "name": "BETA (S2)",
+      "source_url": "http://battlebots.com/robot/beta-2/",
+      "provisional": false
+    },
+    {
+      "slug": "witch-doctor-2",
+      "name": "Witch Doctor (S2)",
+      "source_url": "http://battlebots.com/robot/witch-doctor-2/",
+      "provisional": false
+    },
+    {
+      "slug": "warrior-clan-2",
+      "name": "Warrior Clan (S2)",
+      "source_url": "http://battlebots.com/robot/warrior-clan-2/",
+      "provisional": false
+    },
+    {
+      "slug": "warrior-clan",
+      "name": "Warrior Clan (S1)",
+      "source_url": "http://battlebots.com/robot/warrior-clan/",
+      "provisional": false
+    },
+    {
+      "slug": "warhead-2",
+      "name": "Warhead (S2)",
+      "source_url": "http://battlebots.com/robot/warhead-2/",
+      "provisional": false
+    },
+    {
+      "slug": "warhead",
+      "name": "Warhead (S1)",
+      "source_url": "http://battlebots.com/robot/warhead/",
+      "provisional": false
+    },
+    {
+      "slug": "tombstone-2",
+      "name": "Tombstone (S2)",
+      "source_url": "http://battlebots.com/robot/tombstone-2/",
+      "provisional": false
+    },
+    {
+      "slug": "stinger-2",
+      "name": "Stinger (S2)",
+      "source_url": "http://battlebots.com/robot/stinger-2/",
+      "provisional": false
+    },
+    {
+      "slug": "stinger",
+      "name": "Stinger (S1)",
+      "source_url": "http://battlebots.com/robot/stinger/",
+      "provisional": false
+    },
+    {
+      "slug": "radioactive",
+      "name": "Radioactive (S1)",
+      "source_url": "http://battlebots.com/robot/radioactive/",
+      "provisional": false
+    },
+    {
+      "slug": "plan-x",
+      "name": "Plan X (S1)",
+      "source_url": "http://battlebots.com/robot/plan-x/",
+      "provisional": false
+    },
+    {
+      "slug": "overhaul-2",
+      "name": "Overhaul (S2)",
+      "source_url": "http://battlebots.com/robot/overhaul-2/",
+      "provisional": false
+    },
+    {
+      "slug": "22898",
+      "name": "Overhaul (S1)",
+      "source_url": "http://battlebots.com/robot/22898/",
+      "provisional": false
+    },
+    {
+      "slug": "overdrive",
+      "name": "OverDrive (S1)",
+      "source_url": "http://battlebots.com/robot/overdrive/",
+      "provisional": false
+    },
+    {
+      "slug": "lock-jaw-2",
+      "name": "Lock-Jaw (S2)",
+      "source_url": "http://battlebots.com/robot/lock-jaw-2/",
+      "provisional": false
+    },
+    {
+      "slug": "icewave-2",
+      "name": "Icewave (S2)",
+      "source_url": "http://battlebots.com/robot/icewave-2/",
+      "provisional": false
+    },
+    {
+      "slug": "ghost-raptor-2",
+      "name": "Ghost Raptor (S2)",
+      "source_url": "http://battlebots.com/robot/ghost-raptor-2/",
+      "provisional": false
+    },
+    {
+      "slug": "ghost-raptor",
+      "name": "Ghost Raptor (S1)",
+      "source_url": "http://battlebots.com/robot/ghost-raptor/",
+      "provisional": false
+    },
+    {
+      "slug": "chomp",
+      "name": "Chomp (S1)",
+      "source_url": "http://battlebots.com/robot/chomp/",
+      "provisional": false
+    },
+    {
+      "slug": "chomp-2",
+      "name": "Chomp (S2)",
+      "source_url": "http://battlebots.com/robot/chomp-2/",
+      "provisional": false
+    },
+    {
+      "slug": "captain-shrederator-2",
+      "name": "Captain Shrederator (S2)",
+      "source_url": "http://battlebots.com/robot/captain-shrederator-2/",
+      "provisional": false
+    },
+    {
+      "slug": "bronco-2",
+      "name": "Bronco (S2)",
+      "source_url": "http://battlebots.com/robot/bronco-2/",
+      "provisional": false
+    },
+    {
+      "slug": "bronco",
+      "name": "Bronco (S1)",
+      "source_url": "http://battlebots.com/robot/bronco/",
+      "provisional": false
+    },
+    {
+      "slug": "bite-force-2",
+      "name": "Bite Force (S2)",
+      "source_url": "http://battlebots.com/robot/bite-force-2/",
+      "provisional": false
     }
   ],
-  "ingested_at": "2026-07-28T17:16:17.518733+00:00"
+  "ingested_at": "2026-07-28T17:27:25.196190+00:00"
 }
