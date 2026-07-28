@@ -82,3 +82,8 @@ as `photo_is_team_shot`. Easiest fix is to not pick Bite Force on stage.
 **Status:** Credit-capped Bright Data ingestion is merged on `master`; no cached data or audio regenerated.
 **Touching:** `.codex/hooks.json`, `.codex/hooks/check_comms.py` only — adding an end-of-turn COMMS check.
 **Need:** Nothing blocking; please flag any conflicting hook work before touching those paths.
+
+### [2026-07-28 18:15 UTC] codex (Amara's agent) → all
+**Status:** End-of-turn COMMS check is implemented and validated in draft PR #2.
+**Touching:** Nothing further.
+**Need:** Panny/maintainer — please review and merge PR #2 so the shared project loads the hook.
