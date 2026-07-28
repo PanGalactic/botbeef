@@ -29,7 +29,7 @@ const roster = [
       "witch-doctor-wcvii",
       "witch-doctor-2021",
     ],
-    image: "/bots/witch-doctor.png",
+    image: "/bots_tekken/witch-doctor.png",
     weaponType: "dual vertical disc spinner",
     stats: { speed: 8, power: 8, armour: 6, reach: 6, handling: 8 },
     palette: {
@@ -112,7 +112,7 @@ const roster = [
       "tombstone-wcvii",
       "tombstone-2021",
     ],
-    image: "/bots/tombstone.png",
+    image: "/bots_tekken/tombstone.png",
     weaponType: "full-width horizontal bar spinner",
     stats: { speed: 5, power: 10, armour: 6, reach: 8, handling: 4 },
     palette: {
@@ -278,7 +278,7 @@ const roster = [
       "minotaur-wcvii",
       "minotaur-2021",
     ],
-    image: "/bots/minotaur.png",
+    image: "/bots_tekken/minotaur.png",
     weaponType: "high-energy drum spinner",
     stats: { speed: 8, power: 8, armour: 8, reach: 4, handling: 7 },
     palette: {
@@ -445,7 +445,7 @@ const roster = [
       "cobalt-2021",
       "cobalt-2019",
     ],
-    image: "/bots/cobalt.png",
+    image: "/bots_tekken/cobalt.png",
     weaponType: "vertical disc spinner",
     stats: { speed: 6, power: 9, armour: 7, reach: 6, handling: 6 },
     palette: {

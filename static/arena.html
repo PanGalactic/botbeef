@@ -298,7 +298,7 @@ function makeFighterVisual(definition, side){
   fallback.position.y = .65;
   group.add(fallback);
 
-  textureLoader.load(definition.image, (map) => {
+  const applyTexture = (map) => {
     map.colorSpace = THREE.SRGBColorSpace;
     const aspect = map.image.width / map.image.height;
     const maxWidth = definition.id === "huge" ? 4.8 : 4.45;
@@ -310,7 +310,14 @@ function makeFighterVisual(definition, side){
     spriteMaterial.opacity = 1;
     spriteMaterial.needsUpdate = true;
     fallback.visible = false;
-  });
+  };
+
+  // Not every fighter has a tekkenized render yet (ingest/tekkenize.py has
+  // only covered part of the roster) — fall back to the raw photo cutout
+  // rather than leaving the coloured placeholder box up when one is missing.
+  const rawImage = definition.image.replace("/bots_tekken/", "/bots/");
+  textureLoader.load(definition.image, applyTexture, undefined,
+    () => textureLoader.load(rawImage, applyTexture));
 
   group.position.set(side === "p1" ? -4.5 : 4.5, 0, 0);
   scene.add(group);
