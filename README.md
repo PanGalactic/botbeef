@@ -1,6 +1,7 @@
 # BOT BEEF
 
-Data-grounded rap battles between BattleBots, in a Tekken-style arena.
+Two BattleBots experiences in one app: data-grounded rap battles and a
+playable, early-2000s-3D-fighter-inspired robot combat mode.
 
 Pick two bots. The app writes a 16-bar battle where **every single bar cites a
 real scraped fact** — win/loss record, KO count, strength of schedule, or a
@@ -9,6 +10,17 @@ nothing are rejected before they reach the screen.
 
 Built for the [Bright Data BattleBots Hack Night](https://luma.com/battle-bots-hack-night-jul28-2026),
 London, 28 Jul 2026.
+
+Open <http://127.0.0.1:5050/> to choose a mode:
+
+- **Rap Battle** at <http://127.0.0.1:5050/rap> turns scraped records and fan
+  chatter into voiced, cited bars.
+- **Robot Fight** at <http://127.0.0.1:5050/fight> runs the playable
+  best-of-three combat loop. The existing `/arena` URL remains an alias.
+
+Both modes run in the same Flask application and share robot identities,
+assets, data APIs, and navigation. There is one combat engine, loaded only by
+Fight mode; Rap mode uses the grounded-rap pipeline.
 
 ---
 
@@ -65,8 +77,8 @@ python -m pip install -r requirements.txt
 python app.py
 ```
 
-Open <http://127.0.0.1:5050/arena>. The legacy data-grounded rap view remains
-at <http://127.0.0.1:5050/>.
+Open <http://127.0.0.1:5050/fight>. The backwards-compatible `/arena` URL
+serves the same Fight mode.
 
 ### Fighter controls
 
@@ -88,6 +100,7 @@ attack and restart buttons.
 
 ```bash
 node --test tests/test_gameplay.mjs
+node --test tests/test_rap_audio.mjs
 python -m pytest -q
 ```
 
@@ -96,7 +109,9 @@ optional voice backend but deliberately does not contact Kokoro, Chatterbox,
 or ElevenLabs. Those services are unrelated to fighter gameplay, and probing
 their DNS/network state in the request path can stall a demo.
 
-## Data-grounded rap view
+## Rap Battle mode
+
+Open <http://127.0.0.1:5050/rap>.
 
 The data view shows a **red PLACEHOLDER banner** until every record carries a
 real `source_url` from an actual scrape. That's deliberate: it is not possible
@@ -145,6 +160,10 @@ python3 ingest/pregen.py tombstone hydra
 Everything is pre-rendered to disk. **Nothing hits the network during a demo** —
 no scrape, no LLM call, no TTS render. Live scraping on stage is how demos die.
 
+The voice manifest remains the timing authority: its intro and bar indices
+decide which lyric is highlighted. The selected backing bed loops quietly
+below the voices and stops when that sequence completes.
+
 ### Backing beats
 
 Ten instrumental beds, one per rap style, in `static/beats/` with a manifest
@@ -162,6 +181,8 @@ battle runs roughly 70–90 seconds including the announcer intro.
 
 `industrial.mp3` (clanging metal, hydraulic hiss, servo grind) is the
 thematic pick; `cinematic.mp3` is entrance music rather than a verse bed.
+Known cached matchups have an explicit theme, other pairs receive a stable
+theme derived from their canonical IDs, and the Rap header can override it.
 
 ### Arena art + fighter cutouts
 
