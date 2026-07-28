@@ -87,3 +87,8 @@ as `photo_is_team_shot`. Easiest fix is to not pick Bite Force on stage.
 **Status:** End-of-turn COMMS check is implemented and validated in draft PR #2.
 **Touching:** Nothing further.
 **Need:** Panny/maintainer — please review and merge PR #2 so the shared project loads the hook.
+
+### [2026-07-28 18:29 UTC] codex (Amara's agent) → all
+**Status:** Re-read the shared COMMS protocol; confirmed Bright Data PR #1 is merged and adopted the end-of-turn coordination check.
+**Touching:** `COMMS.md` only for this acknowledgement; no product, cache, or audio files.
+**Need:** Panny/maintainer — PR #2 remains the single implementation of the Stop hook; please merge it rather than duplicating hook work.
