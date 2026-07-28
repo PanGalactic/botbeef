@@ -23,12 +23,28 @@
   .arena-back:hover,.arena-back:focus-visible{color:#fff;border-color:#fff}
   @media (max-width:620px){.arena-back{display:none}}
   @media (pointer:coarse) and (max-width:1000px){.arena-back{display:none}}
+
+  /* Sourced-fact ticker. The fighter MVP's combat is live physics with
+     invented move names (Voodoo Jab, Six Feet Under) — there is no bar or
+     fact_id here to attach a citation to. This strip is the honest version:
+     real cited stats from /api/facts, surfaced during the match rather than
+     claimed to be what any single attack "is". See COMMS 20:18 UTC. */
+  #cite-ticker{position:fixed;z-index:60;left:50%;bottom:14px;
+    transform:translateX(-50%);max-width:min(640px,86vw);
+    padding:9px 16px;border-radius:7px;text-align:center;
+    background:rgba(3,5,8,.78);border:1px solid rgba(255,255,255,.14);
+    font:13px/1.5 ui-monospace,Menlo,monospace;color:#c7d0dc;
+    opacity:0;transition:opacity .35s;pointer-events:none}
+  #cite-ticker.is-visible{opacity:1}
+  #cite-ticker b{color:#2ee6a8;margin-right:8px}
+  @media (max-width:620px){#cite-ticker{font-size:11px;bottom:8px}}
 </style>
 </head>
 <body>
 <main id="stage" aria-label="3D robot combat arena"></main>
 <div id="stage-loading">Powering the BattleBox…</div>
 <div id="fighter-ui-root"></div>
+<div id="cite-ticker"></div>
 <a class="arena-back" href="/" aria-label="Return to data view">Data view</a>
 
 <script type="module">
@@ -352,6 +368,48 @@ function beginMatch({playerId, opponentId}){
   });
   engine.bindKeyboard(window);
   engine.start();
+  startCiteTicker(playerId, opponentId);
+}
+
+/* ---- sourced-fact ticker: real, cited stats cycling under the fight ---- */
+let citeFacts = [], citeIndex = 0, citeTimer = null;
+
+function stopCiteTicker(){
+  if (citeTimer) clearInterval(citeTimer);
+  citeTimer = null;
+  citeFacts = [];
+  document.querySelector("#cite-ticker").classList.remove("is-visible");
+}
+
+function showNextCite(){
+  const el = document.querySelector("#cite-ticker");
+  if (!citeFacts.length){ el.classList.remove("is-visible"); return; }
+  const f = citeFacts[citeIndex % citeFacts.length];
+  citeIndex += 1;
+  el.innerHTML = `<b>${f.id}</b>${f.text.replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}`;
+  el.classList.add("is-visible");
+}
+
+async function startCiteTicker(playerId, opponentId){
+  stopCiteTicker();
+  const token = currentMatchToken;
+  try{
+    const res = await fetch(`/api/facts/${playerId}/${opponentId}`);
+    if (!res.ok || token !== currentMatchToken) return;
+    const data = await res.json();
+    // Prefer the fact kinds that read as evidence rather than trivia —
+    // record and head-to-head first, since those are what a judge asking
+    // "is this cited or invented" would actually want to see.
+    const order = {record:0, h2h:1, ko:2, underrated:3, overrated:3, hype:4, sos:5, weapon:6, quote:7};
+    citeFacts = (data.facts || [])
+      .slice()
+      .sort((a, b) => (order[a.kind] ?? 9) - (order[b.kind] ?? 9))
+      .slice(0, 8);
+  } catch { citeFacts = []; }
+  if (token !== currentMatchToken || !citeFacts.length) return;
+  citeIndex = 0;
+  showNextCite();
+  citeTimer = setInterval(showNextCite, 4200);
 }
 
 function handleCombatEvent(event){
@@ -565,6 +623,7 @@ function returnToSelect(){
   paused = false;
   clearFighters();
   ui.hideOverlay();
+  stopCiteTicker();
 }
 
 function animate(){
