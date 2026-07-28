@@ -58,8 +58,8 @@ Hard rules, in order of importance:
    Bars that brag should cite a fact about the bot speaking.
 4. Punchlines land on the numbers. "You're 3-8 and the crowd still chants
    your name" is a better bar than a generic insult.
-5. One or two bars per verse, max. Keep each bar to roughly 8-16 words so it
-   reads on a projector and speaks cleanly through TTS.
+5. Keep each bar to roughly 8-16 words so it reads on a projector and speaks
+   cleanly through TTS.
 6. Trash talk is in-character robot bravado — combat, weapons, scrap metal,
    the arena. Keep it about the machines. No slurs, no real-person insults,
    nothing about the human teams.
@@ -79,21 +79,37 @@ def _prompt(a, b, fact_list, ctx):
 
 def validate(bars, fact_list, a, b):
     """Drop any bar that doesn't cite a real fact. This is the whole point."""
-    valid_ids = {f["id"] for f in fact_list}
     by_id = {f["id"]: f for f in fact_list}
     kept, rejected = [], []
     for bar in bars:
         fid = (bar.get("fact_id") or "").strip().upper()
         slug = bar.get("bot")
-        if fid not in valid_ids or slug not in (a, b) or not bar.get("text"):
+        fact = by_id.get(fid)
+        candidate_urls = []
+        if fact:
+            candidate_urls = [
+                fact.get("source_url"),
+                *(fact.get("source_urls") or []),
+            ]
+        source_urls = list(dict.fromkeys(
+            url.strip() for url in candidate_urls
+            if store.is_http_url(url)
+        ))
+        if (
+            slug not in (a, b)
+            or not bar.get("text")
+            or not fact
+            or not source_urls
+        ):
             rejected.append({**bar, "reason": "unsourced or malformed"})
             continue
         kept.append({
             "bot": slug,
             "text": bar["text"].strip(),
             "fact_id": fid,
-            "fact": by_id[fid]["text"],
-            "source_url": by_id[fid].get("source_url"),
+            "fact": fact["text"],
+            "source_url": source_urls[0],
+            "source_urls": source_urls,
         })
     return kept, rejected
 
