@@ -1,0 +1,18 @@
+{
+  "description": "Repository coordination hooks for BOT BEEF.",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/.codex/hooks/check_comms.py\"",
+            "commandWindows": "powershell.exe -NoProfile -Command \"$repoRoot = git rev-parse --show-toplevel; python (Join-Path $repoRoot '.codex/hooks/check_comms.py')\"",
+            "timeout": 10,
+            "statusMessage": "Checking COMMS.md coordination"
+          }
+        ]
+      }
+    ]
+  }
+}
