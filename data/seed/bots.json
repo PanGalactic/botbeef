@@ -1,0 +1,148 @@
+{
+  "bots": [
+    {
+      "slug": "tombstone",
+      "name": "Tombstone",
+      "weapon": "horizontal_spinner",
+      "provisional": true
+    },
+    {
+      "slug": "hydra",
+      "name": "Hydra",
+      "weapon": "flipper",
+      "provisional": true
+    },
+    {
+      "slug": "minotaur",
+      "name": "Minotaur",
+      "weapon": "drum",
+      "provisional": true
+    },
+    {
+      "slug": "witch-doctor",
+      "name": "Witch Doctor",
+      "weapon": "vertical_spinner",
+      "provisional": true
+    },
+    {
+      "slug": "bite-force",
+      "name": "Bite Force",
+      "weapon": "vertical_spinner",
+      "provisional": true
+    },
+    {
+      "slug": "end-game",
+      "name": "End Game",
+      "weapon": "vertical_spinner",
+      "provisional": true
+    },
+    {
+      "slug": "riptide",
+      "name": "Riptide",
+      "weapon": "vertical_spinner",
+      "provisional": true
+    },
+    {
+      "slug": "copperhead",
+      "name": "Copperhead",
+      "weapon": "drum",
+      "provisional": true
+    },
+    {
+      "slug": "whiplash",
+      "name": "Whiplash",
+      "weapon": "vertical_spinner",
+      "provisional": true
+    },
+    {
+      "slug": "huge",
+      "name": "HUGE",
+      "weapon": "vertical_spinner",
+      "provisional": true
+    },
+    {
+      "slug": "black-dragon",
+      "name": "Black Dragon",
+      "weapon": "drum",
+      "provisional": true
+    },
+    {
+      "slug": "sawblaze",
+      "name": "SawBlaze",
+      "weapon": "hammer",
+      "provisional": true
+    },
+    {
+      "slug": "lock-jaw",
+      "name": "Lock-Jaw",
+      "weapon": "vertical_spinner",
+      "provisional": true
+    },
+    {
+      "slug": "valkyrie",
+      "name": "Valkyrie",
+      "weapon": "horizontal_spinner",
+      "provisional": true
+    },
+    {
+      "slug": "ribbot",
+      "name": "Ribbot",
+      "weapon": "vertical_spinner",
+      "provisional": true
+    },
+    {
+      "slug": "skorpios",
+      "name": "Skorpios",
+      "weapon": "hammer",
+      "provisional": true
+    },
+    {
+      "slug": "hypershock",
+      "name": "HyperShock",
+      "weapon": "horizontal_spinner",
+      "provisional": true
+    },
+    {
+      "slug": "rotator",
+      "name": "Rotator",
+      "weapon": "horizontal_spinner",
+      "provisional": true
+    },
+    {
+      "slug": "gigabyte",
+      "name": "Gigabyte",
+      "weapon": "horizontal_spinner",
+      "provisional": true
+    },
+    {
+      "slug": "shatter",
+      "name": "Shatter",
+      "weapon": "hammer",
+      "provisional": true
+    },
+    {
+      "slug": "duck",
+      "name": "Duck!",
+      "weapon": "control",
+      "provisional": true
+    },
+    {
+      "slug": "blip",
+      "name": "Blip",
+      "weapon": "flipper",
+      "provisional": true
+    },
+    {
+      "slug": "malice",
+      "name": "Malice",
+      "weapon": "horizontal_spinner",
+      "provisional": true
+    },
+    {
+      "slug": "cobalt",
+      "name": "Cobalt",
+      "weapon": "vertical_spinner",
+      "provisional": true
+    }
+  ]
+}

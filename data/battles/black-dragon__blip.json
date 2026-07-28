@@ -1,0 +1,292 @@
+{
+  "a": "blip",
+  "b": "black-dragon",
+  "names": {
+    "blip": "Blip",
+    "black-dragon": "Black Dragon"
+  },
+  "bars": [
+    {
+      "bot": "blip",
+      "text": "I'm a flipper \u2014 gravity does my dirty work, you land on your lid.",
+      "fact_id": "F3",
+      "fact": "Blip is a flipper.",
+      "source_url": null
+    },
+    {
+      "bot": "blip",
+      "text": "Hype sits 22 points above my results, and the crowd still screams my name.",
+      "fact_id": "F5",
+      "fact": "Blip is the crowd's darling and the record does not back it up: fan hype sits +22.0 points above what its results predict.",
+      "source_url": null
+    },
+    {
+      "bot": "blip",
+      "text": "Five fan mentions total, Dragon \u2014 the whole arena forgot your serial number.",
+      "fact_id": "F10",
+      "fact": "Black Dragon has 5 scraped fan mentions with average sentiment +0.23.",
+      "source_url": null
+    },
+    {
+      "bot": "blip",
+      "text": "Two and three in five fights? Forty percent isn't a reign, it's a rounding error.",
+      "fact_id": "F7",
+      "fact": "Black Dragon is 2-3 across 5 recorded fights (40.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Two wins in five, forty percent \u2014 that's twice the wins you've ever logged.",
+      "fact_id": "F7",
+      "fact": "Black Dragon is 2-3 across 5 recorded fights (40.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "I'm a drum; I don't politely ask you to leave, I redistribute your panels.",
+      "fact_id": "F9",
+      "fact": "Black Dragon is a drum.",
+      "source_url": null
+    },
+    {
+      "bot": "blip",
+      "text": "One and two across three fights \u2014 thirty-three percent, one bright frame, two blackouts.",
+      "fact_id": "F1",
+      "fact": "Blip is 1-2 across 3 recorded fights (33.3% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Zero knockout wins and knocked out twice \u2014 the flipper keeps landing on itself.",
+      "fact_id": "F2",
+      "fact": "Blip has 0 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "blip",
+      "text": "You've got zero knockout wins too \u2014 that drum is all noise, no lights out.",
+      "fact_id": "F8",
+      "fact": "Black Dragon has 0 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "blip",
+      "text": "Your top post is borrowed thunder: \"that KO was the loudest thing all season.\"",
+      "fact_id": "F14",
+      "fact": "Top fan post about Black Dragon (x): \"that KO was the loudest thing I've heard all season\"",
+      "source_url": null
+    },
+    {
+      "bot": "blip",
+      "text": "They said my KO was the loudest thing they'd heard all season \u2014 that's my echo.",
+      "fact_id": "F13",
+      "fact": "Top fan post about Blip (youtube): \"that KO was the loudest thing I've heard all season\"",
+      "source_url": null
+    },
+    {
+      "bot": "blip",
+      "text": "My opponents average 47 percent and I still walked out the fan favorite.",
+      "fact_id": "F6",
+      "fact": "Blip's opponents average a 47.2% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Nobody says my name, yet I'm 36 points better than my hype \u2014 quiet killer.",
+      "fact_id": "F11",
+      "fact": "Black Dragon is a quiet killer \u2014 nobody talks about it, but it is 36.3 points better than its hype implies.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "My opponents win 60 percent of their fights; I climb uphill every single match.",
+      "fact_id": "F12",
+      "fact": "Black Dragon's opponents average a 60.1% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Your hype runs 22 points past your record \u2014 that's a paper crown, welded crooked.",
+      "fact_id": "F5",
+      "fact": "Blip is the crowd's darling and the record does not back it up: fan hype sits +22.0 points above what its results predict.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Thirty-three mentions at plus point two two won't unbend a single axle.",
+      "fact_id": "F4",
+      "fact": "Blip has 33 scraped fan mentions with average sentiment +0.22.",
+      "source_url": null
+    }
+  ],
+  "rejected": [],
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "record",
+      "side": "blip",
+      "text": "Blip is 1-2 across 3 recorded fights (33.3% win rate).",
+      "value": 33.3,
+      "source_url": null
+    },
+    {
+      "id": "F2",
+      "kind": "ko",
+      "side": "blip",
+      "text": "Blip has 0 wins by knockout and has been knocked out 2 times.",
+      "value": 0,
+      "source_url": null
+    },
+    {
+      "id": "F3",
+      "kind": "weapon",
+      "side": "blip",
+      "text": "Blip is a flipper.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F4",
+      "kind": "hype",
+      "side": "blip",
+      "text": "Blip has 33 scraped fan mentions with average sentiment +0.22.",
+      "value": 33,
+      "source_url": null
+    },
+    {
+      "id": "F5",
+      "kind": "overrated",
+      "side": "blip",
+      "text": "Blip is the crowd's darling and the record does not back it up: fan hype sits +22.0 points above what its results predict.",
+      "value": 22.0,
+      "source_url": null
+    },
+    {
+      "id": "F6",
+      "kind": "sos",
+      "side": "blip",
+      "text": "Blip's opponents average a 47.2% win rate (strength of schedule).",
+      "value": 47.2,
+      "source_url": null
+    },
+    {
+      "id": "F7",
+      "kind": "record",
+      "side": "black-dragon",
+      "text": "Black Dragon is 2-3 across 5 recorded fights (40.0% win rate).",
+      "value": 40.0,
+      "source_url": null
+    },
+    {
+      "id": "F8",
+      "kind": "ko",
+      "side": "black-dragon",
+      "text": "Black Dragon has 0 wins by knockout and has been knocked out 2 times.",
+      "value": 0,
+      "source_url": null
+    },
+    {
+      "id": "F9",
+      "kind": "weapon",
+      "side": "black-dragon",
+      "text": "Black Dragon is a drum.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F10",
+      "kind": "hype",
+      "side": "black-dragon",
+      "text": "Black Dragon has 5 scraped fan mentions with average sentiment +0.23.",
+      "value": 5,
+      "source_url": null
+    },
+    {
+      "id": "F11",
+      "kind": "underrated",
+      "side": "black-dragon",
+      "text": "Black Dragon is a quiet killer \u2014 nobody talks about it, but it is 36.3 points better than its hype implies.",
+      "value": -36.3,
+      "source_url": null
+    },
+    {
+      "id": "F12",
+      "kind": "sos",
+      "side": "black-dragon",
+      "text": "Black Dragon's opponents average a 60.1% win rate (strength of schedule).",
+      "value": 60.1,
+      "source_url": null
+    },
+    {
+      "id": "F13",
+      "kind": "quote",
+      "side": "blip",
+      "text": "Top fan post about Blip (youtube): \"that KO was the loudest thing I've heard all season\"",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F14",
+      "kind": "quote",
+      "side": "black-dragon",
+      "text": "Top fan post about Black Dragon (x): \"that KO was the loudest thing I've heard all season\"",
+      "value": null,
+      "source_url": null
+    }
+  ],
+  "context": {
+    "a": {
+      "slug": "blip",
+      "name": "Blip",
+      "weapon": "flipper",
+      "performance": 36.3,
+      "hype": 80.4,
+      "expected_hype": 58.4,
+      "residual": 22.0,
+      "wins": 1,
+      "losses": 2,
+      "ko_wins": 0,
+      "ko_losses": 2,
+      "fights": 3,
+      "win_rate": 33.3,
+      "strength_of_schedule": 47.2,
+      "mentions": 33,
+      "sentiment": 0.22,
+      "engagement": 16662
+    },
+    "b": {
+      "slug": "black-dragon",
+      "name": "Black Dragon",
+      "weapon": "drum",
+      "performance": 35.1,
+      "hype": 21.5,
+      "expected_hype": 57.8,
+      "residual": -36.3,
+      "wins": 2,
+      "losses": 3,
+      "ko_wins": 0,
+      "ko_losses": 2,
+      "fights": 5,
+      "win_rate": 40.0,
+      "strength_of_schedule": 60.1,
+      "mentions": 5,
+      "sentiment": 0.228,
+      "engagement": 1578
+    },
+    "fit": {
+      "slope": 0.5018,
+      "intercept": 40.2,
+      "r": 0.282
+    },
+    "provenance": {
+      "fights_total": 72,
+      "fights_real": 0,
+      "posts_total": 542,
+      "posts_real": 0,
+      "is_real": false,
+      "fights_ingested_at": null,
+      "chatter_ingested_at": null
+    }
+  },
+  "backend": "anthropic"
+}

@@ -1,0 +1,292 @@
+{
+  "a": "malice",
+  "b": "black-dragon",
+  "names": {
+    "malice": "Malice",
+    "black-dragon": "Black Dragon"
+  },
+  "bars": [
+    {
+      "bot": "malice",
+      "text": "Horizontal spinner, blade at hip height \u2014 I redecorate the box wall.",
+      "fact_id": "F3",
+      "fact": "Malice is a horizontal spinner.",
+      "source_url": null
+    },
+    {
+      "bot": "malice",
+      "text": "Fans said it plain: still the scariest bot in the box, isn't close.",
+      "fact_id": "F13",
+      "fact": "Top fan post about Malice (x): \"still the scariest bot in the box and it isn't close\"",
+      "source_url": null
+    },
+    {
+      "bot": "malice",
+      "text": "You've got zero knockout wins, dragon \u2014 all bark, no lights out.",
+      "fact_id": "F8",
+      "fact": "Black Dragon has 0 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "malice",
+      "text": "Two and three in five fights? That's a coin flip with a drum on it.",
+      "fact_id": "F7",
+      "fact": "Black Dragon is 2-3 across 5 recorded fights (40.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "My drum bites low and lifts you, no showboat blade required.",
+      "fact_id": "F9",
+      "fact": "Black Dragon is a drum.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "One and seven across eight fights \u2014 twelve percent, that's your whole r\u00e9sum\u00e9.",
+      "fact_id": "F1",
+      "fact": "Malice is 1-7 across 8 recorded fights (12.5% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Knocked out four times, one KO of your own. Math ain't kind.",
+      "fact_id": "F2",
+      "fact": "Malice has 1 wins by knockout and has been knocked out 4 times.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Nobody says my name, yet I run thirty-six points past my hype.",
+      "fact_id": "F11",
+      "fact": "Black Dragon is a quiet killer \u2014 nobody talks about it, but it is 36.3 points better than its hype implies.",
+      "source_url": null
+    },
+    {
+      "bot": "malice",
+      "text": "Thirty-five mentions, sentiment positive \u2014 the box chants when my blade spins up.",
+      "fact_id": "F4",
+      "fact": "Malice has 35 scraped fan mentions with average sentiment +0.16.",
+      "source_url": null
+    },
+    {
+      "bot": "malice",
+      "text": "Five mentions total, dragon. The crowd forgot you before the countdown ended.",
+      "fact_id": "F10",
+      "fact": "Black Dragon has 5 scraped fan mentions with average sentiment +0.23.",
+      "source_url": null
+    },
+    {
+      "bot": "malice",
+      "text": "My opponents win sixty-three percent \u2014 I get fed monsters every single time.",
+      "fact_id": "F6",
+      "fact": "Malice's opponents average a 63.1% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "malice",
+      "text": "Twenty-four points of hype over my record, and I'm still their darling.",
+      "fact_id": "F5",
+      "fact": "Malice is the crowd's darling and the record does not back it up: fan hype sits +24.4 points above what its results predict.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "They wrote it down: that KO was the loudest thing all season long.",
+      "fact_id": "F14",
+      "fact": "Top fan post about Black Dragon (x): \"that KO was the loudest thing I've heard all season\"",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Hype twenty-four above your results \u2014 you're a poster, not a puncher.",
+      "fact_id": "F5",
+      "fact": "Malice is the crowd's darling and the record does not back it up: fan hype sits +24.4 points above what its results predict.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Sixty percent schedule on my side too, so save the excuse reel.",
+      "fact_id": "F12",
+      "fact": "Black Dragon's opponents average a 60.1% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Forty percent beats twelve every night. Scrap your blade and check.",
+      "fact_id": "F7",
+      "fact": "Black Dragon is 2-3 across 5 recorded fights (40.0% win rate).",
+      "source_url": null
+    }
+  ],
+  "rejected": [],
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "record",
+      "side": "malice",
+      "text": "Malice is 1-7 across 8 recorded fights (12.5% win rate).",
+      "value": 12.5,
+      "source_url": null
+    },
+    {
+      "id": "F2",
+      "kind": "ko",
+      "side": "malice",
+      "text": "Malice has 1 wins by knockout and has been knocked out 4 times.",
+      "value": 1,
+      "source_url": null
+    },
+    {
+      "id": "F3",
+      "kind": "weapon",
+      "side": "malice",
+      "text": "Malice is a horizontal spinner.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F4",
+      "kind": "hype",
+      "side": "malice",
+      "text": "Malice has 35 scraped fan mentions with average sentiment +0.16.",
+      "value": 35,
+      "source_url": null
+    },
+    {
+      "id": "F5",
+      "kind": "overrated",
+      "side": "malice",
+      "text": "Malice is the crowd's darling and the record does not back it up: fan hype sits +24.4 points above what its results predict.",
+      "value": 24.4,
+      "source_url": null
+    },
+    {
+      "id": "F6",
+      "kind": "sos",
+      "side": "malice",
+      "text": "Malice's opponents average a 63.1% win rate (strength of schedule).",
+      "value": 63.1,
+      "source_url": null
+    },
+    {
+      "id": "F7",
+      "kind": "record",
+      "side": "black-dragon",
+      "text": "Black Dragon is 2-3 across 5 recorded fights (40.0% win rate).",
+      "value": 40.0,
+      "source_url": null
+    },
+    {
+      "id": "F8",
+      "kind": "ko",
+      "side": "black-dragon",
+      "text": "Black Dragon has 0 wins by knockout and has been knocked out 2 times.",
+      "value": 0,
+      "source_url": null
+    },
+    {
+      "id": "F9",
+      "kind": "weapon",
+      "side": "black-dragon",
+      "text": "Black Dragon is a drum.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F10",
+      "kind": "hype",
+      "side": "black-dragon",
+      "text": "Black Dragon has 5 scraped fan mentions with average sentiment +0.23.",
+      "value": 5,
+      "source_url": null
+    },
+    {
+      "id": "F11",
+      "kind": "underrated",
+      "side": "black-dragon",
+      "text": "Black Dragon is a quiet killer \u2014 nobody talks about it, but it is 36.3 points better than its hype implies.",
+      "value": -36.3,
+      "source_url": null
+    },
+    {
+      "id": "F12",
+      "kind": "sos",
+      "side": "black-dragon",
+      "text": "Black Dragon's opponents average a 60.1% win rate (strength of schedule).",
+      "value": 60.1,
+      "source_url": null
+    },
+    {
+      "id": "F13",
+      "kind": "quote",
+      "side": "malice",
+      "text": "Top fan post about Malice (x): \"still the scariest bot in the box and it isn't close\"",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F14",
+      "kind": "quote",
+      "side": "black-dragon",
+      "text": "Top fan post about Black Dragon (x): \"that KO was the loudest thing I've heard all season\"",
+      "value": null,
+      "source_url": null
+    }
+  ],
+  "context": {
+    "a": {
+      "slug": "malice",
+      "name": "Malice",
+      "weapon": "horizontal_spinner",
+      "performance": 25.5,
+      "hype": 77.4,
+      "expected_hype": 53.0,
+      "residual": 24.4,
+      "wins": 1,
+      "losses": 7,
+      "ko_wins": 1,
+      "ko_losses": 4,
+      "fights": 8,
+      "win_rate": 12.5,
+      "strength_of_schedule": 63.1,
+      "mentions": 35,
+      "sentiment": 0.16,
+      "engagement": 15392
+    },
+    "b": {
+      "slug": "black-dragon",
+      "name": "Black Dragon",
+      "weapon": "drum",
+      "performance": 35.1,
+      "hype": 21.5,
+      "expected_hype": 57.8,
+      "residual": -36.3,
+      "wins": 2,
+      "losses": 3,
+      "ko_wins": 0,
+      "ko_losses": 2,
+      "fights": 5,
+      "win_rate": 40.0,
+      "strength_of_schedule": 60.1,
+      "mentions": 5,
+      "sentiment": 0.228,
+      "engagement": 1578
+    },
+    "fit": {
+      "slope": 0.5018,
+      "intercept": 40.2,
+      "r": 0.282
+    },
+    "provenance": {
+      "fights_total": 72,
+      "fights_real": 0,
+      "posts_total": 542,
+      "posts_real": 0,
+      "is_real": false,
+      "fights_ingested_at": null,
+      "chatter_ingested_at": null
+    }
+  },
+  "backend": "anthropic"
+}

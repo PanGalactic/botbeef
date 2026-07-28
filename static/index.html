@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BOT BEEF</title>
+<style>
+  :root{
+    --bg:#0a0b0d; --panel:#121419; --line:#242832;
+    --ink:#f2f4f8; --dim:#8b93a6;
+    --a:#ff6b35;      /* bot A */
+    --b:#35c8ff;      /* bot B */
+    --warn:#ff2e4d;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font:16px/1.5 ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif;
+    height:100vh; display:flex; flex-direction:column; overflow:hidden;
+  }
+
+  header{
+    display:flex; align-items:center; gap:20px;
+    padding:14px 22px; border-bottom:1px solid var(--line); flex:0 0 auto;
+  }
+  h1{font-size:26px; letter-spacing:.14em; font-weight:800}
+  h1 em{font-style:normal; color:var(--a)}
+  .tag{
+    font:11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+    letter-spacing:.1em; text-transform:uppercase;
+    padding:6px 10px; border:1px solid var(--line); border-radius:99px; color:var(--dim);
+  }
+  .tag.bad{color:var(--warn); border-color:var(--warn); font-weight:700}
+  .tag.good{color:#2ee6a8; border-color:#2ee6a8}
+  .spacer{flex:1}
+
+  select,button{
+    font:inherit; font-size:15px; color:var(--ink);
+    background:var(--panel); border:1px solid var(--line);
+    border-radius:8px; padding:9px 12px; cursor:pointer;
+  }
+  button.play{
+    background:var(--a); color:#0a0b0d; border-color:var(--a);
+    font-weight:800; letter-spacing:.08em; padding:9px 22px;
+  }
+  button:disabled{opacity:.4; cursor:default}
+
+  main{flex:1; display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); min-height:0}
+  section{padding:18px 22px; min-height:0; display:flex; flex-direction:column}
+  section + section{border-left:1px solid var(--line)}
+
+  .cap{
+    font:11px/1 ui-monospace,Menlo,monospace; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--dim); margin-bottom:4px;
+  }
+  .sub{font-size:14px; color:var(--dim); margin-bottom:10px}
+  .sub b{color:var(--ink)}
+
+  svg{flex:1; width:100%; min-height:0}
+  .grid{stroke:var(--line); stroke-width:1}
+  .fit{stroke:#4a5163; stroke-width:2; stroke-dasharray:7 6}
+  .dot{fill:#525a6e}
+  .dot.hi-a{fill:var(--a)} .dot.hi-b{fill:var(--b)}
+  .lbl{font-size:11px; fill:var(--dim)}
+  .lbl.hi{font-size:16px; font-weight:800}
+  .lbl.hi-a{fill:var(--a)} .lbl.hi-b{fill:var(--b)}
+  .axis{font-size:12px; fill:var(--dim); letter-spacing:.08em}
+  .resid{stroke:#6c7488; stroke-width:1.5; stroke-dasharray:3 4}
+
+  #bars{flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:12px; padding-right:6px}
+  .bar{
+    border-left:4px solid var(--line); padding:9px 0 9px 14px;
+    opacity:.34; transition:opacity .18s;
+  }
+  .bar.a{border-left-color:var(--a)} .bar.b{border-left-color:var(--b)}
+  .bar.on{opacity:1}
+  .bar.on .txt{color:var(--ink)}
+  .who{
+    font:11px/1 ui-monospace,Menlo,monospace; letter-spacing:.12em;
+    text-transform:uppercase; margin-bottom:5px;
+  }
+  .bar.a .who{color:var(--a)} .bar.b .who{color:var(--b)}
+  .txt{font-size:23px; line-height:1.32; font-weight:600; color:#cfd5e2}
+  .cite{
+    margin-top:7px; font:12px/1.45 ui-monospace,Menlo,monospace;
+    color:var(--dim); border-top:1px dashed var(--line); padding-top:6px;
+  }
+  .cite b{color:#2ee6a8}
+  .empty{color:var(--dim); font-size:15px; margin:auto; text-align:center; max-width:34ch}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>BOT <em>BEEF</em></h1>
+  <span class="tag" id="prov">loading…</span>
+  <div class="spacer"></div>
+  <select id="selA"></select>
+  <span style="color:var(--dim)">vs</span>
+  <select id="selB"></select>
+  <button class="play" id="play">▶ BATTLE</button>
+</header>
+
+<main>
+  <section>
+    <div class="cap">Hype vs record &mdash; every bot, one chart</div>
+    <div class="sub" id="chartSub">&nbsp;</div>
+    <svg id="chart" viewBox="0 0 640 600" preserveAspectRatio="xMidYMid meet"></svg>
+  </section>
+
+  <section>
+    <div class="cap">The battle &mdash; every bar cites a scraped fact</div>
+    <div class="sub" id="battleSub">&nbsp;</div>
+    <div id="bars"><div class="empty">Pick two bots and hit BATTLE.</div></div>
+  </section>
+</main>
+
+<audio id="au"></audio>
+
+<script>
+const $ = s => document.querySelector(s);
+let TABLE = null, BATTLE = null, QUEUE = [], qi = 0;
+
+const fmt = n => (n > 0 ? '+' : '') + n.toFixed(1);
+
+async function boot(){
+  const [t, cached] = await Promise.all([
+    fetch('/api/table').then(r => r.json()),
+    fetch('/api/battles').then(r => r.json())
+  ]);
+  TABLE = t;
+
+  const p = t.provenance;
+  const prov = $('#prov');
+  if (p.is_real) {
+    prov.className = 'tag good';
+    prov.textContent = `${p.fights_real} fights · ${p.posts_real} posts · scraped`;
+  } else {
+    prov.className = 'tag bad';
+    prov.textContent = `⚠ placeholder data — ${p.fights_real}/${p.fights_total} fights scraped`;
+  }
+
+  const rows = t.rows;
+  for (const sel of [$('#selA'), $('#selB')]) {
+    sel.innerHTML = rows.map(r => `<option value="${r.slug}">${r.name}</option>`).join('');
+  }
+  // Default to a matchup that actually has a battle on disk, so the demo
+  // is one click from the door. Falls back to the two extreme residuals.
+  const first = (cached.battles || [])[0];
+  $('#selA').value = first ? first.a : rows[0].slug;
+  $('#selB').value = first ? first.b : rows[rows.length - 1].slug;
+
+  $('#chartSub').innerHTML =
+    `<b>${rows.length}</b> bots · fitted line r=<b>${t.fit.r}</b> · ` +
+    `above the line = the crowd rates them higher than the record earns`;
+
+  draw();
+  $('#selA').onchange = $('#selB').onchange = draw;
+}
+
+function draw(){
+  const a = $('#selA').value, b = $('#selB').value;
+  const rows = TABLE.rows, fit = TABLE.fit;
+  const W = 640, H = 600, L = 54, R = 18, T = 16, B = 44;
+
+  // Label only the story: the two combatants, plus the three most overrated
+  // and three most underrated. A 24-label wall reads as noise on a projector.
+  const sorted = [...rows].sort((p, q) => q.residual - p.residual);
+  const named = new Set([
+    ...sorted.slice(0, 3).map(r => r.slug),
+    ...sorted.slice(-3).map(r => r.slug),
+  ]);
+  const xs = rows.map(r => r.performance), ys = rows.map(r => r.hype);
+  const pad = 6;
+  const x0 = Math.min(...xs) - pad, x1 = Math.max(...xs) + pad;
+  const y0 = Math.min(...ys) - pad, y1 = Math.max(...ys) + pad;
+  const px = v => L + (v - x0) / (x1 - x0) * (W - L - R);
+  const py = v => H - B - (v - y0) / (y1 - y0) * (H - T - B);
+
+  let s = '';
+  for (let i = 0; i <= 4; i++){
+    const gy = T + i * (H - T - B) / 4;
+    s += `<line class="grid" x1="${L}" y1="${gy}" x2="${W - R}" y2="${gy}"/>`;
+  }
+  s += `<line class="fit" x1="${px(x0)}" y1="${py(fit.slope * x0 + fit.intercept)}"
+             x2="${px(x1)}" y2="${py(fit.slope * x1 + fit.intercept)}"/>`;
+
+  for (const r of rows){
+    const hi = r.slug === a ? 'hi-a' : r.slug === b ? 'hi-b' : '';
+    if (hi){
+      const ey = fit.slope * r.performance + fit.intercept;
+      s += `<line class="resid" x1="${px(r.performance)}" y1="${py(r.hype)}"
+                  x2="${px(r.performance)}" y2="${py(ey)}"/>`;
+    }
+    s += `<circle class="dot ${hi}" cx="${px(r.performance)}" cy="${py(r.hype)}" r="${hi ? 9 : 4.5}"/>`;
+    if (hi || named.has(r.slug)){
+      s += `<text class="lbl ${hi ? 'hi ' + hi : ''}" x="${px(r.performance) + (hi ? 14 : 8)}"
+                  y="${py(r.hype) + 4}">${r.name} ${fmt(r.residual)}</text>`;
+    }
+  }
+
+  s += `<text class="axis" x="${(W + L) / 2}" y="${H - 10}" text-anchor="middle">PERFORMANCE — record, margin &amp; opponent strength →</text>`;
+  s += `<text class="axis" transform="translate(16,${(H - B + T) / 2}) rotate(-90)" text-anchor="middle">FAN HYPE — volume &amp; sentiment →</text>`;
+  $('#chart').innerHTML = s;
+}
+
+async function playBattle(){
+  const a = $('#selA').value, b = $('#selB').value;
+  if (a === b) return;
+  $('#play').disabled = true;
+  $('#bars').innerHTML = '<div class="empty">loading…</div>';
+
+  let d;
+  try {
+    const res = await fetch(`/api/battle/${a}/${b}`);
+    if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+    d = await res.json();
+  } catch (e) {
+    $('#bars').innerHTML = `<div class="empty">No battle cached for this pair.<br><br>
+      <code style="font-size:13px">python3 ingest/pregen.py ${a} ${b}</code></div>`;
+    $('#play').disabled = false;
+    return;
+  }
+
+  BATTLE = d;
+  const ra = TABLE.rows.find(r => r.slug === a), rb = TABLE.rows.find(r => r.slug === b);
+  $('#battleSub').innerHTML =
+    `<b>${d.names[a]}</b> ${ra ? fmt(ra.residual) : ''} hype residual · ` +
+    `<b>${d.names[b]}</b> ${rb ? fmt(rb.residual) : ''} · ` +
+    `<b>${d.bars.length}</b> bars, <b>${d.bars.length}</b> sourced` +
+    (d.rejected.length ? ` · <span style="color:var(--warn)">${d.rejected.length} rejected as unsourced</span>` : '');
+
+  $('#bars').innerHTML = d.bars.map((x, i) => `
+    <div class="bar ${x.bot === a ? 'a' : 'b'}" id="bar${i}">
+      <div class="who">${d.names[x.bot]}</div>
+      <div class="txt">${esc(x.text)}</div>
+      <div class="cite"><b>${x.fact_id}</b> ${esc(x.fact)}</div>
+    </div>`).join('');
+
+  QUEUE = [];
+  if (d.audio) {
+    if (d.audio.intro) QUEUE.push({ i: -1, f: d.audio.intro });
+    for (const m of d.audio.bars) QUEUE.push({ i: m.index, f: m.file });
+  }
+  qi = 0;
+  if (QUEUE.length) next();
+  else { d.bars.forEach((_, i) => $('#bar' + i).classList.add('on')); $('#play').disabled = false; }
+}
+
+function next(){
+  if (qi >= QUEUE.length){ $('#play').disabled = false; return; }
+  const step = QUEUE[qi++];
+  document.querySelectorAll('.bar.on').forEach(e => e.classList.remove('on'));
+  if (step.i >= 0){
+    const el = $('#bar' + step.i);
+    if (el){ el.classList.add('on'); el.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+  }
+  const au = $('#au');
+  au.src = '/audio/' + step.f;
+  au.onended = next;
+  au.onerror = next;
+  au.play().catch(next);
+}
+
+function esc(s){ return String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c])); }
+
+$('#play').onclick = playBattle;
+boot();
+</script>
+</body>
+</html>

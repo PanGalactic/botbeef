@@ -1,0 +1,18 @@
+# Rendered audio — regenerate with ingest/pregen.py, don't bloat the repo
+audio/*.wav
+
+# Raw scrape output — big, and reproducible from the ingest scripts
+data/raw/*.html
+data/raw/robots/
+data/raw/photos/
+
+# Secrets. Never commit a Bright Data or Anthropic token.
+.env
+*.key
+secrets.json
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store

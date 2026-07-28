@@ -1,0 +1,292 @@
+{
+  "a": "bite-force",
+  "b": "black-dragon",
+  "names": {
+    "bite-force": "Bite Force",
+    "black-dragon": "Black Dragon"
+  },
+  "bars": [
+    {
+      "bot": "bite-force",
+      "text": "I'm a vertical spinner \u2014 my only setting is launching you at the ceiling.",
+      "fact_id": "F3",
+      "fact": "Bite Force is a vertical spinner.",
+      "source_url": null
+    },
+    {
+      "bot": "bite-force",
+      "text": "Fans wrote it down: \"that KO was the loudest thing I've heard all season.\"",
+      "fact_id": "F13",
+      "fact": "Top fan post about Bite Force (x): \"that KO was the loudest thing I've heard all season\"",
+      "source_url": null
+    },
+    {
+      "bot": "bite-force",
+      "text": "You pulled five fan mentions total \u2014 my scrap heap draws a bigger crowd.",
+      "fact_id": "F10",
+      "fact": "Black Dragon has 5 scraped fan mentions with average sentiment +0.23.",
+      "source_url": null
+    },
+    {
+      "bot": "bite-force",
+      "text": "Zero knockout wins, and you've been knocked out twice already. Sit down.",
+      "fact_id": "F8",
+      "fact": "Black Dragon has 0 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "One and three across four fights \u2014 twenty-five percent, and they call you a legend?",
+      "fact_id": "F1",
+      "fact": "Bite Force is 1-3 across 4 recorded fights (25.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "I'm the quiet killer: thirty-six point three points better than my hype.",
+      "fact_id": "F11",
+      "fact": "Black Dragon is a quiet killer \u2014 nobody talks about it, but it is 36.3 points better than its hype implies.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "My opponents average sixty point one percent \u2014 I walk into buzzsaws every night.",
+      "fact_id": "F12",
+      "fact": "Black Dragon's opponents average a 60.1% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Zero KO wins for you, knocked out twice \u2014 the loudest sound was your floor.",
+      "fact_id": "F2",
+      "fact": "Bite Force has 0 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "bite-force",
+      "text": "Thirty-four fan mentions, plus point two three sentiment \u2014 the arena knows my name.",
+      "fact_id": "F4",
+      "fact": "Bite Force has 34 scraped fan mentions with average sentiment +0.23.",
+      "source_url": null
+    },
+    {
+      "bot": "bite-force",
+      "text": "Hype sits nineteen point seven above my results \u2014 they love the swing that much.",
+      "fact_id": "F5",
+      "fact": "Bite Force is the crowd's darling and the record does not back it up: fan hype sits +19.7 points above what its results predict.",
+      "source_url": null
+    },
+    {
+      "bot": "bite-force",
+      "text": "Two and three is still losing more than winning, forty percent dragon.",
+      "fact_id": "F7",
+      "fact": "Black Dragon is 2-3 across 5 recorded fights (40.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "bite-force",
+      "text": "You're a drum \u2014 all rumble, all rebound, nothing that puts a bot to sleep.",
+      "fact_id": "F9",
+      "fact": "Black Dragon is a drum.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "This drum grinds teeth into your armor; every tooth leaves a signature.",
+      "fact_id": "F9",
+      "fact": "Black Dragon is a drum.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Your schedule averaged forty-seven point one percent \u2014 soft metal, softer r\u00e9sum\u00e9.",
+      "fact_id": "F6",
+      "fact": "Bite Force's opponents average a 47.1% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "They said my KO was the loudest thing all season, and I never asked for the mic.",
+      "fact_id": "F14",
+      "fact": "Top fan post about Black Dragon (x): \"that KO was the loudest thing I've heard all season\"",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Take your hype trophy home, twenty-five percent \u2014 I'll take the higher win rate.",
+      "fact_id": "F1",
+      "fact": "Bite Force is 1-3 across 4 recorded fights (25.0% win rate).",
+      "source_url": null
+    }
+  ],
+  "rejected": [],
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "record",
+      "side": "bite-force",
+      "text": "Bite Force is 1-3 across 4 recorded fights (25.0% win rate).",
+      "value": 25.0,
+      "source_url": null
+    },
+    {
+      "id": "F2",
+      "kind": "ko",
+      "side": "bite-force",
+      "text": "Bite Force has 0 wins by knockout and has been knocked out 2 times.",
+      "value": 0,
+      "source_url": null
+    },
+    {
+      "id": "F3",
+      "kind": "weapon",
+      "side": "bite-force",
+      "text": "Bite Force is a vertical spinner.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F4",
+      "kind": "hype",
+      "side": "bite-force",
+      "text": "Bite Force has 34 scraped fan mentions with average sentiment +0.23.",
+      "value": 34,
+      "source_url": null
+    },
+    {
+      "id": "F5",
+      "kind": "overrated",
+      "side": "bite-force",
+      "text": "Bite Force is the crowd's darling and the record does not back it up: fan hype sits +19.7 points above what its results predict.",
+      "value": 19.7,
+      "source_url": null
+    },
+    {
+      "id": "F6",
+      "kind": "sos",
+      "side": "bite-force",
+      "text": "Bite Force's opponents average a 47.1% win rate (strength of schedule).",
+      "value": 47.1,
+      "source_url": null
+    },
+    {
+      "id": "F7",
+      "kind": "record",
+      "side": "black-dragon",
+      "text": "Black Dragon is 2-3 across 5 recorded fights (40.0% win rate).",
+      "value": 40.0,
+      "source_url": null
+    },
+    {
+      "id": "F8",
+      "kind": "ko",
+      "side": "black-dragon",
+      "text": "Black Dragon has 0 wins by knockout and has been knocked out 2 times.",
+      "value": 0,
+      "source_url": null
+    },
+    {
+      "id": "F9",
+      "kind": "weapon",
+      "side": "black-dragon",
+      "text": "Black Dragon is a drum.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F10",
+      "kind": "hype",
+      "side": "black-dragon",
+      "text": "Black Dragon has 5 scraped fan mentions with average sentiment +0.23.",
+      "value": 5,
+      "source_url": null
+    },
+    {
+      "id": "F11",
+      "kind": "underrated",
+      "side": "black-dragon",
+      "text": "Black Dragon is a quiet killer \u2014 nobody talks about it, but it is 36.3 points better than its hype implies.",
+      "value": -36.3,
+      "source_url": null
+    },
+    {
+      "id": "F12",
+      "kind": "sos",
+      "side": "black-dragon",
+      "text": "Black Dragon's opponents average a 60.1% win rate (strength of schedule).",
+      "value": 60.1,
+      "source_url": null
+    },
+    {
+      "id": "F13",
+      "kind": "quote",
+      "side": "bite-force",
+      "text": "Top fan post about Bite Force (x): \"that KO was the loudest thing I've heard all season\"",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F14",
+      "kind": "quote",
+      "side": "black-dragon",
+      "text": "Top fan post about Black Dragon (x): \"that KO was the loudest thing I've heard all season\"",
+      "value": null,
+      "source_url": null
+    }
+  ],
+  "context": {
+    "a": {
+      "slug": "bite-force",
+      "name": "Bite Force",
+      "weapon": "vertical_spinner",
+      "performance": 31.8,
+      "hype": 75.9,
+      "expected_hype": 56.2,
+      "residual": 19.7,
+      "wins": 1,
+      "losses": 3,
+      "ko_wins": 0,
+      "ko_losses": 2,
+      "fights": 4,
+      "win_rate": 25.0,
+      "strength_of_schedule": 47.1,
+      "mentions": 34,
+      "sentiment": 0.231,
+      "engagement": 13767
+    },
+    "b": {
+      "slug": "black-dragon",
+      "name": "Black Dragon",
+      "weapon": "drum",
+      "performance": 35.1,
+      "hype": 21.5,
+      "expected_hype": 57.8,
+      "residual": -36.3,
+      "wins": 2,
+      "losses": 3,
+      "ko_wins": 0,
+      "ko_losses": 2,
+      "fights": 5,
+      "win_rate": 40.0,
+      "strength_of_schedule": 60.1,
+      "mentions": 5,
+      "sentiment": 0.228,
+      "engagement": 1578
+    },
+    "fit": {
+      "slope": 0.5018,
+      "intercept": 40.2,
+      "r": 0.282
+    },
+    "provenance": {
+      "fights_total": 72,
+      "fights_real": 0,
+      "posts_total": 542,
+      "posts_real": 0,
+      "is_real": false,
+      "fights_ingested_at": null,
+      "chatter_ingested_at": null
+    }
+  },
+  "backend": "anthropic"
+}

@@ -1,0 +1,292 @@
+{
+  "a": "sawblaze",
+  "b": "black-dragon",
+  "names": {
+    "sawblaze": "SawBlaze",
+    "black-dragon": "Black Dragon"
+  },
+  "bars": [
+    {
+      "bot": "sawblaze",
+      "text": "Six and two across eight fights, seventy-five percent \u2014 check the tape.",
+      "fact_id": "F1",
+      "fact": "SawBlaze is 6-2 across 8 recorded fights (75.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "sawblaze",
+      "text": "I'm a hammer, so every conversation ends with an overhead swing.",
+      "fact_id": "F3",
+      "fact": "SawBlaze is a hammer.",
+      "source_url": null
+    },
+    {
+      "bot": "sawblaze",
+      "text": "You're two and three in five, forty percent, and still talking.",
+      "fact_id": "F7",
+      "fact": "Black Dragon is 2-3 across 5 recorded fights (40.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "sawblaze",
+      "text": "Zero wins by knockout, but knocked out twice \u2014 that's a bad trade.",
+      "fact_id": "F8",
+      "fact": "Black Dragon has 0 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "I'm a drum, boy, I don't knock \u2014 I chew and I keep spinning.",
+      "fact_id": "F9",
+      "fact": "Black Dragon is a drum.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "My opponents average sixty-one percent; I walk uphill every match.",
+      "fact_id": "F12",
+      "fact": "Black Dragon's opponents average a 60.1% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Your hype sits nineteen points above your results \u2014 darling of the cheap seats.",
+      "fact_id": "F5",
+      "fact": "SawBlaze is the crowd's darling and the record does not back it up: fan hype sits +19.2 points above what its results predict.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Your opponents average forty-one percent; soft schedule, softer legend.",
+      "fact_id": "F6",
+      "fact": "SawBlaze's opponents average a 40.6% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "sawblaze",
+      "text": "Two wins by knockout \u2014 that saw doesn't negotiate, it finishes.",
+      "fact_id": "F2",
+      "fact": "SawBlaze has 2 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "sawblaze",
+      "text": "Reddit says criminally underrated, the record speaks for itself. Loud.",
+      "fact_id": "F13",
+      "fact": "Top fan post about SawBlaze (reddit): \"criminally underrated, the record speaks for itself\"",
+      "source_url": null
+    },
+    {
+      "bot": "sawblaze",
+      "text": "Five whole fan mentions, quiet one \u2014 you're a rumor with a drum.",
+      "fact_id": "F10",
+      "fact": "Black Dragon has 5 scraped fan mentions with average sentiment +0.23.",
+      "source_url": null
+    },
+    {
+      "bot": "sawblaze",
+      "text": "Twice knocked cold in five outings; the arena floor knows your paint.",
+      "fact_id": "F8",
+      "fact": "Black Dragon has 0 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Quiet killer: thirty-six point three better than the hype gives me.",
+      "fact_id": "F11",
+      "fact": "Black Dragon is a quiet killer \u2014 nobody talks about it, but it is 36.3 points better than its hype implies.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "One post on X still echoes: loudest KO heard all season.",
+      "fact_id": "F14",
+      "fact": "Top fan post about Black Dragon (x): \"that KO was the loudest thing I've heard all season\"",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Forty mentions at plus point one two \u2014 lukewarm love, my guy.",
+      "fact_id": "F4",
+      "fact": "SawBlaze has 40 scraped fan mentions with average sentiment +0.12.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Two knockouts for, two against \u2014 that hammer swings both directions.",
+      "fact_id": "F2",
+      "fact": "SawBlaze has 2 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    }
+  ],
+  "rejected": [],
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "record",
+      "side": "sawblaze",
+      "text": "SawBlaze is 6-2 across 8 recorded fights (75.0% win rate).",
+      "value": 75.0,
+      "source_url": null
+    },
+    {
+      "id": "F2",
+      "kind": "ko",
+      "side": "sawblaze",
+      "text": "SawBlaze has 2 wins by knockout and has been knocked out 2 times.",
+      "value": 2,
+      "source_url": null
+    },
+    {
+      "id": "F3",
+      "kind": "weapon",
+      "side": "sawblaze",
+      "text": "SawBlaze is a hammer.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F4",
+      "kind": "hype",
+      "side": "sawblaze",
+      "text": "SawBlaze has 40 scraped fan mentions with average sentiment +0.12.",
+      "value": 40,
+      "source_url": null
+    },
+    {
+      "id": "F5",
+      "kind": "overrated",
+      "side": "sawblaze",
+      "text": "SawBlaze is the crowd's darling and the record does not back it up: fan hype sits +19.2 points above what its results predict.",
+      "value": 19.2,
+      "source_url": null
+    },
+    {
+      "id": "F6",
+      "kind": "sos",
+      "side": "sawblaze",
+      "text": "SawBlaze's opponents average a 40.6% win rate (strength of schedule).",
+      "value": 40.6,
+      "source_url": null
+    },
+    {
+      "id": "F7",
+      "kind": "record",
+      "side": "black-dragon",
+      "text": "Black Dragon is 2-3 across 5 recorded fights (40.0% win rate).",
+      "value": 40.0,
+      "source_url": null
+    },
+    {
+      "id": "F8",
+      "kind": "ko",
+      "side": "black-dragon",
+      "text": "Black Dragon has 0 wins by knockout and has been knocked out 2 times.",
+      "value": 0,
+      "source_url": null
+    },
+    {
+      "id": "F9",
+      "kind": "weapon",
+      "side": "black-dragon",
+      "text": "Black Dragon is a drum.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F10",
+      "kind": "hype",
+      "side": "black-dragon",
+      "text": "Black Dragon has 5 scraped fan mentions with average sentiment +0.23.",
+      "value": 5,
+      "source_url": null
+    },
+    {
+      "id": "F11",
+      "kind": "underrated",
+      "side": "black-dragon",
+      "text": "Black Dragon is a quiet killer \u2014 nobody talks about it, but it is 36.3 points better than its hype implies.",
+      "value": -36.3,
+      "source_url": null
+    },
+    {
+      "id": "F12",
+      "kind": "sos",
+      "side": "black-dragon",
+      "text": "Black Dragon's opponents average a 60.1% win rate (strength of schedule).",
+      "value": 60.1,
+      "source_url": null
+    },
+    {
+      "id": "F13",
+      "kind": "quote",
+      "side": "sawblaze",
+      "text": "Top fan post about SawBlaze (reddit): \"criminally underrated, the record speaks for itself\"",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F14",
+      "kind": "quote",
+      "side": "black-dragon",
+      "text": "Top fan post about Black Dragon (x): \"that KO was the loudest thing I've heard all season\"",
+      "value": null,
+      "source_url": null
+    }
+  ],
+  "context": {
+    "a": {
+      "slug": "sawblaze",
+      "name": "SawBlaze",
+      "weapon": "hammer",
+      "performance": 50.0,
+      "hype": 84.5,
+      "expected_hype": 65.3,
+      "residual": 19.2,
+      "wins": 6,
+      "losses": 2,
+      "ko_wins": 2,
+      "ko_losses": 2,
+      "fights": 8,
+      "win_rate": 75.0,
+      "strength_of_schedule": 40.6,
+      "mentions": 40,
+      "sentiment": 0.115,
+      "engagement": 21096
+    },
+    "b": {
+      "slug": "black-dragon",
+      "name": "Black Dragon",
+      "weapon": "drum",
+      "performance": 35.1,
+      "hype": 21.5,
+      "expected_hype": 57.8,
+      "residual": -36.3,
+      "wins": 2,
+      "losses": 3,
+      "ko_wins": 0,
+      "ko_losses": 2,
+      "fights": 5,
+      "win_rate": 40.0,
+      "strength_of_schedule": 60.1,
+      "mentions": 5,
+      "sentiment": 0.228,
+      "engagement": 1578
+    },
+    "fit": {
+      "slope": 0.5018,
+      "intercept": 40.2,
+      "r": 0.282
+    },
+    "provenance": {
+      "fights_total": 72,
+      "fights_real": 0,
+      "posts_total": 542,
+      "posts_real": 0,
+      "is_real": false,
+      "fights_ingested_at": null,
+      "chatter_ingested_at": null
+    }
+  },
+  "backend": "anthropic"
+}

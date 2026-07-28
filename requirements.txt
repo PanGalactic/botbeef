@@ -1,0 +1,7 @@
+flask>=2.3
+requests>=2.31
+anthropic>=0.120
+# optional — bot cutouts only
+rembg>=2.0
+onnxruntime>=1.17
+pillow>=10.0

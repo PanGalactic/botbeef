@@ -1,0 +1,292 @@
+{
+  "a": "malice",
+  "b": "cobalt",
+  "names": {
+    "malice": "Malice",
+    "cobalt": "Cobalt"
+  },
+  "bars": [
+    {
+      "bot": "malice",
+      "text": "Horizontal blade, hip height, I redecorate floors with your side panels.",
+      "fact_id": "F3",
+      "fact": "Malice is a horizontal spinner.",
+      "source_url": null
+    },
+    {
+      "bot": "malice",
+      "text": "You rolled in three times and rolled out oh-and-three, zero percent.",
+      "fact_id": "F7",
+      "fact": "Cobalt is 0-3 across 3 recorded fights (0.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "malice",
+      "text": "I own one knockout \u2014 that's one more crater than your whole career.",
+      "fact_id": "F2",
+      "fact": "Malice has 1 wins by knockout and has been knocked out 4 times.",
+      "source_url": null
+    },
+    {
+      "bot": "malice",
+      "text": "Zero KOs, knocked out twice: you're the anvil, never the hammer.",
+      "fact_id": "F8",
+      "fact": "Cobalt has 0 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Vertical spinner, I hit up through your belly, not across your armor.",
+      "fact_id": "F9",
+      "fact": "Cobalt is a vertical spinner.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "One and seven in eight fights \u2014 twelve percent isn't a r\u00e9sum\u00e9, it's a rumor.",
+      "fact_id": "F1",
+      "fact": "Malice is 1-7 across 8 recorded fights (12.5% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Nobody types my name, yet I run twenty-four points better than my hype.",
+      "fact_id": "F11",
+      "fact": "Cobalt is a quiet killer \u2014 nobody talks about it, but it is 33.6 points better than its hype implies.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Your hype sits twenty-four points above your results; the box does the math.",
+      "fact_id": "F5",
+      "fact": "Malice is the crowd's darling and the record does not back it up: fan hype sits +24.4 points above what its results predict.",
+      "source_url": null
+    },
+    {
+      "bot": "malice",
+      "text": "Fans say I'm the scariest bot in the box, and it isn't close.",
+      "fact_id": "F13",
+      "fact": "Top fan post about Malice (x): \"still the scariest bot in the box and it isn't close\"",
+      "source_url": null
+    },
+    {
+      "bot": "malice",
+      "text": "Five mentions, minus-oh-eight sentiment \u2014 the crowd forgot your paint job already.",
+      "fact_id": "F10",
+      "fact": "Cobalt has 5 scraped fan mentions with average sentiment -0.08.",
+      "source_url": null
+    },
+    {
+      "bot": "malice",
+      "text": "My opponents win sixty-three percent; I bleed against the best in there.",
+      "fact_id": "F6",
+      "fact": "Malice's opponents average a 63.1% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "malice",
+      "text": "Your top post recycles my line \u2014 borrow my hype, still borrow wins too.",
+      "fact_id": "F14",
+      "fact": "Top fan post about Cobalt (youtube): \"still the scariest bot in the box and it isn't close\"",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Seventy percent win rate on my schedule \u2014 I only meet monsters, no warmups.",
+      "fact_id": "F12",
+      "fact": "Cobalt's opponents average a 70.0% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Four knockouts against you, one for you: the floor knows your undercarriage well.",
+      "fact_id": "F2",
+      "fact": "Malice has 1 wins by knockout and has been knocked out 4 times.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Five quiet mentions, and my numbers still beat the noise by thirty-three points.",
+      "fact_id": "F11",
+      "fact": "Cobalt is a quiet killer \u2014 nobody talks about it, but it is 33.6 points better than its hype implies.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Thirty-five mentions, plus-point-one-six \u2014 a whole lot of love for one win.",
+      "fact_id": "F4",
+      "fact": "Malice has 35 scraped fan mentions with average sentiment +0.16.",
+      "source_url": null
+    }
+  ],
+  "rejected": [],
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "record",
+      "side": "malice",
+      "text": "Malice is 1-7 across 8 recorded fights (12.5% win rate).",
+      "value": 12.5,
+      "source_url": null
+    },
+    {
+      "id": "F2",
+      "kind": "ko",
+      "side": "malice",
+      "text": "Malice has 1 wins by knockout and has been knocked out 4 times.",
+      "value": 1,
+      "source_url": null
+    },
+    {
+      "id": "F3",
+      "kind": "weapon",
+      "side": "malice",
+      "text": "Malice is a horizontal spinner.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F4",
+      "kind": "hype",
+      "side": "malice",
+      "text": "Malice has 35 scraped fan mentions with average sentiment +0.16.",
+      "value": 35,
+      "source_url": null
+    },
+    {
+      "id": "F5",
+      "kind": "overrated",
+      "side": "malice",
+      "text": "Malice is the crowd's darling and the record does not back it up: fan hype sits +24.4 points above what its results predict.",
+      "value": 24.4,
+      "source_url": null
+    },
+    {
+      "id": "F6",
+      "kind": "sos",
+      "side": "malice",
+      "text": "Malice's opponents average a 63.1% win rate (strength of schedule).",
+      "value": 63.1,
+      "source_url": null
+    },
+    {
+      "id": "F7",
+      "kind": "record",
+      "side": "cobalt",
+      "text": "Cobalt is 0-3 across 3 recorded fights (0.0% win rate).",
+      "value": 0.0,
+      "source_url": null
+    },
+    {
+      "id": "F8",
+      "kind": "ko",
+      "side": "cobalt",
+      "text": "Cobalt has 0 wins by knockout and has been knocked out 2 times.",
+      "value": 0,
+      "source_url": null
+    },
+    {
+      "id": "F9",
+      "kind": "weapon",
+      "side": "cobalt",
+      "text": "Cobalt is a vertical spinner.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F10",
+      "kind": "hype",
+      "side": "cobalt",
+      "text": "Cobalt has 5 scraped fan mentions with average sentiment -0.08.",
+      "value": 5,
+      "source_url": null
+    },
+    {
+      "id": "F11",
+      "kind": "underrated",
+      "side": "cobalt",
+      "text": "Cobalt is a quiet killer \u2014 nobody talks about it, but it is 33.6 points better than its hype implies.",
+      "value": -33.6,
+      "source_url": null
+    },
+    {
+      "id": "F12",
+      "kind": "sos",
+      "side": "cobalt",
+      "text": "Cobalt's opponents average a 70.0% win rate (strength of schedule).",
+      "value": 70.0,
+      "source_url": null
+    },
+    {
+      "id": "F13",
+      "kind": "quote",
+      "side": "malice",
+      "text": "Top fan post about Malice (x): \"still the scariest bot in the box and it isn't close\"",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F14",
+      "kind": "quote",
+      "side": "cobalt",
+      "text": "Top fan post about Cobalt (youtube): \"still the scariest bot in the box and it isn't close\"",
+      "value": null,
+      "source_url": null
+    }
+  ],
+  "context": {
+    "a": {
+      "slug": "malice",
+      "name": "Malice",
+      "weapon": "horizontal_spinner",
+      "performance": 25.5,
+      "hype": 77.4,
+      "expected_hype": 53.0,
+      "residual": 24.4,
+      "wins": 1,
+      "losses": 7,
+      "ko_wins": 1,
+      "ko_losses": 4,
+      "fights": 8,
+      "win_rate": 12.5,
+      "strength_of_schedule": 63.1,
+      "mentions": 35,
+      "sentiment": 0.16,
+      "engagement": 15392
+    },
+    "b": {
+      "slug": "cobalt",
+      "name": "Cobalt",
+      "weapon": "vertical_spinner",
+      "performance": 28.6,
+      "hype": 21.0,
+      "expected_hype": 54.6,
+      "residual": -33.6,
+      "wins": 0,
+      "losses": 3,
+      "ko_wins": 0,
+      "ko_losses": 2,
+      "fights": 3,
+      "win_rate": 0.0,
+      "strength_of_schedule": 70.0,
+      "mentions": 5,
+      "sentiment": -0.076,
+      "engagement": 1920
+    },
+    "fit": {
+      "slope": 0.5018,
+      "intercept": 40.2,
+      "r": 0.282
+    },
+    "provenance": {
+      "fights_total": 72,
+      "fights_real": 0,
+      "posts_total": 542,
+      "posts_real": 0,
+      "is_real": false,
+      "fights_ingested_at": null,
+      "chatter_ingested_at": null
+    }
+  },
+  "backend": "anthropic"
+}

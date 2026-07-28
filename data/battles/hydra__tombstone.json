@@ -1,0 +1,292 @@
+{
+  "a": "tombstone",
+  "b": "hydra",
+  "names": {
+    "tombstone": "Tombstone",
+    "hydra": "Hydra"
+  },
+  "bars": [
+    {
+      "bot": "tombstone",
+      "text": "Four and one in five recorded fights \u2014 eighty percent, do the math.",
+      "fact_id": "F1",
+      "fact": "Tombstone is 4-1 across 5 recorded fights (80.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "tombstone",
+      "text": "Three knockouts on my ledger, one loss; I end nights early.",
+      "fact_id": "F2",
+      "fact": "Tombstone has 3 wins by knockout and has been knocked out 1 times.",
+      "source_url": null
+    },
+    {
+      "bot": "tombstone",
+      "text": "Horizontal spinner, hip height, turning your frame into confetti.",
+      "fact_id": "F3",
+      "fact": "Tombstone is a horizontal spinner.",
+      "source_url": null
+    },
+    {
+      "bot": "tombstone",
+      "text": "You've been knocked out three times off one single knockout win.",
+      "fact_id": "F8",
+      "fact": "Hydra has 1 wins by knockout and has been knocked out 3 times.",
+      "source_url": null
+    },
+    {
+      "bot": "hydra",
+      "text": "I'm a flipper \u2014 I don't shred you, I just delete your floor.",
+      "fact_id": "F9",
+      "fact": "Hydra is a flipper.",
+      "source_url": null
+    },
+    {
+      "bot": "hydra",
+      "text": "Quiet killer: nobody tweets me, yet I run twelve points past my hype.",
+      "fact_id": "F11",
+      "fact": "Hydra is a quiet killer \u2014 nobody talks about it, but it is 12.2 points better than its hype implies.",
+      "source_url": null
+    },
+    {
+      "bot": "hydra",
+      "text": "Your fan hype floats twelve points above what your results actually earn.",
+      "fact_id": "F5",
+      "fact": "Tombstone is the crowd's darling and the record does not back it up: fan hype sits +12.1 points above what its results predict.",
+      "source_url": null
+    },
+    {
+      "bot": "hydra",
+      "text": "Reddit's top post on you: \"the meta has moved on and they haven't adapted.\"",
+      "fact_id": "F13",
+      "fact": "Top fan post about Tombstone (reddit): \"the meta has moved on and they haven't adapted\"",
+      "source_url": null
+    },
+    {
+      "bot": "tombstone",
+      "text": "Thirty-eight fan mentions, sentiment plus point one four \u2014 they chant for me.",
+      "fact_id": "F4",
+      "fact": "Tombstone has 38 scraped fan mentions with average sentiment +0.14.",
+      "source_url": null
+    },
+    {
+      "bot": "tombstone",
+      "text": "Twelve mentions, minus point one seven sentiment: even the crowd flipped on you.",
+      "fact_id": "F10",
+      "fact": "Hydra has 12 scraped fan mentions with average sentiment -0.17.",
+      "source_url": null
+    },
+    {
+      "bot": "tombstone",
+      "text": "My opponents average fifty-three percent wins \u2014 I beat real machines.",
+      "fact_id": "F6",
+      "fact": "Tombstone's opponents average a 53.0% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "tombstone",
+      "text": "X said it about you too: \"the meta has moved on and they haven't adapted.\"",
+      "fact_id": "F14",
+      "fact": "Top fan post about Hydra (x): \"the meta has moved on and they haven't adapted\"",
+      "source_url": null
+    },
+    {
+      "bot": "hydra",
+      "text": "Seven fights, four wins \u2014 I keep showing up when you're still booking.",
+      "fact_id": "F7",
+      "fact": "Hydra is 4-3 across 7 recorded fights (57.1% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "hydra",
+      "text": "Fifty-three point five strength of schedule; I take the hard draws.",
+      "fact_id": "F12",
+      "fact": "Hydra's opponents average a 53.5% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "hydra",
+      "text": "Only five fights on your record \u2014 small sample, loud legend.",
+      "fact_id": "F1",
+      "fact": "Tombstone is 4-1 across 5 recorded fights (80.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "hydra",
+      "text": "And you've been knocked out once already, so that bar spins both ways.",
+      "fact_id": "F2",
+      "fact": "Tombstone has 3 wins by knockout and has been knocked out 1 times.",
+      "source_url": null
+    }
+  ],
+  "rejected": [],
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "record",
+      "side": "tombstone",
+      "text": "Tombstone is 4-1 across 5 recorded fights (80.0% win rate).",
+      "value": 80.0,
+      "source_url": null
+    },
+    {
+      "id": "F2",
+      "kind": "ko",
+      "side": "tombstone",
+      "text": "Tombstone has 3 wins by knockout and has been knocked out 1 times.",
+      "value": 3,
+      "source_url": null
+    },
+    {
+      "id": "F3",
+      "kind": "weapon",
+      "side": "tombstone",
+      "text": "Tombstone is a horizontal spinner.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F4",
+      "kind": "hype",
+      "side": "tombstone",
+      "text": "Tombstone has 38 scraped fan mentions with average sentiment +0.14.",
+      "value": 38,
+      "source_url": null
+    },
+    {
+      "id": "F5",
+      "kind": "overrated",
+      "side": "tombstone",
+      "text": "Tombstone is the crowd's darling and the record does not back it up: fan hype sits +12.1 points above what its results predict.",
+      "value": 12.1,
+      "source_url": null
+    },
+    {
+      "id": "F6",
+      "kind": "sos",
+      "side": "tombstone",
+      "text": "Tombstone's opponents average a 53.0% win rate (strength of schedule).",
+      "value": 53.0,
+      "source_url": null
+    },
+    {
+      "id": "F7",
+      "kind": "record",
+      "side": "hydra",
+      "text": "Hydra is 4-3 across 7 recorded fights (57.1% win rate).",
+      "value": 57.1,
+      "source_url": null
+    },
+    {
+      "id": "F8",
+      "kind": "ko",
+      "side": "hydra",
+      "text": "Hydra has 1 wins by knockout and has been knocked out 3 times.",
+      "value": 1,
+      "source_url": null
+    },
+    {
+      "id": "F9",
+      "kind": "weapon",
+      "side": "hydra",
+      "text": "Hydra is a flipper.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F10",
+      "kind": "hype",
+      "side": "hydra",
+      "text": "Hydra has 12 scraped fan mentions with average sentiment -0.17.",
+      "value": 12,
+      "source_url": null
+    },
+    {
+      "id": "F11",
+      "kind": "underrated",
+      "side": "hydra",
+      "text": "Hydra is a quiet killer \u2014 nobody talks about it, but it is 12.2 points better than its hype implies.",
+      "value": -12.2,
+      "source_url": null
+    },
+    {
+      "id": "F12",
+      "kind": "sos",
+      "side": "hydra",
+      "text": "Hydra's opponents average a 53.5% win rate (strength of schedule).",
+      "value": 53.5,
+      "source_url": null
+    },
+    {
+      "id": "F13",
+      "kind": "quote",
+      "side": "tombstone",
+      "text": "Top fan post about Tombstone (reddit): \"the meta has moved on and they haven't adapted\"",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F14",
+      "kind": "quote",
+      "side": "hydra",
+      "text": "Top fan post about Hydra (x): \"the meta has moved on and they haven't adapted\"",
+      "value": null,
+      "source_url": null
+    }
+  ],
+  "context": {
+    "a": {
+      "slug": "tombstone",
+      "name": "Tombstone",
+      "weapon": "horizontal_spinner",
+      "performance": 61.7,
+      "hype": 83.3,
+      "expected_hype": 71.2,
+      "residual": 12.1,
+      "wins": 4,
+      "losses": 1,
+      "ko_wins": 3,
+      "ko_losses": 1,
+      "fights": 5,
+      "win_rate": 80.0,
+      "strength_of_schedule": 53.0,
+      "mentions": 38,
+      "sentiment": 0.142,
+      "engagement": 19745
+    },
+    "b": {
+      "slug": "hydra",
+      "name": "Hydra",
+      "weapon": "flipper",
+      "performance": 42.7,
+      "hype": 49.4,
+      "expected_hype": 61.6,
+      "residual": -12.2,
+      "wins": 4,
+      "losses": 3,
+      "ko_wins": 1,
+      "ko_losses": 3,
+      "fights": 7,
+      "win_rate": 57.1,
+      "strength_of_schedule": 53.5,
+      "mentions": 12,
+      "sentiment": -0.165,
+      "engagement": 6337
+    },
+    "fit": {
+      "slope": 0.5018,
+      "intercept": 40.2,
+      "r": 0.282
+    },
+    "provenance": {
+      "fights_total": 72,
+      "fights_real": 0,
+      "posts_total": 542,
+      "posts_real": 0,
+      "is_real": false,
+      "fights_ingested_at": null,
+      "chatter_ingested_at": null
+    }
+  },
+  "backend": "anthropic"
+}

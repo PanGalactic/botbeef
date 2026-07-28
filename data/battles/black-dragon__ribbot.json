@@ -1,0 +1,292 @@
+{
+  "a": "ribbot",
+  "b": "black-dragon",
+  "names": {
+    "ribbot": "Ribbot",
+    "black-dragon": "Black Dragon"
+  },
+  "bars": [
+    {
+      "bot": "ribbot",
+      "text": "Two and one across three \u2014 I hop in the box already up.",
+      "fact_id": "F1",
+      "fact": "Ribbot is 2-1 across 3 recorded fights (66.7% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "ribbot",
+      "text": "One knockout logged, knocked out zero times. My lily pad don't tip.",
+      "fact_id": "F2",
+      "fact": "Ribbot has 1 wins by knockout and has been knocked out 0 times.",
+      "source_url": null
+    },
+    {
+      "bot": "ribbot",
+      "text": "You got zero KO wins and got slept twice \u2014 that drum's all noise.",
+      "fact_id": "F8",
+      "fact": "Black Dragon has 0 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "ribbot",
+      "text": "Two and three in five fights, Dragon. That's a losing pond you're swimming in.",
+      "fact_id": "F7",
+      "fact": "Black Dragon is 2-3 across 5 recorded fights (40.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "My opponents win 60 percent. I fight killers, not croaks.",
+      "fact_id": "F12",
+      "fact": "Black Dragon's opponents average a 60.1% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Your opponents average 30 percent \u2014 you built that record on tadpoles.",
+      "fact_id": "F6",
+      "fact": "Ribbot's opponents average a 30.4% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Quiet killer: nobody says my name, I'm 36 points past my hype.",
+      "fact_id": "F11",
+      "fact": "Black Dragon is a quiet killer \u2014 nobody talks about it, but it is 36.3 points better than its hype implies.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "You sit 21 points above what your results predict. Crowd-funded frog.",
+      "fact_id": "F5",
+      "fact": "Ribbot is the crowd's darling and the record does not back it up: fan hype sits +21.0 points above what its results predict.",
+      "source_url": null
+    },
+    {
+      "bot": "ribbot",
+      "text": "Forty mentions, sentiment plus point two seven \u2014 the whole box chants green.",
+      "fact_id": "F4",
+      "fact": "Ribbot has 40 scraped fan mentions with average sentiment +0.27.",
+      "source_url": null
+    },
+    {
+      "bot": "ribbot",
+      "text": "Five mentions total, Dragon. The crowd forgot to write your name down.",
+      "fact_id": "F10",
+      "fact": "Black Dragon has 5 scraped fan mentions with average sentiment +0.23.",
+      "source_url": null
+    },
+    {
+      "bot": "ribbot",
+      "text": "Fans say every time they pick against me, I prove them wrong.",
+      "fact_id": "F13",
+      "fact": "Top fan post about Ribbot (x): \"every time I pick against them they prove me wrong\"",
+      "source_url": null
+    },
+    {
+      "bot": "ribbot",
+      "text": "Vertical spinner, straight up under you \u2014 I open shells like cans.",
+      "fact_id": "F3",
+      "fact": "Ribbot is a vertical spinner.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "I'm a drum: low, tight, spinning fast enough to eat your wheels.",
+      "fact_id": "F9",
+      "fact": "Black Dragon is a drum.",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "They said my KO was the loudest thing they'd heard all season.",
+      "fact_id": "F14",
+      "fact": "Top fan post about Black Dragon (x): \"that KO was the loudest thing I've heard all season\"",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "Three fights on your whole record. I've logged five \u2014 come back seasoned.",
+      "fact_id": "F1",
+      "fact": "Ribbot is 2-1 across 3 recorded fights (66.7% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "black-dragon",
+      "text": "One knockout on your sheet. One. That's the entire highlight reel, frog.",
+      "fact_id": "F2",
+      "fact": "Ribbot has 1 wins by knockout and has been knocked out 0 times.",
+      "source_url": null
+    }
+  ],
+  "rejected": [],
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "record",
+      "side": "ribbot",
+      "text": "Ribbot is 2-1 across 3 recorded fights (66.7% win rate).",
+      "value": 66.7,
+      "source_url": null
+    },
+    {
+      "id": "F2",
+      "kind": "ko",
+      "side": "ribbot",
+      "text": "Ribbot has 1 wins by knockout and has been knocked out 0 times.",
+      "value": 1,
+      "source_url": null
+    },
+    {
+      "id": "F3",
+      "kind": "weapon",
+      "side": "ribbot",
+      "text": "Ribbot is a vertical spinner.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F4",
+      "kind": "hype",
+      "side": "ribbot",
+      "text": "Ribbot has 40 scraped fan mentions with average sentiment +0.27.",
+      "value": 40,
+      "source_url": null
+    },
+    {
+      "id": "F5",
+      "kind": "overrated",
+      "side": "ribbot",
+      "text": "Ribbot is the crowd's darling and the record does not back it up: fan hype sits +21.0 points above what its results predict.",
+      "value": 21.0,
+      "source_url": null
+    },
+    {
+      "id": "F6",
+      "kind": "sos",
+      "side": "ribbot",
+      "text": "Ribbot's opponents average a 30.4% win rate (strength of schedule).",
+      "value": 30.4,
+      "source_url": null
+    },
+    {
+      "id": "F7",
+      "kind": "record",
+      "side": "black-dragon",
+      "text": "Black Dragon is 2-3 across 5 recorded fights (40.0% win rate).",
+      "value": 40.0,
+      "source_url": null
+    },
+    {
+      "id": "F8",
+      "kind": "ko",
+      "side": "black-dragon",
+      "text": "Black Dragon has 0 wins by knockout and has been knocked out 2 times.",
+      "value": 0,
+      "source_url": null
+    },
+    {
+      "id": "F9",
+      "kind": "weapon",
+      "side": "black-dragon",
+      "text": "Black Dragon is a drum.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F10",
+      "kind": "hype",
+      "side": "black-dragon",
+      "text": "Black Dragon has 5 scraped fan mentions with average sentiment +0.23.",
+      "value": 5,
+      "source_url": null
+    },
+    {
+      "id": "F11",
+      "kind": "underrated",
+      "side": "black-dragon",
+      "text": "Black Dragon is a quiet killer \u2014 nobody talks about it, but it is 36.3 points better than its hype implies.",
+      "value": -36.3,
+      "source_url": null
+    },
+    {
+      "id": "F12",
+      "kind": "sos",
+      "side": "black-dragon",
+      "text": "Black Dragon's opponents average a 60.1% win rate (strength of schedule).",
+      "value": 60.1,
+      "source_url": null
+    },
+    {
+      "id": "F13",
+      "kind": "quote",
+      "side": "ribbot",
+      "text": "Top fan post about Ribbot (x): \"every time I pick against them they prove me wrong\"",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F14",
+      "kind": "quote",
+      "side": "black-dragon",
+      "text": "Top fan post about Black Dragon (x): \"that KO was the loudest thing I've heard all season\"",
+      "value": null,
+      "source_url": null
+    }
+  ],
+  "context": {
+    "a": {
+      "slug": "ribbot",
+      "name": "Ribbot",
+      "weapon": "vertical_spinner",
+      "performance": 47.9,
+      "hype": 85.2,
+      "expected_hype": 64.2,
+      "residual": 21.0,
+      "wins": 2,
+      "losses": 1,
+      "ko_wins": 1,
+      "ko_losses": 0,
+      "fights": 3,
+      "win_rate": 66.7,
+      "strength_of_schedule": 30.4,
+      "mentions": 40,
+      "sentiment": 0.268,
+      "engagement": 19485
+    },
+    "b": {
+      "slug": "black-dragon",
+      "name": "Black Dragon",
+      "weapon": "drum",
+      "performance": 35.1,
+      "hype": 21.5,
+      "expected_hype": 57.8,
+      "residual": -36.3,
+      "wins": 2,
+      "losses": 3,
+      "ko_wins": 0,
+      "ko_losses": 2,
+      "fights": 5,
+      "win_rate": 40.0,
+      "strength_of_schedule": 60.1,
+      "mentions": 5,
+      "sentiment": 0.228,
+      "engagement": 1578
+    },
+    "fit": {
+      "slope": 0.5018,
+      "intercept": 40.2,
+      "r": 0.282
+    },
+    "provenance": {
+      "fights_total": 72,
+      "fights_real": 0,
+      "posts_total": 542,
+      "posts_real": 0,
+      "is_real": false,
+      "fights_ingested_at": null,
+      "chatter_ingested_at": null
+    }
+  },
+  "backend": "anthropic"
+}
