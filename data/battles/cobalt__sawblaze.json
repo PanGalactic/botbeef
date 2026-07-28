@@ -1,0 +1,292 @@
+{
+  "a": "sawblaze",
+  "b": "cobalt",
+  "names": {
+    "sawblaze": "SawBlaze",
+    "cobalt": "Cobalt"
+  },
+  "bars": [
+    {
+      "bot": "sawblaze",
+      "text": "Six and four in ten recorded fights \u2014 that's sixty percent, verified.",
+      "fact_id": "F1",
+      "fact": "SawBlaze is 6-4 across 10 recorded fights (60.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "sawblaze",
+      "text": "I'm a hammer, boy. Every argument I make lands from above.",
+      "fact_id": "F3",
+      "fact": "SawBlaze is a hammer.",
+      "source_url": null
+    },
+    {
+      "bot": "sawblaze",
+      "text": "You're 2-2 in four fights \u2014 half your whole career is a loss column.",
+      "fact_id": "F7",
+      "fact": "Cobalt is 2-2 across 4 recorded fights (50.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "sawblaze",
+      "text": "Five fan mentions at minus zero-eight? Even the internet forgot to hate you.",
+      "fact_id": "F10",
+      "fact": "Cobalt has 5 scraped fan mentions with average sentiment -0.08.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Vertical spinner, straight up the middle \u2014 I open bots like envelopes.",
+      "fact_id": "F9",
+      "fact": "Cobalt is a vertical spinner.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "My opponents average 68.6 percent. I've been eating killers for breakfast.",
+      "fact_id": "F12",
+      "fact": "Cobalt's opponents average a 68.6% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Your hype sits 23.8 points above what your results actually predict.",
+      "fact_id": "F5",
+      "fact": "SawBlaze is the crowd's darling and the record does not back it up: fan hype sits +23.8 points above what its results predict.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Two KO wins, two times knocked out \u2014 you break even at breaking things.",
+      "fact_id": "F2",
+      "fact": "SawBlaze has 2 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "sawblaze",
+      "text": "Forty fan mentions, plus point-one-two \u2014 the box loves me out loud.",
+      "fact_id": "F4",
+      "fact": "SawBlaze has 40 scraped fan mentions with average sentiment +0.12.",
+      "source_url": null
+    },
+    {
+      "bot": "sawblaze",
+      "text": "Reddit calls me criminally underrated, says the record speaks for itself.",
+      "fact_id": "F13",
+      "fact": "Top fan post about SawBlaze (reddit): \"criminally underrated, the record speaks for itself\"",
+      "source_url": null
+    },
+    {
+      "bot": "sawblaze",
+      "text": "One KO win, two times counted out \u2014 that math ain't scary, that's fragile.",
+      "fact_id": "F8",
+      "fact": "Cobalt has 1 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "sawblaze",
+      "text": "My slate only averaged forty-four percent and I still had to earn every swing.",
+      "fact_id": "F6",
+      "fact": "SawBlaze's opponents average a 44.0% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "YouTube says I'm still the scariest bot in the box, and it isn't close.",
+      "fact_id": "F14",
+      "fact": "Top fan post about Cobalt (youtube): \"still the scariest bot in the box and it isn't close\"",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Quiet killer: 40.6 points better than my hype ever implied.",
+      "fact_id": "F11",
+      "fact": "Cobalt is a quiet killer \u2014 nobody talks about it, but it is 40.6 points better than its hype implies.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Six and four means four times somebody already solved the hammer.",
+      "fact_id": "F1",
+      "fact": "SawBlaze is 6-4 across 10 recorded fights (60.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "I'm fifty percent in four fights against monsters \u2014 imagine me at full swing.",
+      "fact_id": "F7",
+      "fact": "Cobalt is 2-2 across 4 recorded fights (50.0% win rate).",
+      "source_url": null
+    }
+  ],
+  "rejected": [],
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "record",
+      "side": "sawblaze",
+      "text": "SawBlaze is 6-4 across 10 recorded fights (60.0% win rate).",
+      "value": 60.0,
+      "source_url": null
+    },
+    {
+      "id": "F2",
+      "kind": "ko",
+      "side": "sawblaze",
+      "text": "SawBlaze has 2 wins by knockout and has been knocked out 2 times.",
+      "value": 2,
+      "source_url": null
+    },
+    {
+      "id": "F3",
+      "kind": "weapon",
+      "side": "sawblaze",
+      "text": "SawBlaze is a hammer.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F4",
+      "kind": "hype",
+      "side": "sawblaze",
+      "text": "SawBlaze has 40 scraped fan mentions with average sentiment +0.12.",
+      "value": 40,
+      "source_url": null
+    },
+    {
+      "id": "F5",
+      "kind": "overrated",
+      "side": "sawblaze",
+      "text": "SawBlaze is the crowd's darling and the record does not back it up: fan hype sits +23.8 points above what its results predict.",
+      "value": 23.8,
+      "source_url": null
+    },
+    {
+      "id": "F6",
+      "kind": "sos",
+      "side": "sawblaze",
+      "text": "SawBlaze's opponents average a 44.0% win rate (strength of schedule).",
+      "value": 44.0,
+      "source_url": null
+    },
+    {
+      "id": "F7",
+      "kind": "record",
+      "side": "cobalt",
+      "text": "Cobalt is 2-2 across 4 recorded fights (50.0% win rate).",
+      "value": 50.0,
+      "source_url": null
+    },
+    {
+      "id": "F8",
+      "kind": "ko",
+      "side": "cobalt",
+      "text": "Cobalt has 1 wins by knockout and has been knocked out 2 times.",
+      "value": 1,
+      "source_url": null
+    },
+    {
+      "id": "F9",
+      "kind": "weapon",
+      "side": "cobalt",
+      "text": "Cobalt is a vertical spinner.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F10",
+      "kind": "hype",
+      "side": "cobalt",
+      "text": "Cobalt has 5 scraped fan mentions with average sentiment -0.08.",
+      "value": 5,
+      "source_url": null
+    },
+    {
+      "id": "F11",
+      "kind": "underrated",
+      "side": "cobalt",
+      "text": "Cobalt is a quiet killer \u2014 nobody talks about it, but it is 40.6 points better than its hype implies.",
+      "value": -40.6,
+      "source_url": null
+    },
+    {
+      "id": "F12",
+      "kind": "sos",
+      "side": "cobalt",
+      "text": "Cobalt's opponents average a 68.6% win rate (strength of schedule).",
+      "value": 68.6,
+      "source_url": null
+    },
+    {
+      "id": "F13",
+      "kind": "quote",
+      "side": "sawblaze",
+      "text": "Top fan post about SawBlaze (reddit): \"criminally underrated, the record speaks for itself\"",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F14",
+      "kind": "quote",
+      "side": "cobalt",
+      "text": "Top fan post about Cobalt (youtube): \"still the scariest bot in the box and it isn't close\"",
+      "value": null,
+      "source_url": null
+    }
+  ],
+  "context": {
+    "a": {
+      "slug": "sawblaze",
+      "name": "SawBlaze",
+      "weapon": "hammer",
+      "performance": 43.4,
+      "hype": 84.5,
+      "expected_hype": 60.7,
+      "residual": 23.8,
+      "wins": 6,
+      "losses": 4,
+      "ko_wins": 2,
+      "ko_losses": 2,
+      "fights": 10,
+      "win_rate": 60.0,
+      "strength_of_schedule": 44.0,
+      "mentions": 40,
+      "sentiment": 0.115,
+      "engagement": 21096
+    },
+    "b": {
+      "slug": "cobalt",
+      "name": "Cobalt",
+      "weapon": "vertical_spinner",
+      "performance": 46.2,
+      "hype": 21.0,
+      "expected_hype": 61.6,
+      "residual": -40.6,
+      "wins": 2,
+      "losses": 2,
+      "ko_wins": 1,
+      "ko_losses": 2,
+      "fights": 4,
+      "win_rate": 50.0,
+      "strength_of_schedule": 68.6,
+      "mentions": 5,
+      "sentiment": -0.076,
+      "engagement": 1920
+    },
+    "fit": {
+      "slope": 0.3213,
+      "intercept": 46.72,
+      "r": 0.208
+    },
+    "provenance": {
+      "fights_total": 140,
+      "fights_real": 140,
+      "posts_total": 542,
+      "posts_real": 0,
+      "is_real": false,
+      "fights_ingested_at": "2026-07-28T17:27:25.197117+00:00",
+      "chatter_ingested_at": null
+    }
+  },
+  "backend": "anthropic"
+}

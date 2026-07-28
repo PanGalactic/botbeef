@@ -1,0 +1,292 @@
+{
+  "a": "tombstone",
+  "b": "cobalt",
+  "names": {
+    "tombstone": "Tombstone",
+    "cobalt": "Cobalt"
+  },
+  "bars": [
+    {
+      "bot": "tombstone",
+      "text": "Six wins by knockout on my sheet \u2014 I close shows, not points fights.",
+      "fact_id": "F2",
+      "fact": "Tombstone has 6 wins by knockout and has been knocked out 3 times.",
+      "source_url": null
+    },
+    {
+      "bot": "tombstone",
+      "text": "Horizontal spinner, hip height, and your armor is standing at bar level.",
+      "fact_id": "F3",
+      "fact": "Tombstone is a horizontal spinner.",
+      "source_url": null
+    },
+    {
+      "bot": "tombstone",
+      "text": "Two and two in four fights, rookie \u2014 that's a resume written on a napkin.",
+      "fact_id": "F7",
+      "fact": "Cobalt is 2-2 across 4 recorded fights (50.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "tombstone",
+      "text": "One knockout scored, twice knocked out \u2014 you lose the KO math two to one.",
+      "fact_id": "F8",
+      "fact": "Cobalt has 1 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Quiet killer, no headlines: I rate 40.6 points above my hype.",
+      "fact_id": "F11",
+      "fact": "Cobalt is a quiet killer \u2014 nobody talks about it, but it is 40.6 points better than its hype implies.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Fans call me the scariest bot in the box, and it isn't close.",
+      "fact_id": "F14",
+      "fact": "Top fan post about Cobalt (youtube): \"still the scariest bot in the box and it isn't close\"",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Your hype floats 19.5 points above what your results actually predict.",
+      "fact_id": "F5",
+      "fact": "Tombstone is the crowd's darling and the record does not back it up: fan hype sits +19.5 points above what its results predict.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Six and five, 54.5 percent \u2014 that's a coin flip in a fan costume.",
+      "fact_id": "F1",
+      "fact": "Tombstone is 6-5 across 11 recorded fights (54.5% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "tombstone",
+      "text": "Thirty-eight mentions, plus 0.14 sentiment \u2014 the box knows my name.",
+      "fact_id": "F4",
+      "fact": "Tombstone has 38 scraped fan mentions with average sentiment +0.14.",
+      "source_url": null
+    },
+    {
+      "bot": "tombstone",
+      "text": "Five mentions at minus 0.08? Even the internet forgot to be scared.",
+      "fact_id": "F10",
+      "fact": "Cobalt has 5 scraped fan mentions with average sentiment -0.08.",
+      "source_url": null
+    },
+    {
+      "bot": "tombstone",
+      "text": "Vertical spinner throwing uppercuts at air while my bar takes your ankles.",
+      "fact_id": "F9",
+      "fact": "Cobalt is a vertical spinner.",
+      "source_url": null
+    },
+    {
+      "bot": "tombstone",
+      "text": "Call my 48.1 percent schedule soft \u2014 I still booked eleven trips inside.",
+      "fact_id": "F6",
+      "fact": "Tombstone's opponents average a 48.1% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Your own fans posted it: the meta moved on and you never adapted.",
+      "fact_id": "F13",
+      "fact": "Top fan post about Tombstone (reddit): \"the meta has moved on and they haven't adapted\"",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Knocked out three times already \u2014 that big bar cuts both directions, legend.",
+      "fact_id": "F2",
+      "fact": "Tombstone has 6 wins by knockout and has been knocked out 3 times.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "My opponents average 68.6 percent; I fight bosses, you fight brackets.",
+      "fact_id": "F12",
+      "fact": "Cobalt's opponents average a 68.6% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Vertical spinner, straight up the belly \u2014 one bite and your frame folds.",
+      "fact_id": "F9",
+      "fact": "Cobalt is a vertical spinner.",
+      "source_url": null
+    }
+  ],
+  "rejected": [],
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "record",
+      "side": "tombstone",
+      "text": "Tombstone is 6-5 across 11 recorded fights (54.5% win rate).",
+      "value": 54.5,
+      "source_url": null
+    },
+    {
+      "id": "F2",
+      "kind": "ko",
+      "side": "tombstone",
+      "text": "Tombstone has 6 wins by knockout and has been knocked out 3 times.",
+      "value": 6,
+      "source_url": null
+    },
+    {
+      "id": "F3",
+      "kind": "weapon",
+      "side": "tombstone",
+      "text": "Tombstone is a horizontal spinner.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F4",
+      "kind": "hype",
+      "side": "tombstone",
+      "text": "Tombstone has 38 scraped fan mentions with average sentiment +0.14.",
+      "value": 38,
+      "source_url": null
+    },
+    {
+      "id": "F5",
+      "kind": "overrated",
+      "side": "tombstone",
+      "text": "Tombstone is the crowd's darling and the record does not back it up: fan hype sits +19.5 points above what its results predict.",
+      "value": 19.5,
+      "source_url": null
+    },
+    {
+      "id": "F6",
+      "kind": "sos",
+      "side": "tombstone",
+      "text": "Tombstone's opponents average a 48.1% win rate (strength of schedule).",
+      "value": 48.1,
+      "source_url": null
+    },
+    {
+      "id": "F7",
+      "kind": "record",
+      "side": "cobalt",
+      "text": "Cobalt is 2-2 across 4 recorded fights (50.0% win rate).",
+      "value": 50.0,
+      "source_url": null
+    },
+    {
+      "id": "F8",
+      "kind": "ko",
+      "side": "cobalt",
+      "text": "Cobalt has 1 wins by knockout and has been knocked out 2 times.",
+      "value": 1,
+      "source_url": null
+    },
+    {
+      "id": "F9",
+      "kind": "weapon",
+      "side": "cobalt",
+      "text": "Cobalt is a vertical spinner.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F10",
+      "kind": "hype",
+      "side": "cobalt",
+      "text": "Cobalt has 5 scraped fan mentions with average sentiment -0.08.",
+      "value": 5,
+      "source_url": null
+    },
+    {
+      "id": "F11",
+      "kind": "underrated",
+      "side": "cobalt",
+      "text": "Cobalt is a quiet killer \u2014 nobody talks about it, but it is 40.6 points better than its hype implies.",
+      "value": -40.6,
+      "source_url": null
+    },
+    {
+      "id": "F12",
+      "kind": "sos",
+      "side": "cobalt",
+      "text": "Cobalt's opponents average a 68.6% win rate (strength of schedule).",
+      "value": 68.6,
+      "source_url": null
+    },
+    {
+      "id": "F13",
+      "kind": "quote",
+      "side": "tombstone",
+      "text": "Top fan post about Tombstone (reddit): \"the meta has moved on and they haven't adapted\"",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F14",
+      "kind": "quote",
+      "side": "cobalt",
+      "text": "Top fan post about Cobalt (youtube): \"still the scariest bot in the box and it isn't close\"",
+      "value": null,
+      "source_url": null
+    }
+  ],
+  "context": {
+    "a": {
+      "slug": "tombstone",
+      "name": "Tombstone",
+      "weapon": "horizontal_spinner",
+      "performance": 53.0,
+      "hype": 83.3,
+      "expected_hype": 63.8,
+      "residual": 19.5,
+      "wins": 6,
+      "losses": 5,
+      "ko_wins": 6,
+      "ko_losses": 3,
+      "fights": 11,
+      "win_rate": 54.5,
+      "strength_of_schedule": 48.1,
+      "mentions": 38,
+      "sentiment": 0.142,
+      "engagement": 19745
+    },
+    "b": {
+      "slug": "cobalt",
+      "name": "Cobalt",
+      "weapon": "vertical_spinner",
+      "performance": 46.2,
+      "hype": 21.0,
+      "expected_hype": 61.6,
+      "residual": -40.6,
+      "wins": 2,
+      "losses": 2,
+      "ko_wins": 1,
+      "ko_losses": 2,
+      "fights": 4,
+      "win_rate": 50.0,
+      "strength_of_schedule": 68.6,
+      "mentions": 5,
+      "sentiment": -0.076,
+      "engagement": 1920
+    },
+    "fit": {
+      "slope": 0.3213,
+      "intercept": 46.72,
+      "r": 0.208
+    },
+    "provenance": {
+      "fights_total": 140,
+      "fights_real": 140,
+      "posts_total": 542,
+      "posts_real": 0,
+      "is_real": false,
+      "fights_ingested_at": "2026-07-28T17:27:25.197117+00:00",
+      "chatter_ingested_at": null
+    }
+  },
+  "backend": "anthropic"
+}

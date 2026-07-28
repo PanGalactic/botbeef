@@ -1,0 +1,292 @@
+{
+  "a": "ribbot",
+  "b": "cobalt",
+  "names": {
+    "ribbot": "Ribbot",
+    "cobalt": "Cobalt"
+  },
+  "bars": [
+    {
+      "bot": "ribbot",
+      "text": "Two of my four wins came by knockout, and I've only hit the floor once.",
+      "fact_id": "F2",
+      "fact": "Ribbot has 2 wins by knockout and has been knocked out 1 times.",
+      "source_url": null
+    },
+    {
+      "bot": "ribbot",
+      "text": "You got knocked out twice and only KO'd one \u2014 that math is scrap metal.",
+      "fact_id": "F8",
+      "fact": "Cobalt has 1 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "ribbot",
+      "text": "Five fan mentions at minus zero-point-oh-eight; nobody even bothers to boo you.",
+      "fact_id": "F10",
+      "fact": "Cobalt has 5 scraped fan mentions with average sentiment -0.08.",
+      "source_url": null
+    },
+    {
+      "bot": "ribbot",
+      "text": "Forty mentions, plus point two-seven \u2014 the box lights up when I hop in.",
+      "fact_id": "F4",
+      "fact": "Ribbot has 40 scraped fan mentions with average sentiment +0.27.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Quiet killer: forty-point-six points better than my hype. I don't need mentions.",
+      "fact_id": "F11",
+      "fact": "Cobalt is a quiet killer \u2014 nobody talks about it, but it is 40.6 points better than its hype implies.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Your hype floats twenty-two-point-eight above your results \u2014 that's a balloon, not a bot.",
+      "fact_id": "F5",
+      "fact": "Ribbot is the crowd's darling and the record does not back it up: fan hype sits +22.8 points above what its results predict.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "My opponents win 68.6 percent; I fight the boss level every single time.",
+      "fact_id": "F12",
+      "fact": "Cobalt's opponents average a 68.6% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Yours win 39.9 \u2014 soft bracket, frog, and you still came out even.",
+      "fact_id": "F6",
+      "fact": "Ribbot's opponents average a 39.9% win rate (strength of schedule).",
+      "source_url": null
+    },
+    {
+      "bot": "ribbot",
+      "text": "Fans said it best: every time I pick against them they prove me wrong.",
+      "fact_id": "F13",
+      "fact": "Top fan post about Ribbot (x): \"every time I pick against them they prove me wrong\"",
+      "source_url": null
+    },
+    {
+      "bot": "ribbot",
+      "text": "Vertical spinner, teeth pointed up, sending your paint to the lighting rig.",
+      "fact_id": "F3",
+      "fact": "Ribbot is a vertical spinner.",
+      "source_url": null
+    },
+    {
+      "bot": "ribbot",
+      "text": "You're two and two same as me \u2014 that's not a reign, that's a coin flip.",
+      "fact_id": "F7",
+      "fact": "Cobalt is 2-2 across 4 recorded fights (50.0% win rate).",
+      "source_url": null
+    },
+    {
+      "bot": "ribbot",
+      "text": "Knocked out twice already; your chin is the softest plate you own.",
+      "fact_id": "F8",
+      "fact": "Cobalt has 1 wins by knockout and has been knocked out 2 times.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "YouTube still calls me the scariest bot in the box, and it isn't close.",
+      "fact_id": "F14",
+      "fact": "Top fan post about Cobalt (youtube): \"still the scariest bot in the box and it isn't close\"",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "My vertical spinner doesn't need applause \u2014 just contact and a launch angle.",
+      "fact_id": "F9",
+      "fact": "Cobalt is a vertical spinner.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "You've been knocked out once before; one clean bite and the pond goes quiet.",
+      "fact_id": "F2",
+      "fact": "Ribbot has 2 wins by knockout and has been knocked out 1 times.",
+      "source_url": null
+    },
+    {
+      "bot": "cobalt",
+      "text": "Twenty-two-point-eight points of hype, zero extra wins on the board. Croak.",
+      "fact_id": "F5",
+      "fact": "Ribbot is the crowd's darling and the record does not back it up: fan hype sits +22.8 points above what its results predict.",
+      "source_url": null
+    }
+  ],
+  "rejected": [],
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "record",
+      "side": "ribbot",
+      "text": "Ribbot is 2-2 across 4 recorded fights (50.0% win rate).",
+      "value": 50.0,
+      "source_url": null
+    },
+    {
+      "id": "F2",
+      "kind": "ko",
+      "side": "ribbot",
+      "text": "Ribbot has 2 wins by knockout and has been knocked out 1 times.",
+      "value": 2,
+      "source_url": null
+    },
+    {
+      "id": "F3",
+      "kind": "weapon",
+      "side": "ribbot",
+      "text": "Ribbot is a vertical spinner.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F4",
+      "kind": "hype",
+      "side": "ribbot",
+      "text": "Ribbot has 40 scraped fan mentions with average sentiment +0.27.",
+      "value": 40,
+      "source_url": null
+    },
+    {
+      "id": "F5",
+      "kind": "overrated",
+      "side": "ribbot",
+      "text": "Ribbot is the crowd's darling and the record does not back it up: fan hype sits +22.8 points above what its results predict.",
+      "value": 22.8,
+      "source_url": null
+    },
+    {
+      "id": "F6",
+      "kind": "sos",
+      "side": "ribbot",
+      "text": "Ribbot's opponents average a 39.9% win rate (strength of schedule).",
+      "value": 39.9,
+      "source_url": null
+    },
+    {
+      "id": "F7",
+      "kind": "record",
+      "side": "cobalt",
+      "text": "Cobalt is 2-2 across 4 recorded fights (50.0% win rate).",
+      "value": 50.0,
+      "source_url": null
+    },
+    {
+      "id": "F8",
+      "kind": "ko",
+      "side": "cobalt",
+      "text": "Cobalt has 1 wins by knockout and has been knocked out 2 times.",
+      "value": 1,
+      "source_url": null
+    },
+    {
+      "id": "F9",
+      "kind": "weapon",
+      "side": "cobalt",
+      "text": "Cobalt is a vertical spinner.",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F10",
+      "kind": "hype",
+      "side": "cobalt",
+      "text": "Cobalt has 5 scraped fan mentions with average sentiment -0.08.",
+      "value": 5,
+      "source_url": null
+    },
+    {
+      "id": "F11",
+      "kind": "underrated",
+      "side": "cobalt",
+      "text": "Cobalt is a quiet killer \u2014 nobody talks about it, but it is 40.6 points better than its hype implies.",
+      "value": -40.6,
+      "source_url": null
+    },
+    {
+      "id": "F12",
+      "kind": "sos",
+      "side": "cobalt",
+      "text": "Cobalt's opponents average a 68.6% win rate (strength of schedule).",
+      "value": 68.6,
+      "source_url": null
+    },
+    {
+      "id": "F13",
+      "kind": "quote",
+      "side": "ribbot",
+      "text": "Top fan post about Ribbot (x): \"every time I pick against them they prove me wrong\"",
+      "value": null,
+      "source_url": null
+    },
+    {
+      "id": "F14",
+      "kind": "quote",
+      "side": "cobalt",
+      "text": "Top fan post about Cobalt (youtube): \"still the scariest bot in the box and it isn't close\"",
+      "value": null,
+      "source_url": null
+    }
+  ],
+  "context": {
+    "a": {
+      "slug": "ribbot",
+      "name": "Ribbot",
+      "weapon": "vertical_spinner",
+      "performance": 48.7,
+      "hype": 85.2,
+      "expected_hype": 62.4,
+      "residual": 22.8,
+      "wins": 2,
+      "losses": 2,
+      "ko_wins": 2,
+      "ko_losses": 1,
+      "fights": 4,
+      "win_rate": 50.0,
+      "strength_of_schedule": 39.9,
+      "mentions": 40,
+      "sentiment": 0.268,
+      "engagement": 19485
+    },
+    "b": {
+      "slug": "cobalt",
+      "name": "Cobalt",
+      "weapon": "vertical_spinner",
+      "performance": 46.2,
+      "hype": 21.0,
+      "expected_hype": 61.6,
+      "residual": -40.6,
+      "wins": 2,
+      "losses": 2,
+      "ko_wins": 1,
+      "ko_losses": 2,
+      "fights": 4,
+      "win_rate": 50.0,
+      "strength_of_schedule": 68.6,
+      "mentions": 5,
+      "sentiment": -0.076,
+      "engagement": 1920
+    },
+    "fit": {
+      "slope": 0.3213,
+      "intercept": 46.72,
+      "r": 0.208
+    },
+    "provenance": {
+      "fights_total": 140,
+      "fights_real": 140,
+      "posts_total": 542,
+      "posts_real": 0,
+      "is_real": false,
+      "fights_ingested_at": "2026-07-28T17:27:25.197117+00:00",
+      "chatter_ingested_at": null
+    }
+  },
+  "backend": "anthropic"
+}

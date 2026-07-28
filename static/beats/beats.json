@@ -1,0 +1,97 @@
+{
+  "note": "Instrumental backing beds, generated on Suno v5.5 (Pro account, commercial rights). One per style. Every prompt asked for a seamless loop, so short beds are safe to loop under a longer battle.",
+  "beats": [
+    {
+      "slug": "grime",
+      "style": "UK grime",
+      "title": "Warehouse Clash",
+      "bpm": 140,
+      "duration": "2:34",
+      "file": "grime.mp3",
+      "suno_id": "705c9470-c453-42b8-b0bd-45259ed9a30e"
+    },
+    {
+      "slug": "gfunk",
+      "style": "West Coast G-funk",
+      "title": "Lowrider Scratch",
+      "bpm": 92,
+      "duration": "1:45",
+      "file": "gfunk.mp3",
+      "suno_id": "b1fa3c2e-c964-439b-9a74-3f406795a74e"
+    },
+    {
+      "slug": "boombap",
+      "style": "East Coast boom bap",
+      "title": "Subway Dust Loop",
+      "bpm": 90,
+      "duration": "2:37",
+      "file": "boombap.mp3",
+      "suno_id": "5ec21c2d-8629-4eeb-9312-a50b7954c8eb"
+    },
+    {
+      "slug": "trap",
+      "style": "Atlanta trap",
+      "title": "Mercy Lane",
+      "bpm": 140,
+      "duration": "1:11",
+      "file": "trap.mp3",
+      "suno_id": "aaf1fd16-61c5-4780-902e-11b21b04e62f"
+    },
+    {
+      "slug": "drill",
+      "style": "UK drill",
+      "title": "Brixton Blackout",
+      "bpm": 144,
+      "duration": "2:16",
+      "file": "drill.mp3",
+      "suno_id": "b960f337-a1a8-45a6-9bc8-4151fbd9a93b"
+    },
+    {
+      "slug": "phonk",
+      "style": "Memphis phonk",
+      "title": "Graveyard Turn",
+      "bpm": 130,
+      "duration": "1:51",
+      "file": "phonk.mp3",
+      "suno_id": "25a69200-90fd-40a8-8668-f4b58d7a0b43"
+    },
+    {
+      "slug": "industrial",
+      "style": "Industrial hip hop",
+      "title": "Hydraulic Wreckage",
+      "bpm": 96,
+      "duration": "2:26",
+      "file": "industrial.mp3",
+      "suno_id": "cfdef1bd-418b-478c-9f86-352cf11f1b0b",
+      "note": "The thematic pick — clanging metal, hydraulic hiss, servo grind."
+    },
+    {
+      "slug": "miami",
+      "style": "Miami bass electro",
+      "title": "Palm Point Fury",
+      "bpm": 128,
+      "duration": "1:56",
+      "file": "miami.mp3",
+      "suno_id": "ceb3d4c8-4483-4da9-b049-b0b4376dcacd"
+    },
+    {
+      "slug": "detroit",
+      "style": "Detroit street rap",
+      "title": "Northside Loop",
+      "bpm": 100,
+      "duration": "1:05",
+      "file": "detroit.mp3",
+      "suno_id": "19b51ffe-9ab3-4250-8bf9-a01b2ef08b5a"
+    },
+    {
+      "slug": "cinematic",
+      "style": "Cinematic orchestral trap",
+      "title": "Arena March",
+      "bpm": 88,
+      "duration": "3:23",
+      "file": "cinematic.mp3",
+      "suno_id": "3625713d-8ad8-494c-a8e4-e376a8008848",
+      "note": "Entrance / VS-screen music rather than a verse bed."
+    }
+  ]
+}

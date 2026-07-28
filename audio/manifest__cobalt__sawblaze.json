@@ -1,0 +1,70 @@
+{
+  "backend": "chatterbox",
+  "bars": [
+    {
+      "index": 0,
+      "file": "6256d326ba21f8fe.wav"
+    },
+    {
+      "index": 1,
+      "file": "676d2e9cb8743548.wav"
+    },
+    {
+      "index": 2,
+      "file": "c57813d98117e1f0.wav"
+    },
+    {
+      "index": 3,
+      "file": "99893ce3c88a3f93.wav"
+    },
+    {
+      "index": 4,
+      "file": "5d520b9ebbd88ec6.wav"
+    },
+    {
+      "index": 5,
+      "file": "53d0b1acd92c230b.wav"
+    },
+    {
+      "index": 6,
+      "file": "ff6eb5dd059a6891.wav"
+    },
+    {
+      "index": 7,
+      "file": "229a9b34746c1817.wav"
+    },
+    {
+      "index": 8,
+      "file": "1221977d1854567b.wav"
+    },
+    {
+      "index": 9,
+      "file": "d812f6d24cd1e5e9.wav"
+    },
+    {
+      "index": 10,
+      "file": "b9fa9c3cc8fc3aca.wav"
+    },
+    {
+      "index": 11,
+      "file": "0432c4ff38c07822.wav"
+    },
+    {
+      "index": 12,
+      "file": "6c7b970f0045e7da.wav"
+    },
+    {
+      "index": 13,
+      "file": "750327a4771d900f.wav"
+    },
+    {
+      "index": 14,
+      "file": "b398774a134703a2.wav"
+    },
+    {
+      "index": 15,
+      "file": "24183c9f27adb3e9.wav"
+    }
+  ],
+  "intro": "758a368dccfdc261.wav"
+}

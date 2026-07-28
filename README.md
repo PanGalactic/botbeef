@@ -83,6 +83,24 @@ python3 ingest/pregen.py tombstone hydra
 Everything is pre-rendered to disk. **Nothing hits the network during a demo** —
 no scrape, no LLM call, no TTS render. Live scraping on stage is how demos die.
 
+### Backing beats
+
+Ten instrumental beds, one per rap style, in `static/beats/` with a manifest
+in `beats.json` (style, BPM, duration, Suno id). Generated on Suno v5.5 under
+a Pro subscription, which carries commercial rights.
+
+```bash
+python3 ingest/beats.py     # re-pull from the CDN if the files are missing
+```
+
+Grime · G-funk · boom bap · trap · drill · phonk · industrial · Miami bass ·
+Detroit · cinematic orchestral. Every prompt asked for a seamless loop, so the
+shorter beds are safe to loop under a battle that outruns them — a 16-bar
+battle runs roughly 70–90 seconds including the announcer intro.
+
+`industrial.mp3` (clanging metal, hydraulic hiss, servo grind) is the
+thematic pick; `cinematic.mp3` is entrance music rather than a verse bed.
+
 ### Arena art + fighter cutouts
 
 ```bash
