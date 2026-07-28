@@ -1,0 +1,661 @@
+{
+  "a": "minotaur",
+  "b": "end-game",
+  "names": {
+    "minotaur": "Minotaur",
+    "end-game": "End Game"
+  },
+  "bars": [
+    {
+      "bot": "minotaur",
+      "text": "Nine and three in twelve recorded fights, seventy-five percent \u2014 do the math.",
+      "fact_id": "F1",
+      "fact": "Minotaur is 9-3 across 12 recorded fights (75.0% win rate).",
+      "source_url": "https://battlebots.com/matches/event-44/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-44/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/minotaur-16-vs-bloodsport-17/",
+        "https://battlebots.com/matches/hydra-2019-vs-minotaur-2019/",
+        "https://battlebots.com/matches/event-5/",
+        "https://battlebots.com/matches/event-7/",
+        "https://battlebots.com/matches/minotaur-2018-vs-witch-doctor-2018/",
+        "https://battlebots.com/matches/event-2/",
+        "https://battlebots.com/matches/bronco-s2-vs-minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-bombshell-s2/",
+        "https://battlebots.com/matches/minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-blacksmith-s2/"
+      ]
+    },
+    {
+      "bot": "minotaur",
+      "text": "Six of those wins came by knockout; I don't need judges to close.",
+      "fact_id": "F2",
+      "fact": "Minotaur has 6 wins by knockout and has been knocked out 2 times.",
+      "source_url": "https://battlebots.com/matches/event-44/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-44/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/minotaur-16-vs-bloodsport-17/",
+        "https://battlebots.com/matches/hydra-2019-vs-minotaur-2019/",
+        "https://battlebots.com/matches/event-5/",
+        "https://battlebots.com/matches/event-7/",
+        "https://battlebots.com/matches/minotaur-2018-vs-witch-doctor-2018/",
+        "https://battlebots.com/matches/event-2/",
+        "https://battlebots.com/matches/bronco-s2-vs-minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-bombshell-s2/",
+        "https://battlebots.com/matches/minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-blacksmith-s2/"
+      ]
+    },
+    {
+      "bot": "minotaur",
+      "text": "My opponents average a 52.7 win rate \u2014 I fight the sharp end.",
+      "fact_id": "F6",
+      "fact": "Minotaur's opponents average a 52.7% win rate (strength of schedule).",
+      "source_url": "https://battlebots.com/matches/event-44/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-44/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/minotaur-16-vs-bloodsport-17/",
+        "https://battlebots.com/matches/hydra-2019-vs-minotaur-2019/",
+        "https://battlebots.com/matches/event-5/",
+        "https://battlebots.com/matches/event-7/",
+        "https://battlebots.com/matches/minotaur-2018-vs-witch-doctor-2018/",
+        "https://battlebots.com/matches/event-2/",
+        "https://battlebots.com/matches/bronco-s2-vs-minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-bombshell-s2/",
+        "https://battlebots.com/matches/minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-blacksmith-s2/"
+      ]
+    },
+    {
+      "bot": "minotaur",
+      "text": "Yours average 47.2. That's a soft bracket, champ, not a resume.",
+      "fact_id": "F12",
+      "fact": "End Game's opponents average a 47.2% win rate (strength of schedule).",
+      "source_url": "https://battlebots.com/matches/event-59/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "Seven and one in eight. Eighty-seven point five. Highest number in the box.",
+      "fact_id": "F7",
+      "fact": "End Game is 7-1 across 8 recorded fights (87.5% win rate).",
+      "source_url": "https://battlebots.com/matches/event-59/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "Five knockout wins, zero times knocked out. Nobody has ever put me down.",
+      "fact_id": "F8",
+      "fact": "End Game has 5 wins by knockout and has been knocked out 0 times.",
+      "source_url": "https://battlebots.com/matches/event-59/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "You've been knocked out twice, drum boy. The floor knows your paint code.",
+      "fact_id": "F2",
+      "fact": "Minotaur has 6 wins by knockout and has been knocked out 2 times.",
+      "source_url": "https://battlebots.com/matches/event-44/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-44/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/minotaur-16-vs-bloodsport-17/",
+        "https://battlebots.com/matches/hydra-2019-vs-minotaur-2019/",
+        "https://battlebots.com/matches/event-5/",
+        "https://battlebots.com/matches/event-7/",
+        "https://battlebots.com/matches/minotaur-2018-vs-witch-doctor-2018/",
+        "https://battlebots.com/matches/event-2/",
+        "https://battlebots.com/matches/bronco-s2-vs-minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-bombshell-s2/",
+        "https://battlebots.com/matches/minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-blacksmith-s2/"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "Vertical spinner geometry: I go under, you go up, gravity finishes the verse.",
+      "fact_id": "F9",
+      "fact": "End Game is a vertical spinner.",
+      "source_url": "https://battlebots.com/robot/end-game-wcvii/",
+      "source_urls": [
+        "https://battlebots.com/robot/end-game-wcvii/"
+      ]
+    },
+    {
+      "bot": "minotaur",
+      "text": "I'm a drum, and drums don't ask permission before rearranging your frame rails.",
+      "fact_id": "F3",
+      "fact": "Minotaur is a drum.",
+      "source_url": "https://battlebots.com/robot/minotaur-wcvii/",
+      "source_urls": [
+        "https://battlebots.com/robot/minotaur-wcvii/"
+      ]
+    },
+    {
+      "bot": "minotaur",
+      "text": "Fifty-seven fan mentions at plus point two-four sentiment \u2014 the crowd rides with me.",
+      "fact_id": "F4",
+      "fact": "Minotaur has 57 scraped fan mentions with average sentiment +0.24.",
+      "source_url": "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyocy68/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozd42zy/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozdja58/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozcshbh/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozcqyfv/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozdp5xe/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyoh5al/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/oze2hpz/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyp8mlf/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozpa8f8/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyoikqi/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/p03a5at/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozfb8t3/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozf79po/",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oz64gon/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyq75u7/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyow64k/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyofu5v/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozni7ko/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozhi2ow/"
+      ]
+    },
+    {
+      "bot": "minotaur",
+      "text": "You pulled thirteen mentions total. Sharp bot, empty room, echo in the pits.",
+      "fact_id": "F10",
+      "fact": "End Game has 13 scraped fan mentions with average sentiment +0.31.",
+      "source_url": "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+      "source_urls": [
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov7ckxt/",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.reddit.com/r/battlebots/comments/1uiv9o1/battlebots_pro_league_episode_1_fight_card/ov3m255/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ovcq24i/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=yMaPrk9TUaA&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D"
+      ]
+    },
+    {
+      "bot": "minotaur",
+      "text": "And when we actually met, I took it by judges' decision. Check the card.",
+      "fact_id": "F13",
+      "fact": "Minotaur vs End Game (S99ENone): Minotaur won by JD",
+      "source_url": "https://battlebots.com/matches/event-36/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-36/"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "My results sit 35.8 points above my hype \u2014 I overperform, you get chanted at.",
+      "fact_id": "F11",
+      "fact": "End Game's results sit 35.8 points above its fan hype.",
+      "source_url": "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+      "source_urls": [
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov7ckxt/",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.reddit.com/r/battlebots/comments/1uiv9o1/battlebots_pro_league_episode_1_fight_card/ov3m255/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ovcq24i/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=yMaPrk9TUaA&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "Top post on me: a whirlwind, viewers unsure what they saw. That's my speed.",
+      "fact_id": "F15",
+      "fact": "Top fan post about End Game (reddit): \"That was good.. I think? It was such a whirlwind I'm not entirely sure WHAT I saw. I even missed that the judging criteria have changed. But of what I managed to process, good figh\"",
+      "source_url": "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+      "source_urls": [
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "Three losses on your ledger. I've got one. Bring a spare drum bearing.",
+      "fact_id": "F1",
+      "fact": "Minotaur is 9-3 across 12 recorded fights (75.0% win rate).",
+      "source_url": "https://battlebots.com/matches/event-44/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-44/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/minotaur-16-vs-bloodsport-17/",
+        "https://battlebots.com/matches/hydra-2019-vs-minotaur-2019/",
+        "https://battlebots.com/matches/event-5/",
+        "https://battlebots.com/matches/event-7/",
+        "https://battlebots.com/matches/minotaur-2018-vs-witch-doctor-2018/",
+        "https://battlebots.com/matches/event-2/",
+        "https://battlebots.com/matches/bronco-s2-vs-minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-bombshell-s2/",
+        "https://battlebots.com/matches/minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-blacksmith-s2/"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "Eight fights, seven wins \u2014 the cleanest sheet in this arena stays mine.",
+      "fact_id": "F7",
+      "fact": "End Game is 7-1 across 8 recorded fights (87.5% win rate).",
+      "source_url": "https://battlebots.com/matches/event-59/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    }
+  ],
+  "rejected": [],
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "record",
+      "side": "minotaur",
+      "text": "Minotaur is 9-3 across 12 recorded fights (75.0% win rate).",
+      "value": 75.0,
+      "source_url": "https://battlebots.com/matches/event-44/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-44/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/minotaur-16-vs-bloodsport-17/",
+        "https://battlebots.com/matches/hydra-2019-vs-minotaur-2019/",
+        "https://battlebots.com/matches/event-5/",
+        "https://battlebots.com/matches/event-7/",
+        "https://battlebots.com/matches/minotaur-2018-vs-witch-doctor-2018/",
+        "https://battlebots.com/matches/event-2/",
+        "https://battlebots.com/matches/bronco-s2-vs-minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-bombshell-s2/",
+        "https://battlebots.com/matches/minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-blacksmith-s2/"
+      ]
+    },
+    {
+      "id": "F2",
+      "kind": "ko",
+      "side": "minotaur",
+      "text": "Minotaur has 6 wins by knockout and has been knocked out 2 times.",
+      "value": 6,
+      "source_url": "https://battlebots.com/matches/event-44/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-44/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/minotaur-16-vs-bloodsport-17/",
+        "https://battlebots.com/matches/hydra-2019-vs-minotaur-2019/",
+        "https://battlebots.com/matches/event-5/",
+        "https://battlebots.com/matches/event-7/",
+        "https://battlebots.com/matches/minotaur-2018-vs-witch-doctor-2018/",
+        "https://battlebots.com/matches/event-2/",
+        "https://battlebots.com/matches/bronco-s2-vs-minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-bombshell-s2/",
+        "https://battlebots.com/matches/minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-blacksmith-s2/"
+      ]
+    },
+    {
+      "id": "F3",
+      "kind": "weapon",
+      "side": "minotaur",
+      "text": "Minotaur is a drum.",
+      "value": null,
+      "source_url": "https://battlebots.com/robot/minotaur-wcvii/",
+      "source_urls": [
+        "https://battlebots.com/robot/minotaur-wcvii/"
+      ]
+    },
+    {
+      "id": "F4",
+      "kind": "hype",
+      "side": "minotaur",
+      "text": "Minotaur has 57 scraped fan mentions with average sentiment +0.24.",
+      "value": 57,
+      "source_url": "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyocy68/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozd42zy/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozdja58/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozcshbh/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozcqyfv/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozdp5xe/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyoh5al/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/oze2hpz/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyp8mlf/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozpa8f8/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyoikqi/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/p03a5at/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozfb8t3/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozf79po/",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oz64gon/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyq75u7/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyow64k/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyofu5v/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozni7ko/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozhi2ow/"
+      ]
+    },
+    {
+      "id": "F5",
+      "kind": "overrated",
+      "side": "minotaur",
+      "text": "Minotaur's fan hype sits +16.8 points above what its record predicts.",
+      "value": 16.8,
+      "source_url": "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyocy68/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozd42zy/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozdja58/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozcshbh/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozcqyfv/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozdp5xe/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyoh5al/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/oze2hpz/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyp8mlf/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozpa8f8/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyoikqi/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/p03a5at/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozfb8t3/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozf79po/",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oz64gon/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyq75u7/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyow64k/",
+        "https://www.reddit.com/r/battlebots/comments/1v1m75m/battlebots_pro_league_episode_4_fight_card/oyofu5v/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozni7ko/",
+        "https://www.reddit.com/r/battlebots/comments/1v4n3dt/can_ai_outdrive_this_battlebot_legend_battlebots/ozhi2ow/",
+        "https://battlebots.com/matches/event-44/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/minotaur-16-vs-bloodsport-17/",
+        "https://battlebots.com/matches/hydra-2019-vs-minotaur-2019/",
+        "https://battlebots.com/matches/event-5/",
+        "https://battlebots.com/matches/event-7/",
+        "https://battlebots.com/matches/minotaur-2018-vs-witch-doctor-2018/",
+        "https://battlebots.com/matches/event-2/",
+        "https://battlebots.com/matches/bronco-s2-vs-minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-bombshell-s2/",
+        "https://battlebots.com/matches/minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-blacksmith-s2/"
+      ]
+    },
+    {
+      "id": "F6",
+      "kind": "sos",
+      "side": "minotaur",
+      "text": "Minotaur's opponents average a 52.7% win rate (strength of schedule).",
+      "value": 52.7,
+      "source_url": "https://battlebots.com/matches/event-44/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-44/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/minotaur-16-vs-bloodsport-17/",
+        "https://battlebots.com/matches/hydra-2019-vs-minotaur-2019/",
+        "https://battlebots.com/matches/event-5/",
+        "https://battlebots.com/matches/event-7/",
+        "https://battlebots.com/matches/minotaur-2018-vs-witch-doctor-2018/",
+        "https://battlebots.com/matches/event-2/",
+        "https://battlebots.com/matches/bronco-s2-vs-minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-bombshell-s2/",
+        "https://battlebots.com/matches/minotaur-s2/",
+        "https://battlebots.com/matches/minotaur-s2-vs-blacksmith-s2/"
+      ]
+    },
+    {
+      "id": "F7",
+      "kind": "record",
+      "side": "end-game",
+      "text": "End Game is 7-1 across 8 recorded fights (87.5% win rate).",
+      "value": 87.5,
+      "source_url": "https://battlebots.com/matches/event-59/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "id": "F8",
+      "kind": "ko",
+      "side": "end-game",
+      "text": "End Game has 5 wins by knockout and has been knocked out 0 times.",
+      "value": 5,
+      "source_url": "https://battlebots.com/matches/event-59/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "id": "F9",
+      "kind": "weapon",
+      "side": "end-game",
+      "text": "End Game is a vertical spinner.",
+      "value": null,
+      "source_url": "https://battlebots.com/robot/end-game-wcvii/",
+      "source_urls": [
+        "https://battlebots.com/robot/end-game-wcvii/"
+      ]
+    },
+    {
+      "id": "F10",
+      "kind": "hype",
+      "side": "end-game",
+      "text": "End Game has 13 scraped fan mentions with average sentiment +0.31.",
+      "value": 13,
+      "source_url": "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+      "source_urls": [
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov7ckxt/",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.reddit.com/r/battlebots/comments/1uiv9o1/battlebots_pro_league_episode_1_fight_card/ov3m255/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ovcq24i/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=yMaPrk9TUaA&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D"
+      ]
+    },
+    {
+      "id": "F11",
+      "kind": "underrated",
+      "side": "end-game",
+      "text": "End Game's results sit 35.8 points above its fan hype.",
+      "value": -35.8,
+      "source_url": "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+      "source_urls": [
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov7ckxt/",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.reddit.com/r/battlebots/comments/1uiv9o1/battlebots_pro_league_episode_1_fight_card/ov3m255/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ovcq24i/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=yMaPrk9TUaA&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "id": "F12",
+      "kind": "sos",
+      "side": "end-game",
+      "text": "End Game's opponents average a 47.2% win rate (strength of schedule).",
+      "value": 47.2,
+      "source_url": "https://battlebots.com/matches/event-59/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "id": "F13",
+      "kind": "h2h",
+      "side": "minotaur",
+      "text": "Minotaur vs End Game (S99ENone): Minotaur won by JD",
+      "value": null,
+      "source_url": "https://battlebots.com/matches/event-36/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-36/"
+      ]
+    },
+    {
+      "id": "F14",
+      "kind": "quote",
+      "side": "minotaur",
+      "text": "Top fan post about Minotaur (youtube): \"I cannot express how good it is to see Marco and Daniel back for team Minotaur\"",
+      "value": null,
+      "source_url": "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D"
+      ]
+    },
+    {
+      "id": "F15",
+      "kind": "quote",
+      "side": "end-game",
+      "text": "Top fan post about End Game (reddit): \"That was good.. I think? It was such a whirlwind I'm not entirely sure WHAT I saw. I even missed that the judging criteria have changed. But of what I managed to process, good figh\"",
+      "value": null,
+      "source_url": "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+      "source_urls": [
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/"
+      ]
+    }
+  ],
+  "context": {
+    "a": {
+      "slug": "minotaur",
+      "name": "Minotaur",
+      "weapon": "drum",
+      "performance": 61.0,
+      "hype": 74.4,
+      "expected_hype": 57.6,
+      "residual": 16.8,
+      "wins": 9,
+      "losses": 3,
+      "ko_wins": 6,
+      "ko_losses": 2,
+      "fights": 12,
+      "win_rate": 75.0,
+      "strength_of_schedule": 52.7,
+      "mentions": 57,
+      "sentiment": 0.237,
+      "engagement": 480
+    },
+    "b": {
+      "slug": "end-game",
+      "name": "End Game",
+      "weapon": "vertical_spinner",
+      "performance": 66.8,
+      "hype": 22.9,
+      "expected_hype": 58.7,
+      "residual": -35.8,
+      "wins": 7,
+      "losses": 1,
+      "ko_wins": 5,
+      "ko_losses": 0,
+      "fights": 8,
+      "win_rate": 87.5,
+      "strength_of_schedule": 47.2,
+      "mentions": 13,
+      "sentiment": 0.308,
+      "engagement": 49
+    },
+    "fit": {
+      "slope": 0.186,
+      "intercept": 46.3,
+      "r": 0.124
+    },
+    "provenance": {
+      "fights_total": 140,
+      "fights_real": 140,
+      "posts_total": 912,
+      "posts_real": 912,
+      "fights_missing_source_url": 0,
+      "posts_missing_source_url": 0,
+      "is_real": true,
+      "fights_ingested_at": "2026-07-28T17:27:25.197117+00:00",
+      "chatter_ingested_at": "2026-07-28T17:58:49.939814+00:00"
+    }
+  },
+  "backend": "anthropic"
+}

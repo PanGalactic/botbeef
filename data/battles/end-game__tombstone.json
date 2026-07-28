@@ -1,0 +1,687 @@
+{
+  "a": "tombstone",
+  "b": "end-game",
+  "names": {
+    "tombstone": "Tombstone",
+    "end-game": "End Game"
+  },
+  "bars": [
+    {
+      "bot": "tombstone",
+      "text": "Six wins by knockout on my sheet \u2014 I don't do decisions, I do debris.",
+      "fact_id": "F2",
+      "fact": "Tombstone has 6 wins by knockout and has been knocked out 3 times.",
+      "source_url": "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+      "source_urls": [
+        "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+        "https://battlebots.com/matches/event-24/",
+        "https://battlebots.com/matches/tombstone-2020/",
+        "https://battlebots.com/matches/event-9/",
+        "https://battlebots.com/matches/event-12/",
+        "https://battlebots.com/matches/tombstone-2019-vs-quantum-2019/",
+        "https://battlebots.com/matches/tombstone-2018-vs-bombshell-2018/",
+        "https://battlebots.com/matches/23027/",
+        "https://battlebots.com/matches/23029/",
+        "https://battlebots.com/matches/23023/",
+        "https://battlebots.com/matches/tombstone-vs-radioactive/"
+      ]
+    },
+    {
+      "bot": "tombstone",
+      "text": "Horizontal spinner, ankle height, I mow the floor you're standing on.",
+      "fact_id": "F3",
+      "fact": "Tombstone is a horizontal spinner.",
+      "source_url": "https://battlebots.com/robot/tombstone-2021/",
+      "source_urls": [
+        "https://battlebots.com/robot/tombstone-2021/"
+      ]
+    },
+    {
+      "bot": "tombstone",
+      "text": "Eighty-four mentions scraped, sentiment positive \u2014 the box score knows my name.",
+      "fact_id": "F4",
+      "fact": "Tombstone has 84 scraped fan mentions with average sentiment +0.10.",
+      "source_url": "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.youtube.com/watch?v=yMaPrk9TUaA&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02juud/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwip55/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02jb5a/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p0328pf/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwm3ad/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwpfkh/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwmcmt/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p03cqx6/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02samm/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02mpb2/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p03dufa/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02lpvm/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovxhoqx/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p04a6mh/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwv96w/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ow591qw/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovxlra1/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwxt7n/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwpobi/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwkxf5/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p03uzas/",
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v35f6k/so_far_all_the_pro_league_episodes_have_gotten/oz5vttd/"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "Thirteen mentions total on you? That's a group chat, not a fanbase.",
+      "fact_id": "F10",
+      "fact": "End Game has 13 scraped fan mentions with average sentiment +0.31.",
+      "source_url": "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+      "source_urls": [
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov7ckxt/",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.reddit.com/r/battlebots/comments/1uiv9o1/battlebots_pro_league_episode_1_fight_card/ov3m255/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ovcq24i/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=yMaPrk9TUaA&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "Seven and one in eight fights, eighty-seven percent \u2014 do the math and duck.",
+      "fact_id": "F7",
+      "fact": "End Game is 7-1 across 8 recorded fights (87.5% win rate).",
+      "source_url": "https://battlebots.com/matches/event-59/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "Five knockouts scored, knocked out zero times; zero's my favorite number.",
+      "fact_id": "F8",
+      "fact": "End Game has 5 wins by knockout and has been knocked out 0 times.",
+      "source_url": "https://battlebots.com/matches/event-59/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "Six and five over eleven? You're a coin flip with a big blade.",
+      "fact_id": "F1",
+      "fact": "Tombstone is 6-5 across 11 recorded fights (54.5% win rate).",
+      "source_url": "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+      "source_urls": [
+        "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+        "https://battlebots.com/matches/event-24/",
+        "https://battlebots.com/matches/tombstone-2020/",
+        "https://battlebots.com/matches/event-9/",
+        "https://battlebots.com/matches/event-12/",
+        "https://battlebots.com/matches/tombstone-2019-vs-quantum-2019/",
+        "https://battlebots.com/matches/tombstone-2018-vs-bombshell-2018/",
+        "https://battlebots.com/matches/23027/",
+        "https://battlebots.com/matches/23029/",
+        "https://battlebots.com/matches/23023/",
+        "https://battlebots.com/matches/tombstone-vs-radioactive/"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "You've been knocked out three times already \u2014 the floor knows you personally.",
+      "fact_id": "F2",
+      "fact": "Tombstone has 6 wins by knockout and has been knocked out 3 times.",
+      "source_url": "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+      "source_urls": [
+        "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+        "https://battlebots.com/matches/event-24/",
+        "https://battlebots.com/matches/tombstone-2020/",
+        "https://battlebots.com/matches/event-9/",
+        "https://battlebots.com/matches/event-12/",
+        "https://battlebots.com/matches/tombstone-2019-vs-quantum-2019/",
+        "https://battlebots.com/matches/tombstone-2018-vs-bombshell-2018/",
+        "https://battlebots.com/matches/23027/",
+        "https://battlebots.com/matches/23029/",
+        "https://battlebots.com/matches/23023/",
+        "https://battlebots.com/matches/tombstone-vs-radioactive/"
+      ]
+    },
+    {
+      "bot": "tombstone",
+      "text": "Your results sit 35.8 above your hype \u2014 you win and nobody notices.",
+      "fact_id": "F11",
+      "fact": "End Game's results sit 35.8 points above its fan hype.",
+      "source_url": "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+      "source_urls": [
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov7ckxt/",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.reddit.com/r/battlebots/comments/1uiv9o1/battlebots_pro_league_episode_1_fight_card/ov3m255/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ovcq24i/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=yMaPrk9TUaA&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "bot": "tombstone",
+      "text": "My hype runs 15.5 above my record; they scream before I spin up.",
+      "fact_id": "F5",
+      "fact": "Tombstone's fan hype sits +15.5 points above what its record predicts.",
+      "source_url": "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.youtube.com/watch?v=yMaPrk9TUaA&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02juud/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwip55/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02jb5a/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p0328pf/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwm3ad/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwpfkh/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwmcmt/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p03cqx6/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02samm/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02mpb2/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p03dufa/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02lpvm/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovxhoqx/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p04a6mh/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwv96w/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ow591qw/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovxlra1/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwxt7n/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwpobi/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwkxf5/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p03uzas/",
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v35f6k/so_far_all_the_pro_league_episodes_have_gotten/oz5vttd/",
+        "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+        "https://battlebots.com/matches/event-24/",
+        "https://battlebots.com/matches/tombstone-2020/",
+        "https://battlebots.com/matches/event-9/",
+        "https://battlebots.com/matches/event-12/",
+        "https://battlebots.com/matches/tombstone-2019-vs-quantum-2019/",
+        "https://battlebots.com/matches/tombstone-2018-vs-bombshell-2018/",
+        "https://battlebots.com/matches/23027/",
+        "https://battlebots.com/matches/23029/",
+        "https://battlebots.com/matches/23023/",
+        "https://battlebots.com/matches/tombstone-vs-radioactive/"
+      ]
+    },
+    {
+      "bot": "tombstone",
+      "text": "Top post on you: \"not entirely sure WHAT I saw.\" Forgettable whirlwind.",
+      "fact_id": "F14",
+      "fact": "Top fan post about End Game (reddit): \"That was good.. I think? It was such a whirlwind I'm not entirely sure WHAT I saw. I even missed that the judging criteria have changed. But of what I managed to process, good figh\"",
+      "source_url": "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+      "source_urls": [
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/"
+      ]
+    },
+    {
+      "bot": "tombstone",
+      "text": "They call me king of kinetic energy, stable and coming back in the Mad Catter fight.",
+      "fact_id": "F13",
+      "fact": "Top fan post about Tombstone (youtube): \"Tombstone is looking quite stable in the madcatter fight. Is the king of kinetic energy making his comeback?\"",
+      "source_url": "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "Vertical spinner, I come up underneath and open you like a can.",
+      "fact_id": "F9",
+      "fact": "End Game is a vertical spinner.",
+      "source_url": "https://battlebots.com/robot/end-game-wcvii/",
+      "source_urls": [
+        "https://battlebots.com/robot/end-game-wcvii/"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "Your opponents averaged 48.1 percent \u2014 a mid-road schedule you barely crawled.",
+      "fact_id": "F6",
+      "fact": "Tombstone's opponents average a 48.1% win rate (strength of schedule).",
+      "source_url": "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+      "source_urls": [
+        "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+        "https://battlebots.com/matches/event-24/",
+        "https://battlebots.com/matches/tombstone-2020/",
+        "https://battlebots.com/matches/event-9/",
+        "https://battlebots.com/matches/event-12/",
+        "https://battlebots.com/matches/tombstone-2019-vs-quantum-2019/",
+        "https://battlebots.com/matches/tombstone-2018-vs-bombshell-2018/",
+        "https://battlebots.com/matches/23027/",
+        "https://battlebots.com/matches/23029/",
+        "https://battlebots.com/matches/23023/",
+        "https://battlebots.com/matches/tombstone-vs-radioactive/"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "Thirteen mentions at plus 0.31 \u2014 small crowd, highest praise in the room.",
+      "fact_id": "F10",
+      "fact": "End Game has 13 scraped fan mentions with average sentiment +0.31.",
+      "source_url": "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+      "source_urls": [
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov7ckxt/",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.reddit.com/r/battlebots/comments/1uiv9o1/battlebots_pro_league_episode_1_fight_card/ov3m255/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ovcq24i/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=yMaPrk9TUaA&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D"
+      ]
+    },
+    {
+      "bot": "end-game",
+      "text": "My results sit 35.8 above my hype; the numbers do my talking.",
+      "fact_id": "F11",
+      "fact": "End Game's results sit 35.8 points above its fan hype.",
+      "source_url": "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+      "source_urls": [
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov7ckxt/",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.reddit.com/r/battlebots/comments/1uiv9o1/battlebots_pro_league_episode_1_fight_card/ov3m255/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ovcq24i/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=yMaPrk9TUaA&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    }
+  ],
+  "rejected": [],
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "record",
+      "side": "tombstone",
+      "text": "Tombstone is 6-5 across 11 recorded fights (54.5% win rate).",
+      "value": 54.5,
+      "source_url": "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+      "source_urls": [
+        "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+        "https://battlebots.com/matches/event-24/",
+        "https://battlebots.com/matches/tombstone-2020/",
+        "https://battlebots.com/matches/event-9/",
+        "https://battlebots.com/matches/event-12/",
+        "https://battlebots.com/matches/tombstone-2019-vs-quantum-2019/",
+        "https://battlebots.com/matches/tombstone-2018-vs-bombshell-2018/",
+        "https://battlebots.com/matches/23027/",
+        "https://battlebots.com/matches/23029/",
+        "https://battlebots.com/matches/23023/",
+        "https://battlebots.com/matches/tombstone-vs-radioactive/"
+      ]
+    },
+    {
+      "id": "F2",
+      "kind": "ko",
+      "side": "tombstone",
+      "text": "Tombstone has 6 wins by knockout and has been knocked out 3 times.",
+      "value": 6,
+      "source_url": "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+      "source_urls": [
+        "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+        "https://battlebots.com/matches/event-24/",
+        "https://battlebots.com/matches/tombstone-2020/",
+        "https://battlebots.com/matches/event-9/",
+        "https://battlebots.com/matches/event-12/",
+        "https://battlebots.com/matches/tombstone-2019-vs-quantum-2019/",
+        "https://battlebots.com/matches/tombstone-2018-vs-bombshell-2018/",
+        "https://battlebots.com/matches/23027/",
+        "https://battlebots.com/matches/23029/",
+        "https://battlebots.com/matches/23023/",
+        "https://battlebots.com/matches/tombstone-vs-radioactive/"
+      ]
+    },
+    {
+      "id": "F3",
+      "kind": "weapon",
+      "side": "tombstone",
+      "text": "Tombstone is a horizontal spinner.",
+      "value": null,
+      "source_url": "https://battlebots.com/robot/tombstone-2021/",
+      "source_urls": [
+        "https://battlebots.com/robot/tombstone-2021/"
+      ]
+    },
+    {
+      "id": "F4",
+      "kind": "hype",
+      "side": "tombstone",
+      "text": "Tombstone has 84 scraped fan mentions with average sentiment +0.10.",
+      "value": 84,
+      "source_url": "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.youtube.com/watch?v=yMaPrk9TUaA&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02juud/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwip55/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02jb5a/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p0328pf/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwm3ad/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwpfkh/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwmcmt/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p03cqx6/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02samm/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02mpb2/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p03dufa/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02lpvm/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovxhoqx/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p04a6mh/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwv96w/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ow591qw/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovxlra1/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwxt7n/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwpobi/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwkxf5/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p03uzas/",
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v35f6k/so_far_all_the_pro_league_episodes_have_gotten/oz5vttd/"
+      ]
+    },
+    {
+      "id": "F5",
+      "kind": "overrated",
+      "side": "tombstone",
+      "text": "Tombstone's fan hype sits +15.5 points above what its record predicts.",
+      "value": 15.5,
+      "source_url": "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.youtube.com/watch?v=yMaPrk9TUaA&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02juud/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwip55/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02jb5a/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p0328pf/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwm3ad/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwpfkh/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwmcmt/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p03cqx6/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02samm/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02mpb2/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p03dufa/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p02lpvm/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovxhoqx/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p04a6mh/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwv96w/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ow591qw/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovxlra1/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwxt7n/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwpobi/",
+        "https://www.reddit.com/r/battlebots/comments/1up1lxt/battlebots_pro_league_episode_2_fight_card/ovwkxf5/",
+        "https://www.reddit.com/r/battlebots/comments/1v82asq/battlebots_pro_league_episode_5_fight_card/p03uzas/",
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.reddit.com/r/battlebots/comments/1v35f6k/so_far_all_the_pro_league_episodes_have_gotten/oz5vttd/",
+        "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+        "https://battlebots.com/matches/event-24/",
+        "https://battlebots.com/matches/tombstone-2020/",
+        "https://battlebots.com/matches/event-9/",
+        "https://battlebots.com/matches/event-12/",
+        "https://battlebots.com/matches/tombstone-2019-vs-quantum-2019/",
+        "https://battlebots.com/matches/tombstone-2018-vs-bombshell-2018/",
+        "https://battlebots.com/matches/23027/",
+        "https://battlebots.com/matches/23029/",
+        "https://battlebots.com/matches/23023/",
+        "https://battlebots.com/matches/tombstone-vs-radioactive/"
+      ]
+    },
+    {
+      "id": "F6",
+      "kind": "sos",
+      "side": "tombstone",
+      "text": "Tombstone's opponents average a 48.1% win rate (strength of schedule).",
+      "value": 48.1,
+      "source_url": "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+      "source_urls": [
+        "https://battlebots.com/matches/jackpot-10-vs-tombstone-23/",
+        "https://battlebots.com/matches/event-24/",
+        "https://battlebots.com/matches/tombstone-2020/",
+        "https://battlebots.com/matches/event-9/",
+        "https://battlebots.com/matches/event-12/",
+        "https://battlebots.com/matches/tombstone-2019-vs-quantum-2019/",
+        "https://battlebots.com/matches/tombstone-2018-vs-bombshell-2018/",
+        "https://battlebots.com/matches/23027/",
+        "https://battlebots.com/matches/23029/",
+        "https://battlebots.com/matches/23023/",
+        "https://battlebots.com/matches/tombstone-vs-radioactive/"
+      ]
+    },
+    {
+      "id": "F7",
+      "kind": "record",
+      "side": "end-game",
+      "text": "End Game is 7-1 across 8 recorded fights (87.5% win rate).",
+      "value": 87.5,
+      "source_url": "https://battlebots.com/matches/event-59/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "id": "F8",
+      "kind": "ko",
+      "side": "end-game",
+      "text": "End Game has 5 wins by knockout and has been knocked out 0 times.",
+      "value": 5,
+      "source_url": "https://battlebots.com/matches/event-59/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "id": "F9",
+      "kind": "weapon",
+      "side": "end-game",
+      "text": "End Game is a vertical spinner.",
+      "value": null,
+      "source_url": "https://battlebots.com/robot/end-game-wcvii/",
+      "source_urls": [
+        "https://battlebots.com/robot/end-game-wcvii/"
+      ]
+    },
+    {
+      "id": "F10",
+      "kind": "hype",
+      "side": "end-game",
+      "text": "End Game has 13 scraped fan mentions with average sentiment +0.31.",
+      "value": 13,
+      "source_url": "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+      "source_urls": [
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov7ckxt/",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.reddit.com/r/battlebots/comments/1uiv9o1/battlebots_pro_league_episode_1_fight_card/ov3m255/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ovcq24i/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=yMaPrk9TUaA&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D"
+      ]
+    },
+    {
+      "id": "F11",
+      "kind": "underrated",
+      "side": "end-game",
+      "text": "End Game's results sit 35.8 points above its fan hype.",
+      "value": -35.8,
+      "source_url": "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+      "source_urls": [
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov7ckxt/",
+        "https://www.youtube.com/watch?v=rPvv0PN2wKs&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+        "https://www.reddit.com/r/battlebots/comments/1uiv9o1/battlebots_pro_league_episode_1_fight_card/ov3m255/",
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ovcq24i/",
+        "https://www.youtube.com/watch?v=GCU2BNN7jF4&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=xOOMHMxjsXg&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://www.youtube.com/watch?v=yMaPrk9TUaA&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGE%3D",
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "id": "F12",
+      "kind": "sos",
+      "side": "end-game",
+      "text": "End Game's opponents average a 47.2% win rate (strength of schedule).",
+      "value": 47.2,
+      "source_url": "https://battlebots.com/matches/event-59/",
+      "source_urls": [
+        "https://battlebots.com/matches/event-59/",
+        "https://battlebots.com/matches/event-36/",
+        "https://battlebots.com/matches/end-game-1/",
+        "https://battlebots.com/matches/event-35/",
+        "https://battlebots.com/matches/event-32/",
+        "https://battlebots.com/matches/event-34/",
+        "https://battlebots.com/matches/event-28/",
+        "https://battlebots.com/matches/event-20/"
+      ]
+    },
+    {
+      "id": "F13",
+      "kind": "quote",
+      "side": "tombstone",
+      "text": "Top fan post about Tombstone (youtube): \"Tombstone is looking quite stable in the madcatter fight. Is the king of kinetic energy making his comeback?\"",
+      "value": null,
+      "source_url": "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D",
+      "source_urls": [
+        "https://www.youtube.com/watch?v=ofwHV4jaCX0&pp=ygUsQmF0dGxlQm90cyBQcm8gTGVhZ3VlIHBvd2VyZWQgYnkgQnJpZ2h0IERhdGHSBwkJowsBhyohjO8%3D"
+      ]
+    },
+    {
+      "id": "F14",
+      "kind": "quote",
+      "side": "end-game",
+      "text": "Top fan post about End Game (reddit): \"That was good.. I think? It was such a whirlwind I'm not entirely sure WHAT I saw. I even missed that the judging criteria have changed. But of what I managed to process, good figh\"",
+      "value": null,
+      "source_url": "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/",
+      "source_urls": [
+        "https://www.reddit.com/r/battlebots/comments/1ultoh8/the_worlds_toughest_robot_tournament_begins/ov74i54/"
+      ]
+    }
+  ],
+  "context": {
+    "a": {
+      "slug": "tombstone",
+      "name": "Tombstone",
+      "weapon": "horizontal_spinner",
+      "performance": 53.0,
+      "hype": 71.7,
+      "expected_hype": 56.2,
+      "residual": 15.5,
+      "wins": 6,
+      "losses": 5,
+      "ko_wins": 6,
+      "ko_losses": 3,
+      "fights": 11,
+      "win_rate": 54.5,
+      "strength_of_schedule": 48.1,
+      "mentions": 84,
+      "sentiment": 0.099,
+      "engagement": 366
+    },
+    "b": {
+      "slug": "end-game",
+      "name": "End Game",
+      "weapon": "vertical_spinner",
+      "performance": 66.8,
+      "hype": 22.9,
+      "expected_hype": 58.7,
+      "residual": -35.8,
+      "wins": 7,
+      "losses": 1,
+      "ko_wins": 5,
+      "ko_losses": 0,
+      "fights": 8,
+      "win_rate": 87.5,
+      "strength_of_schedule": 47.2,
+      "mentions": 13,
+      "sentiment": 0.308,
+      "engagement": 49
+    },
+    "fit": {
+      "slope": 0.186,
+      "intercept": 46.3,
+      "r": 0.124
+    },
+    "provenance": {
+      "fights_total": 140,
+      "fights_real": 140,
+      "posts_total": 912,
+      "posts_real": 912,
+      "fights_missing_source_url": 0,
+      "posts_missing_source_url": 0,
+      "is_real": true,
+      "fights_ingested_at": "2026-07-28T17:27:25.197117+00:00",
+      "chatter_ingested_at": "2026-07-28T17:58:49.939814+00:00"
+    }
+  },
+  "backend": "anthropic"
+}
