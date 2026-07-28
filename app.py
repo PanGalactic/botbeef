@@ -21,6 +21,12 @@ def index():
     return send_from_directory("static", "index.html")
 
 
+@app.route("/sprites")
+def sprites():
+    """Contact sheet of every fighter cutout — QA for the scrape."""
+    return send_from_directory("static", "sprites.html")
+
+
 @app.route("/arena")
 def arena():
     """The Tekken-style stage. Same data, different room."""
@@ -83,6 +89,6 @@ def audio(filename):
 
 if __name__ == "__main__":
     print(f"BOT BEEF on http://127.0.0.1:{PORT}")
-    print(f"  kokoro: {'up' if voice.health() else 'DOWN'}")
+    print(f"  voice:  {voice.BACKEND} (optional; not probed at startup)")
     print(f"  data:   {store.provenance()}")
     app.run(host="0.0.0.0", port=PORT, debug=False, threaded=True)

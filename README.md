@@ -49,17 +49,59 @@ TOMBSTONE
 
 ---
 
-## Run it
+## Six-robot fighter MVP
+
+The verified MVP roster is Witch Doctor, Tombstone, HyperShock, Minotaur,
+HUGE, and Cobalt. The arena is self-contained: Three.js, robot cutouts, arena
+art, combat sound effects, and gameplay modules are served locally.
+
+From this repository directory:
 
 ```bash
-pip install -r requirements.txt
-python3 ingest/seed.py          # placeholder data so the app boots
-python3 app.py                  # http://127.0.0.1:5050
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
+python -m pip install -r requirements.txt
+python app.py
 ```
 
-The UI shows a **red PLACEHOLDER banner** until every record carries a real
-`source_url` from an actual scrape. That's deliberate: it is not possible to
-demo fake numbers by forgetting to swap the data, because the screen says so.
+Open <http://127.0.0.1:5050/arena>. The legacy data-grounded rap view remains
+at <http://127.0.0.1:5050/>.
+
+### Fighter controls
+
+| Action | Keyboard |
+| --- | --- |
+| Move toward / away from opponent | `W` / `S` |
+| Sidestep left / right | `A` / `D` |
+| Light / medium / heavy / special attack | `J` / `K` / `L` / `I` |
+| Block (hold) | `Space` |
+| Restart the full best-of-three match | `R` |
+| Pause / open match menu | `Esc` |
+| Toggle combat sound | `M` |
+
+On touch devices up to 1000 px wide, on-screen movement, attack, block, and
+restart controls appear automatically. Hold movement and block buttons; tap
+attack and restart buttons.
+
+### Verification
+
+```bash
+node --test tests/test_gameplay.mjs
+python -m pytest -q
+```
+
+`GET /health` is a fast local liveness check. It reports the configured
+optional voice backend but deliberately does not contact Kokoro, Chatterbox,
+or ElevenLabs. Those services are unrelated to fighter gameplay, and probing
+their DNS/network state in the request path can stall a demo.
+
+## Data-grounded rap view
+
+The data view shows a **red PLACEHOLDER banner** until every record carries a
+real `source_url` from an actual scrape. That's deliberate: it is not possible
+to demo fake numbers by forgetting to swap the data, because the screen says
+so.
 
 ### Real data (Bright Data)
 

@@ -92,3 +92,13 @@ as `photo_is_team_shot`. Easiest fix is to not pick Bite Force on stage.
 **Status:** Re-read the shared COMMS protocol; confirmed Bright Data PR #1 is merged and adopted the end-of-turn coordination check.
 **Touching:** `COMMS.md` only for this acknowledgement; no product, cache, or audio files.
 **Need:** Panny/maintainer — PR #2 remains the single implementation of the Stop hook; please merge it rather than duplicating hook work.
+
+### [2026-07-28 19:02 UTC] codex (Battlebots Hack agent) → all
+**Status:** Six-robot fighter MVP browser QA is complete; runtime, health-check, sound, balance, and narrow-layout defects are fixed locally.
+**Touching:** `app.py`, `core/voice.py`, `static/arena.html`, new `static/css/` and `static/js/` fighter modules, arena tests, and README controls on `codex/six-robot-fighter-mvp`.
+**Need:** Please avoid these paths until the MVP PR lands; no data caches, battle audio, backing beats, or paid scraping are being changed.
+
+### [2026-07-28 19:07 UTC] codex (Battlebots Hack agent) → all
+**Status:** Verified MVP is committed and published as https://github.com/PanGalactic/botbeef/pull/3; JavaScript 4/4 and Python 33/33 pass, browser console is clean, and `/health` now returns in about 0.18s.
+**Touching:** `COMMS.md` only for this final status update.
+**Need:** PanGalactic maintainer — please merge PR #3. The authenticated `mara-241` account is mergeable but lacks `MergePullRequest` permission. PR #2 remains the single Stop-hook implementation and also needs maintainer merge.

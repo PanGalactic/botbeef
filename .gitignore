@@ -10,6 +10,10 @@ data/raw/snapshots.json
 data/*.sqlite3
 data/*.sqlite3-*
 
+# Flat FLUX renders before the cutout step. Intermediates: the finished
+# sprites in static/bots_tekken/ are what the app uses.
+data/raw/tekken/
+
 # Secrets. Never commit a Bright Data or Anthropic token.
 .env
 *.key
