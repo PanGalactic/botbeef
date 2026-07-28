@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#05070a">
 <title>BOT BEEF — Robot Combat Arena</title>
 <link rel="stylesheet" href="/css/arena-fighter.css">
+<link rel="stylesheet" href="/css/mode-switcher.css">
 <style>
   *{box-sizing:border-box}
   html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#030507}
@@ -16,20 +17,16 @@
     color:#aab8c4;background:#030507;font:700 12px/1.2 ui-monospace,monospace;
     letter-spacing:.28em;text-transform:uppercase;transition:opacity .35s}
   #stage-loading.is-ready{opacity:0;pointer-events:none}
-  .arena-back{position:fixed;z-index:80;left:14px;bottom:14px;padding:8px 11px;
-    color:#a9b5bf;background:#06090dbd;border:1px solid #8b98a64d;
-    font:700 10px/1 ui-monospace,monospace;letter-spacing:.12em;
-    text-decoration:none;text-transform:uppercase;pointer-events:auto}
-  .arena-back:hover,.arena-back:focus-visible{color:#fff;border-color:#fff}
-  @media (max-width:620px){.arena-back{display:none}}
-  @media (pointer:coarse) and (max-width:1000px){.arena-back{display:none}}
 </style>
 </head>
 <body>
 <main id="stage" aria-label="3D robot combat arena"></main>
 <div id="stage-loading">Powering the BattleBox…</div>
 <div id="fighter-ui-root"></div>
-<a class="arena-back" href="/" aria-label="Return to data view">Data view</a>
+<nav class="mode-nav mode-nav--arena" aria-label="Bot Beef modes">
+  <a href="/rap">Rap</a>
+  <a href="/fight" aria-current="page">Fight</a>
+</nav>
 
 <script type="module">
 import * as THREE from "/vendor/three.module.js";

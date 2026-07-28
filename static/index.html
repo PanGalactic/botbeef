@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BOT BEEF</title>
+<title>BOT BEEF — Rap Battle Mode</title>
+<link rel="stylesheet" href="/css/mode-switcher.css">
 <style>
   :root{
     --bg:#0a0b0d; --panel:#121419; --line:#242832;
@@ -39,6 +40,7 @@
     background:var(--panel); border:1px solid var(--line);
     border-radius:8px; padding:9px 12px; cursor:pointer;
   }
+  #beatSelect{max-width:190px}
   button.play{
     background:var(--a); color:#0a0b0d; border-color:var(--a);
     font-weight:800; letter-spacing:.08em; padding:9px 22px;
@@ -95,6 +97,13 @@
   <h1>BOT <em>BEEF</em></h1>
   <span class="tag" id="prov">loading…</span>
   <div class="spacer"></div>
+  <nav class="mode-nav mode-nav--header" aria-label="Bot Beef modes">
+    <a href="/rap" aria-current="page">Rap</a>
+    <a href="/fight">Fight</a>
+  </nav>
+  <select id="beatSelect" aria-label="Rap beat">
+    <option value="auto">Auto beat</option>
+  </select>
   <select id="selA"></select>
   <span style="color:var(--dim)">vs</span>
   <select id="selB"></select>
@@ -109,26 +118,58 @@
   </section>
 
   <section>
-    <div class="cap">The battle &mdash; every bar cites a scraped fact</div>
+    <div class="cap">Rap battle mode &mdash; every bar cites a scraped fact</div>
     <div class="sub" id="battleSub">&nbsp;</div>
     <div id="bars"><div class="empty">Pick two bots and hit BATTLE.</div></div>
   </section>
 </main>
 
+<audio id="beat" loop></audio>
 <audio id="au"></audio>
 
-<script>
+<script type="module">
+import {
+  RapAudioController,
+  selectBeatForMatchup,
+  selectCachedMatchup,
+} from "/js/rap-audio.js";
+
 const $ = s => document.querySelector(s);
-let TABLE = null, BATTLE = null, QUEUE = [], qi = 0, PLAYABLE = [];
+let TABLE = null, BATTLE = null, BEATS = [], PLAYABLE = [];
+
+const rapAudio = new RapAudioController({
+  voiceElement: $('#au'),
+  beatElement: $('#beat'),
+  onStep: step => {
+    document.querySelectorAll('.bar.on').forEach(e => e.classList.remove('on'));
+    if (step.index < 0) return;
+    const el = $('#bar' + step.index);
+    if (el) {
+      el.classList.add('on');
+      el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
+  },
+  onComplete: () => { $('#play').disabled = false; },
+  onStatus: message => {
+    const status = $('#audioStatus');
+    if (status) status.textContent = ` · ${message}`;
+  },
+});
 
 const fmt = n => (n > 0 ? '+' : '') + n.toFixed(1);
 
 async function boot(){
-  const [t, cached] = await Promise.all([
+  const [t, cached, beatData] = await Promise.all([
     fetch('/api/table').then(r => r.json()),
-    fetch('/api/battles').then(r => r.json())
+    fetch('/api/battles').then(r => r.json()),
+    fetch('/beats/beats.json').then(r => r.ok ? r.json() : { beats: [] }).catch(() => ({ beats: [] }))
   ]);
   TABLE = t;
+  BEATS = Array.isArray(beatData.beats) ? beatData.beats : [];
+  $('#beatSelect').innerHTML = '<option value="auto">Auto · matchup theme</option>' +
+    BEATS.map(beat =>
+      `<option value="${esc(beat.slug)}">${esc(beat.style)} · ${beat.bpm} BPM</option>`
+    ).join('');
 
   const p = t.provenance;
   const prov = $('#prov');
@@ -150,9 +191,9 @@ async function boot(){
   // selects nothing, and the demo dies on the first click.
   const slugs = new Set(rows.map(r => r.slug));
   PLAYABLE = (cached.battles || []).filter(b => slugs.has(b.a) && slugs.has(b.b));
-  const first = PLAYABLE[0];
-  $('#selA').value = first ? first.a : rows[0].slug;
-  $('#selB').value = first ? first.b : rows[rows.length - 1].slug;
+  const first = selectCachedMatchup(rows, PLAYABLE);
+  $('#selA').value = first.a;
+  $('#selB').value = first.b;
 
   $('#chartSub').innerHTML =
     `<b>${rows.length}</b> bots · fitted line r=<b>${t.fit.r}</b> · ` +
@@ -167,6 +208,13 @@ async function boot(){
 
   draw();
   $('#selA').onchange = $('#selB').onchange = draw;
+}
+
+function selectedBeat(a, b){
+  const explicit = $('#beatSelect').value;
+  return explicit === 'auto'
+    ? selectBeatForMatchup(a, b, BEATS)
+    : BEATS.find(beat => beat.slug === explicit) || selectBeatForMatchup(a, b, BEATS);
 }
 
 function draw(){
@@ -230,6 +278,7 @@ async function playBattle(){
     $('#bars').innerHTML = `<div class="empty">Pick two <em>different</em> bots.</div>`;
     return;
   }
+  rapAudio.stop();
   $('#play').disabled = true;
   $('#bars').innerHTML = '<div class="empty">loading…</div>';
 
@@ -246,12 +295,19 @@ async function playBattle(){
   }
 
   BATTLE = d;
+  const beat = selectedBeat(a, b);
   const ra = TABLE.rows.find(r => r.slug === a), rb = TABLE.rows.find(r => r.slug === b);
   $('#battleSub').innerHTML =
     `<b>${d.names[a]}</b> ${ra ? fmt(ra.residual) : ''} hype residual · ` +
     `<b>${d.names[b]}</b> ${rb ? fmt(rb.residual) : ''} · ` +
     `<b>${d.bars.length}</b> bars, <b>${d.bars.length}</b> sourced` +
     (d.rejected.length ? ` · <span style="color:var(--warn)">${d.rejected.length} rejected as unsourced</span>` : '');
+
+  if (beat) {
+    $('#battleSub').innerHTML +=
+      ` · beat: <b>${esc(beat.title)}</b> (${esc(beat.style)}, ${beat.bpm} BPM)`;
+  }
+  $('#battleSub').insertAdjacentHTML('beforeend', '<span id="audioStatus"></span>');
 
   $('#bars').innerHTML = d.bars.map((x, i) => `
     <div class="bar ${x.bot === a ? 'a' : 'b'}" id="bar${i}">
@@ -260,35 +316,13 @@ async function playBattle(){
       <div class="cite"><b>${x.fact_id}</b> ${esc(x.fact)}</div>
     </div>`).join('');
 
-  QUEUE = [];
   if (d.audio) {
-    if (d.audio.intro) QUEUE.push({ i: -1, f: d.audio.intro });
-    for (const m of d.audio.bars) QUEUE.push({ i: m.index, f: m.file });
+    rapAudio.play({ manifest: d.audio, bars: d.bars, beat });
+  } else {
+    d.bars.forEach((_, i) => $('#bar' + i).classList.add('on'));
+    $('#audioStatus').textContent = ' · Voice manifest unavailable; showing lyrics only.';
+    $('#play').disabled = false;
   }
-  qi = 0;
-  if (QUEUE.length) next();
-  else { d.bars.forEach((_, i) => $('#bar' + i).classList.add('on')); $('#play').disabled = false; }
-}
-
-function next(){
-  if (qi >= QUEUE.length){ $('#play').disabled = false; return; }
-  const step = QUEUE[qi++];
-  document.querySelectorAll('.bar.on').forEach(e => e.classList.remove('on'));
-  if (step.i >= 0){
-    const el = $('#bar' + step.i);
-    if (el){ el.classList.add('on'); el.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
-  }
-  // See arena.html: rendered WAVs aren't committed, so on a fresh clone the
-  // manifest points at 404s. Advancing on the error event would flash the
-  // battle past — pace it to reading speed instead.
-  const bar = step.i >= 0 ? BATTLE.bars[step.i] : null;
-  const hold = bar ? Math.max(2600, 380 * bar.text.split(/\s+/).length) : 3200;
-
-  const au = $('#au');
-  au.src = '/audio/' + step.f;
-  au.onended = next;
-  au.onerror = () => setTimeout(next, hold);
-  au.play().catch(() => setTimeout(next, hold));
 }
 
 function esc(s){ return String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c])); }

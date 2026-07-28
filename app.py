@@ -18,6 +18,13 @@ PORT = int(os.environ.get("BOTBEEF_PORT", "5050"))
 
 @app.route("/")
 def index():
+    """Choose between the two distinct Bot Beef experiences."""
+    return send_from_directory("static", "modes.html")
+
+
+@app.route("/rap")
+def rap_mode():
+    """Data-grounded, voiced rap battles with a citation on every bar."""
     return send_from_directory("static", "index.html")
 
 
@@ -28,8 +35,9 @@ def sprites():
 
 
 @app.route("/arena")
-def arena():
-    """The Tekken-style stage. Same data, different room."""
+@app.route("/fight")
+def fight_mode():
+    """The playable robot combat mode; /arena remains a compatibility alias."""
     return send_from_directory("static", "arena.html")
 
 

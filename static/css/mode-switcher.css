@@ -1,0 +1,59 @@
+.mode-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid #65727e66;
+  border-radius: 7px;
+  background: #06090de8;
+  box-shadow: inset 0 1px #fff1, 0 4px 14px #0009;
+  font: 800 10px/1 ui-monospace, "SFMono-Regular", Menlo, monospace;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.mode-nav a {
+  min-width: 72px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  color: #9ba8b3;
+  text-align: center;
+  text-decoration: none;
+  transition: background .15s ease, color .15s ease;
+}
+
+.mode-nav a:hover,
+.mode-nav a:focus-visible {
+  background: #1b242c;
+  color: #fff;
+  outline: none;
+}
+
+.mode-nav a[aria-current="page"] {
+  background: #f2b930;
+  color: #080a0c;
+}
+
+.mode-nav--arena {
+  position: fixed;
+  z-index: 80;
+  bottom: 14px;
+  left: 14px;
+  pointer-events: auto;
+}
+
+@media (max-width: 720px) {
+  .mode-nav--header a {
+    min-width: 56px;
+    padding-inline: 7px;
+  }
+}
+
+@media (pointer: coarse) and (max-width: 1000px) {
+  .mode-nav--arena {
+    top: max(8px, env(safe-area-inset-top));
+    right: max(8px, env(safe-area-inset-right));
+    bottom: auto;
+    left: auto;
+  }
+}
