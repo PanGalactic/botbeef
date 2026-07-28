@@ -89,6 +89,6 @@ def audio(filename):
 
 if __name__ == "__main__":
     print(f"BOT BEEF on http://127.0.0.1:{PORT}")
-    print(f"  kokoro: {'up' if voice.health() else 'DOWN'}")
+    print(f"  voice:  {voice.BACKEND} (optional; not probed at startup)")
     print(f"  data:   {store.provenance()}")
     app.run(host="0.0.0.0", port=PORT, debug=False, threaded=True)

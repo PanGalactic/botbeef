@@ -221,28 +221,14 @@ def manifest_for(a, b):
 
 
 def health():
-    """What can actually speak right now."""
-    out = {"backend": BACKEND, "kokoro": False,
-           "chatterbox": False, "elevenlabs": False}
-    try:
-        r = requests.get(f"{KOKORO}/health", timeout=3)
-        out["kokoro"] = r.status_code == 200 and r.json().get("model_loaded") is True
-    except requests.RequestException:
-        pass
-    try:
-        r = requests.get(f"{CHATTERBOX}/health", timeout=5)
-        out["chatterbox"] = r.status_code == 200 and r.json().get("loaded") is True
-    except requests.RequestException:
-        pass
-    if os.environ.get("ELEVENLABS_API_KEY"):
-        try:
-            r = requests.get(f"{ELEVEN}/user/subscription",
-                             headers={"xi-api-key": os.environ["ELEVENLABS_API_KEY"]},
-                             timeout=8)
-            if r.status_code == 200:
-                d = r.json()
-                out["elevenlabs"] = True
-                out["eleven_chars_left"] = d.get("character_limit", 0) - d.get("character_count", 0)
-        except requests.RequestException:
-            pass
-    return out
+    """Return voice configuration without probing optional network services.
+
+    Flask health checks must remain local and fast. In particular, Requests'
+    timeout does not put a hard deadline on DNS resolution, so checking the
+    optional ``garage.wg`` service here could stall the entire response.
+    """
+    return {
+        "backend": BACKEND,
+        "availability": "not-probed",
+        "optional": True,
+    }
