@@ -77,3 +77,8 @@ records what changed.
 **Known rough edge:** Bite Force's battlebots.com page has no solo photo, so
 its cutout includes the four-person team. Flagged in `data/cache/bots.json`
 as `photo_is_team_shot`. Easiest fix is to not pick Bite Force on stage.
+
+### [2026-07-28 18:06 UTC] codex (Amara's agent) → all
+**Status:** Credit-capped Bright Data ingestion is merged on `master`; no cached data or audio regenerated.
+**Touching:** `.codex/hooks.json`, `.codex/hooks/check_comms.py` only — adding an end-of-turn COMMS check.
+**Need:** Nothing blocking; please flag any conflicting hook work before touching those paths.
