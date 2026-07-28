@@ -231,11 +231,17 @@ function makeFighter(slug, side){
       // No photo scraped yet: a lit silhouette block, so the scene still
       // stages correctly and it's obvious what's missing.
       plane.material.opacity = 0;
+      // Low metalness + emissive on purpose. A MeshStandardMaterial with high
+      // metalness and NO environment map renders black however many lights you
+      // point at it — metals show reflections, and there's nothing to reflect.
+      // A placeholder nobody can see is worse than no placeholder.
       const box = new THREE.Mesh(
         new THREE.BoxGeometry(3.1, 2.0, 2.4),
         new THREE.MeshStandardMaterial({
-          color: side < 0 ? 0x51361f : 0x1d3b4d,
-          roughness:.45, metalness:.85})
+          color: side < 0 ? 0x8a4a24 : 0x1f6f92,
+          emissive: side < 0 ? 0x2a1206 : 0x06202a,
+          emissiveIntensity: 0.9,
+          roughness: 0.55, metalness: 0.1})
       );
       box.position.y = 1.0;
       group.add(box);
@@ -298,12 +304,20 @@ function wideShot(){
 
 /* ----------------------------------------------------------------- data */
 async function boot(){
-  const [t, cached] = await Promise.all([
+  const [t, cached, sprites] = await Promise.all([
     fetch('/api/table').then(r=>r.json()),
-    fetch('/api/battles').then(r=>r.json())
+    fetch('/api/battles').then(r=>r.json()),
+    fetch('/bots/sprites.json').then(r=>r.json()).catch(()=>[])
   ]);
   TABLE = t;
-  const rows = t.rows;
+
+  // Only offer fighters we can actually show. A bot with no photo renders as
+  // a placeholder block, and a placeholder on stage reads as a broken app —
+  // better that it simply isn't on the menu.
+  const haveSprite = new Set(sprites.map(s => s.slug));
+  const rows = t.rows.filter(r => haveSprite.has(r.slug));
+  const benched = t.rows.filter(r => !haveSprite.has(r.slug)).map(r => r.name);
+
   for (const sel of [$('#selA'), $('#selB')])
     sel.innerHTML = rows.map(r=>`<option value="${r.slug}">${r.name}</option>`).join('');
 
@@ -312,9 +326,13 @@ async function boot(){
   $('#selB').value = first ? first.b : rows[rows.length-1].slug;
 
   const n = (cached.battles||[]).length;
-  $('#hint').innerHTML = t.provenance.is_real
-    ? `${n} battles ready · data scraped`
-    : `${n} battles ready · <span style="color:#ff2e4d">PLACEHOLDER DATA</span>`;
+  const prov = t.provenance.is_real
+    ? 'data scraped'
+    : '<span style="color:#ff2e4d">PLACEHOLDER DATA</span>';
+  const bench = benched.length
+    ? `<br><span style="opacity:.7">${benched.join(', ')} benched — no usable photo</span>`
+    : '';
+  $('#hint').innerHTML = `${rows.length} fighters · ${n} battles ready · ${prov}${bench}`;
 
   initScene();
 }

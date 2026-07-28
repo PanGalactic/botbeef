@@ -1,0 +1,186 @@
+[
+  {
+    "slug": "black-dragon",
+    "w": 530,
+    "h": 253,
+    "kb": 193,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "blip",
+    "w": 490,
+    "h": 280,
+    "kb": 188,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "cobalt",
+    "w": 443,
+    "h": 319,
+    "kb": 151,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "copperhead",
+    "w": 483,
+    "h": 303,
+    "kb": 183,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "duck",
+    "w": 501,
+    "h": 257,
+    "kb": 136,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "end-game",
+    "w": 393,
+    "h": 319,
+    "kb": 135,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "gigabyte",
+    "w": 326,
+    "h": 337,
+    "kb": 101,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "huge",
+    "w": 432,
+    "h": 282,
+    "kb": 103,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "hydra",
+    "w": 525,
+    "h": 325,
+    "kb": 221,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "hypershock",
+    "w": 481,
+    "h": 232,
+    "kb": 152,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "lock-jaw",
+    "w": 462,
+    "h": 302,
+    "kb": 192,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "malice",
+    "w": 454,
+    "h": 320,
+    "kb": 132,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "minotaur",
+    "w": 456,
+    "h": 249,
+    "kb": 123,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "ribbot",
+    "w": 505,
+    "h": 256,
+    "kb": 146,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "riptide",
+    "w": 460,
+    "h": 289,
+    "kb": 161,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "rotator",
+    "w": 426,
+    "h": 296,
+    "kb": 163,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "sawblaze",
+    "w": 406,
+    "h": 334,
+    "kb": 110,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "shatter",
+    "w": 385,
+    "h": 328,
+    "kb": 100,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "skorpios",
+    "w": 376,
+    "h": 329,
+    "kb": 152,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "tombstone",
+    "w": 673,
+    "h": 473,
+    "kb": 381,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "valkyrie",
+    "w": 456,
+    "h": 281,
+    "kb": 123,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "whiplash",
+    "w": 376,
+    "h": 339,
+    "kb": 129,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
+    "slug": "witch-doctor",
+    "w": 443,
+    "h": 287,
+    "kb": 176,
+    "alpha_min": 0,
+    "alpha_max": 255
+  }
+]

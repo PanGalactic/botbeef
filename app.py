@@ -21,6 +21,12 @@ def index():
     return send_from_directory("static", "index.html")
 
 
+@app.route("/sprites")
+def sprites():
+    """Contact sheet of every fighter cutout — QA for the scrape."""
+    return send_from_directory("static", "sprites.html")
+
+
 @app.route("/arena")
 def arena():
     """The Tekken-style stage. Same data, different room."""

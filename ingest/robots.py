@@ -126,6 +126,31 @@ RE_RECORD = re.compile(r'(\d+)\s*(?:wins?|W)\D{0,12}?(\d+)\s*(?:loss(?:es)?|L)',
 RE_WEAPON = re.compile(r'weapon[^<]{0,40}</[^>]+>\s*<[^>]+>([^<]{3,60})', re.I)
 RE_WPSIZE = re.compile(r'-\d{2,4}x\d{2,4}\.(jpg|jpeg|png)$', re.I)
 
+# Words that appear in filenames but carry no identity.
+_STOP = {"the", "bb", "bot", "team", "jpg", "jpeg", "png", "wcvii", "wcvi"}
+
+
+def _tokens(s):
+    return {t for t in re.findall(r"[a-z]+", s.lower()) if t not in _STOP and len(t) > 2}
+
+
+def base_name(slug):
+    return slug.replace("-", " ")
+
+
+def _names_bot(url, slug, name):
+    """Does this filename actually name this bot?
+
+    Compared on tokens AND on the de-hyphenated run, because the site is
+    inconsistent: 'lock-jaw' ships as 'BB2022-lockjaw-bot.jpg'.
+    """
+    fn = url.split("/")[-1]
+    want = _tokens(slug) | _tokens(name)
+    if _tokens(fn) & want:
+        return True
+    flat = re.sub(r"[^a-z]", "", fn.lower())
+    return any(re.sub(r"[^a-z]", "", w) in flat for w in (slug, name) if len(w) > 3)
+
 
 def parse():
     """Turn cached pages into real records + photo sources."""
@@ -156,9 +181,18 @@ def parse():
         # rembg keeps the humans, so a crew shot puts five people on stage.
         solo = [u for u in imgs
                 if not any(t in u.lower() for t in ("-team", "team-", "crew"))]
+        # A robot page also links OTHER robots (related bots, brackets), so
+        # "first non-junk image" silently assigns the wrong machine — that's
+        # how bite-force ended up showing Captain Shrederator. Require the
+        # filename to actually name this bot.
+        named = [u for u in solo if _names_bot(u, slug, base_name(slug))]
+        if solo and not named:
+            print(f"  {slug}: no image matches its own name — skipping photo")
+        solo = named
+
         if not solo and imgs:
             print(f"  {slug}: only a team photo available — will include people")
-        imgs = solo or imgs
+        imgs = solo or []
         if imgs:
             # WordPress serves resized variants (foo-300x200.jpg). Strip the
             # suffix to get the full-size original — a 200px thumbnail is

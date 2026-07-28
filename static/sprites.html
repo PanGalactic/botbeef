@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BOT BEEF — sprites</title>
+<style>
+  :root{--bg:#0a0b0d;--panel:#14171f;--line:#252a35;--ink:#f2f4f8;--dim:#8b93a6;--a:#ff6b35;--ok:#2ee6a8;--bad:#ff2e4d}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);
+       font:15px/1.5 ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif;padding:26px}
+  header{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:6px}
+  h1{font-size:24px;letter-spacing:.12em;font-weight:800}
+  h1 em{font-style:normal;color:var(--a)}
+  .sub{color:var(--dim);font-size:14px;margin-bottom:20px}
+  .tools{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+  button{font:inherit;font-size:13px;color:var(--ink);background:var(--panel);
+         border:1px solid var(--line);border-radius:7px;padding:8px 13px;cursor:pointer}
+  button.on{background:var(--a);color:#0a0b0d;border-color:var(--a);font-weight:700}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:11px;
+        padding:12px;display:flex;flex-direction:column;gap:9px}
+  .shot{height:150px;display:flex;align-items:center;justify-content:center;
+        border-radius:8px;position:relative;overflow:hidden}
+  /* checkerboard proves the alpha channel is real rather than a white box */
+  .shot.checks{background-image:
+      linear-gradient(45deg,#1b1f28 25%,transparent 25%),
+      linear-gradient(-45deg,#1b1f28 25%,transparent 25%),
+      linear-gradient(45deg,transparent 75%,#1b1f28 75%),
+      linear-gradient(-45deg,transparent 75%,#1b1f28 75%);
+    background-size:16px 16px;
+    background-position:0 0,0 8px,8px -8px,-8px 0}
+  .shot.dark{background:#05060a}
+  .shot.arena{background:linear-gradient(180deg,#1a2338,#0b1018)}
+  .shot img{max-width:100%;max-height:100%;object-fit:contain}
+  .nm{font-weight:700;font-size:15px}
+  .meta{font:11px/1.6 ui-monospace,Menlo,monospace;color:var(--dim)}
+  .tag{display:inline-block;font:10px/1 ui-monospace,Menlo,monospace;letter-spacing:.08em;
+       padding:4px 7px;border-radius:99px;border:1px solid var(--line);color:var(--dim)}
+  .tag.ok{color:var(--ok);border-color:var(--ok)}
+  .tag.bad{color:var(--bad);border-color:var(--bad)}
+  .missing{grid-column:1/-1;background:#1a1114;border:1px solid var(--bad);
+           border-radius:11px;padding:16px}
+  .missing h3{color:var(--bad);font-size:14px;margin-bottom:7px;letter-spacing:.06em}
+  .missing p{color:var(--dim);font-size:13px}
+  a.back{color:var(--dim);font:11px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;
+         text-decoration:none;text-transform:uppercase;border:1px solid var(--line);
+         padding:8px 12px;border-radius:6px}
+  a.back:hover{color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>BOT <em>BEEF</em> — SPRITES</h1>
+  <a class="back" href="/arena">arena ▶</a>
+  <a class="back" href="/">data view</a>
+</header>
+<div class="sub" id="sub">loading…</div>
+
+<div class="tools">
+  <button class="on" data-bg="checks">Checkerboard</button>
+  <button data-bg="dark">Arena black</button>
+  <button data-bg="arena">Stage gradient</button>
+  <button id="sortSize">Sort by size</button>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+let SPRITES = [], ROSTER = {}, bySize = false;
+
+async function boot(){
+  const [sprites, table] = await Promise.all([
+    fetch('/bots/sprites.json').then(r => r.json()),
+    fetch('/api/table').then(r => r.json()).catch(() => ({rows: []}))
+  ]);
+  SPRITES = sprites;
+  const bots = await fetch('/api/bots').then(r => r.json());
+  for (const b of bots.bots) ROSTER[b.slug] = b;
+
+  const scored = new Set(table.rows.map(r => r.slug));
+  const withSprite = new Set(SPRITES.map(s => s.slug));
+  const missing = table.rows.filter(r => !withSprite.has(r.slug)).map(r => r.name);
+
+  $('#sub').innerHTML =
+    `<b>${SPRITES.length}</b> sprites on disk · ` +
+    `<b>${SPRITES.filter(s => scored.has(s.slug)).length}</b> also have a score row · ` +
+    `all cut out with a real alpha channel`;
+
+  render(missing);
+}
+
+function render(missing){
+  const list = [...SPRITES];
+  if (bySize) list.sort((a, b) => (b.w * b.h) - (a.w * a.h));
+  else list.sort((a, b) => a.slug.localeCompare(b.slug));
+
+  const bg = document.querySelector('[data-bg].on')?.dataset.bg || 'checks';
+
+  let html = list.map(s => {
+    const bot = ROSTER[s.slug] || {};
+    const small = s.w < 380;
+    return `
+      <div class="card">
+        <div class="shot ${bg}"><img src="/bots/${s.slug}.png" alt="${s.slug}" loading="lazy"></div>
+        <div class="nm">${bot.name || s.slug}</div>
+        <div class="meta">${s.w}×${s.h} · ${s.kb} KB</div>
+        <div>
+          <span class="tag ${small ? 'bad' : 'ok'}">${small ? 'low-res' : 'sharp'}</span>
+          <span class="tag ok">alpha ${s.alpha_min}–${s.alpha_max}</span>
+        </div>
+      </div>`;
+  }).join('');
+
+  if (missing && missing.length){
+    html += `<div class="missing">
+      <h3>NO SPRITE (${missing.length})</h3>
+      <p>${missing.join(', ')} — these bots have a score row but no usable photo,
+      so the arena falls back to a lit silhouette. Bite Force is here on purpose:
+      its battlebots.com page carries no image that actually names the bot, only
+      team shots and an unrelated robot, so the scraper now refuses it rather than
+      putting the wrong machine on stage.</p></div>`;
+  }
+  $('#grid').innerHTML = html;
+}
+
+document.querySelectorAll('[data-bg]').forEach(b => b.onclick = () => {
+  document.querySelectorAll('[data-bg]').forEach(x => x.classList.remove('on'));
+  b.classList.add('on');
+  boot();
+});
+$('#sortSize').onclick = e => { bySize = !bySize; e.target.classList.toggle('on', bySize); boot(); };
+boot();
+</script>
+</body>
+</html>
