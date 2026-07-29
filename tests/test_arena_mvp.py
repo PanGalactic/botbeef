@@ -1,3 +1,4 @@
+import json
 import re
 import unittest
 from pathlib import Path
@@ -41,11 +42,15 @@ class ArenaMVPTests(unittest.TestCase):
     def test_modes_are_two_controllers_on_one_shared_app(self):
         gateway_status, gateway_html = self.get_text("/")
         rap_status, rap_html = self.get_text("/rap")
+        data_status, data_html = self.get_text("/rap/data")
+        stage_status, stage_html = self.get_text("/stage")
         fight_status, fight_html = self.get_text("/fight")
         legacy_status, legacy_html = self.get_text("/arena")
 
         self.assertEqual(gateway_status, 200)
         self.assertEqual(rap_status, 200)
+        self.assertEqual(data_status, 200)
+        self.assertEqual(stage_status, 200)
         self.assertEqual(fight_status, 200)
         self.assertEqual(legacy_status, 200)
 
@@ -53,28 +58,46 @@ class ArenaMVPTests(unittest.TestCase):
         self.assertIn('href="/fight"', gateway_html)
         self.assertIn('href="/fight"', rap_html)
         self.assertIn('href="/rap"', fight_html)
-        self.assertIn("fetch('/api/table')", rap_html)
-        self.assertIn("fetch('/api/battles')", rap_html)
-        self.assertIn("/api/battle/", rap_html)
+        self.assertIn('src="/js/rap-arena.js"', rap_html)
+        self.assertIn("fetch('/api/table')", data_html)
+        self.assertIn("fetch('/api/battles')", data_html)
+        self.assertIn("/api/battle/", data_html)
         self.assertNotIn("CombatEngine", rap_html)
         self.assertIn("new CombatEngine", fight_html)
+        self.assertEqual(rap_html, stage_html)
         self.assertEqual(fight_html, legacy_html)
 
-        fight_rules = {
+        mode_rules = {
             rule.rule: rule.endpoint
             for rule in app.url_map.iter_rules()
-            if rule.rule in {"/fight", "/arena"}
+            if rule.rule in {"/rap", "/stage", "/rap/data", "/data", "/fight", "/arena"}
         }
         self.assertEqual(
-            fight_rules,
-            {"/fight": "fight_mode", "/arena": "fight_mode"},
+            mode_rules,
+            {
+                "/rap": "rap_mode",
+                "/stage": "rap_mode",
+                "/rap/data": "rap_data",
+                "/data": "rap_data",
+                "/fight": "fight_mode",
+                "/arena": "fight_mode",
+            },
         )
         self.assertIn("fight_mode", app.view_functions)
 
     def test_fight_roster_uses_shared_canonical_robot_identities(self):
         roster_source = (self.static_root / "js" / "roster.js").read_text(encoding="utf-8")
-        canonical_ids = set(re.findall(r'^    id: "([^"]+)",$', roster_source, re.MULTILINE))
+        registry = json.loads(
+            (self.static_root / "data" / "robot-identities.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        combat_identities = {
+            robot["id"]: robot for robot in registry["robots"] if robot.get("combat")
+        }
+        canonical_ids = set(combat_identities)
         self.assertEqual(len(canonical_ids), 6)
+        self.assertIn("loadIdentityRegistry", roster_source)
 
         bots_status, bots_payload = self.get_json("/api/bots")
         table_status, table_payload = self.get_json("/api/table")
@@ -89,8 +112,9 @@ class ArenaMVPTests(unittest.TestCase):
 
         for slug in canonical_ids:
             with self.subTest(slug=slug):
-                self.assertIn(f'image: "/bots/{slug}.png"', roster_source)
-                response = self.client.get(f"/bots/{slug}.png")
+                image = combat_identities[slug]["assets"]["standard"]
+                self.assertEqual(image, f"/bots/{slug}.png")
+                response = self.client.get(image)
                 try:
                     self.assertEqual(response.status_code, 200)
                 finally:
@@ -132,7 +156,9 @@ class ArenaMVPTests(unittest.TestCase):
     def test_game_assets_are_served_locally(self):
         assets = [
             "/css/mode-switcher.css",
+            "/css/rap-arena.css",
             "/js/combat-engine.js",
+            "/js/rap-arena.js",
             "/js/roster.js",
             "/js/fighter-select.js",
             "/css/arena-fighter.css",
@@ -166,6 +192,18 @@ class ArenaMVPTests(unittest.TestCase):
         self.assertEqual(status, 200)
         self.assertTrue(payload["ok"])
         self.assertEqual(payload["voice"]["availability"], "not-probed")
+
+    def test_catalog_api_exposes_capabilities_and_drift(self):
+        status, payload = self.get_json("/api/catalog")
+        self.assertEqual(status, 200)
+        self.assertIn("robots", payload)
+        self.assertIn("audit", payload)
+        self.assertTrue(payload["robots"]["cobalt"]["capabilities"]["is_rap_arena_ready"])
+        self.assertTrue(payload["robots"]["bloodsport"]["capabilities"]["has_any_sprite"])
+        self.assertTrue(
+            payload["robots"]["bloodsport"]["capabilities"]["is_rap_arena_ready"]
+        )
+        self.assertEqual(payload["audit"]["counts"]["cached_battles"], 16)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#05060a">
+  <title>BOT BEEF — Rap Arena</title>
+  <link rel="stylesheet" href="/css/rap-arena.css">
+</head>
+<body>
+  <main id="arena" aria-label="Bot Beef rap arena">
+    <div id="scene" aria-hidden="true"></div>
+    <div id="fallback-scene" class="fallback-scene" aria-label="Reduced graphics rap arena" hidden>
+      <img id="fallback-a" class="fallback-fighter fallback-a" alt="">
+      <div class="fallback-versus" aria-hidden="true">VS</div>
+      <img id="fallback-b" class="fallback-fighter fallback-b" alt="">
+    </div>
+    <p id="graphics-notice" class="graphics-notice" role="status" hidden></p>
+
+    <section id="ui" aria-label="Battle status">
+      <div class="hud">
+        <div class="side side-a">
+          <div class="name" id="name-a">—</div>
+          <div class="meter" aria-hidden="true"><i id="hype-a"></i></div>
+          <div class="legend">Fan hype</div>
+          <div class="meter meter-small" aria-hidden="true"><i id="performance-a"></i></div>
+          <div class="legend">Record</div>
+        </div>
+        <div class="mid">
+          <div class="round" id="round">ROUND 1</div>
+          <div class="versus">VS</div>
+        </div>
+        <div class="side side-b">
+          <div class="name" id="name-b">—</div>
+          <div class="meter" aria-hidden="true"><i id="hype-b"></i></div>
+          <div class="legend">Fan hype</div>
+          <div class="meter meter-small" aria-hidden="true"><i id="performance-b"></i></div>
+          <div class="legend">Record</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="subtitle" id="subtitle" aria-live="polite" aria-atomic="true">
+          <div class="speaker" id="speaker"></div>
+          <div class="bar" id="bar"></div>
+          <div class="citation" id="citation"></div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="arena-nav" aria-label="Mode navigation">
+      <a href="/">Modes</a>
+      <a href="/rap/data">View the data</a>
+      <a href="/fight">Fight mode</a>
+      <button id="graphics-toggle" type="button" aria-pressed="false">Use reduced graphics</button>
+    </nav>
+
+    <section id="splash" aria-labelledby="arena-title">
+      <p class="eyebrow">Data-grounded robot bars</p>
+      <h1 id="arena-title">BOT <em>BEEF</em></h1>
+      <form id="matchup-form">
+        <div class="picker">
+          <label>
+            <span>First robot</span>
+            <select id="select-a" required aria-describedby="availability"></select>
+          </label>
+          <b aria-hidden="true">VS</b>
+          <label>
+            <span>Second robot</span>
+            <select id="select-b" required aria-describedby="availability"></select>
+          </label>
+        </div>
+        <section id="matchup-preview" class="matchup-preview" aria-labelledby="preview-heading" aria-live="polite" aria-busy="true">
+          <div class="preview-topline">
+            <h2 id="preview-heading">Preparing matchup…</h2>
+            <span id="preview-audio" class="preview-badge">Checking audio</span>
+          </div>
+          <dl>
+            <div>
+              <dt>Beat</dt>
+              <dd id="preview-beat">—</dd>
+            </div>
+            <div>
+              <dt>Hype vs record</dt>
+              <dd id="preview-score">—</dd>
+            </div>
+          </dl>
+          <p id="preview-fact" class="preview-fact">Loading a verified rivalry fact…</p>
+          <a id="preview-source" class="preview-source" target="_blank" rel="noopener noreferrer" hidden>View fact source</a>
+        </section>
+        <div class="actions">
+          <button class="go" id="start" type="submit" disabled>START RAP BATTLE</button>
+          <button class="secondary" id="replay" type="button" hidden>REPLAY</button>
+        </div>
+      </form>
+      <p class="status" id="availability" role="status">Loading battle roster…</p>
+    </section>
+  </main>
+
+  <audio id="voice" preload="metadata"></audio>
+  <audio id="beat" preload="metadata" loop></audio>
+  <script type="module" src="/js/rap-arena.js"></script>
+</body>
+</html>

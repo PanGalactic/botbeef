@@ -16,6 +16,14 @@
     "alpha_max": 255
   },
   {
+    "slug": "bloodsport",
+    "w": 900,
+    "h": 754,
+    "kb": 586,
+    "alpha_min": 0,
+    "alpha_max": 255
+  },
+  {
     "slug": "cobalt",
     "w": 443,
     "h": 319,

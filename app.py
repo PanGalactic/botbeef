@@ -9,7 +9,7 @@ import os
 
 from flask import Flask, abort, jsonify, request, send_from_directory
 
-from core import facts, rap, score, store, voice
+from core import catalog, facts, rap, score, store, voice
 
 app = Flask(__name__, static_folder="static", static_url_path="")
 
@@ -22,9 +22,17 @@ def index():
     return send_from_directory("static", "modes.html")
 
 
+@app.route("/stage")
 @app.route("/rap")
 def rap_mode():
-    """Data-grounded, voiced rap battles with a citation on every bar."""
+    """The restored, data-grounded rap performance arena."""
+    return send_from_directory("static", "rap-arena.html")
+
+
+@app.route("/data")
+@app.route("/rap/data")
+def rap_data():
+    """Evidence and score view retained separately from the performance."""
     return send_from_directory("static", "index.html")
 
 
@@ -61,6 +69,12 @@ def table():
 @app.route("/api/bots")
 def bots():
     return jsonify({"bots": store.bots()})
+
+
+@app.route("/api/catalog")
+def robot_catalog():
+    """Read-only cross-source robot capabilities and drift diagnostics."""
+    return jsonify(catalog.catalog_with_audit())
 
 
 @app.route("/api/battles")

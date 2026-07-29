@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "robots": [
+    {"id":"bite-force","name":"Bite Force","weapon":"vertical_spinner","source_url":"https://battlebots.com/robot/bite-force/","assets":{}},
+    {"id":"black-dragon","name":"Black Dragon","weapon":"drum","source_url":"https://battlebots.com/robot/black-dragon-wcvii/","assets":{"standard":"/bots/black-dragon.png","tekken":"/bots_tekken/black-dragon.png"}},
+    {"id":"blip","name":"Blip","weapon":"flipper","source_url":"https://battlebots.com/robot/blip-wcvii/","assets":{"standard":"/bots/blip.png","tekken":"/bots_tekken/blip.png"}},
+    {"id":"bloodsport","name":"Bloodsport","weapon":"horizontal_spinner","source_url":"https://battlebots.com/robot/bloodsport-wcvii/","assets":{"standard":"/bots/bloodsport.png"}},
+    {"id":"cobalt","name":"Cobalt","weapon":"vertical_spinner","source_url":"https://battlebots.com/robot/cobalt-wcvii/","assets":{"standard":"/bots/cobalt.png","tekken":"/bots_tekken/cobalt.png"},"aliases":["co balt","co-balt","cobalt-wcvii","cobalt-2021","cobalt-2019"],"combat":true,"combat_weapon_type":"vertical disc spinner"},
+    {"id":"copperhead","name":"Copperhead","weapon":"drum","source_url":"https://battlebots.com/robot/copperhead-wcvii/","assets":{"standard":"/bots/copperhead.png","tekken":"/bots_tekken/copperhead.png"}},
+    {"id":"duck","name":"DUCK!","weapon":null,"source_url":"https://battlebots.com/robot/duck-2021/","assets":{"standard":"/bots/duck.png","tekken":"/bots_tekken/duck.png"}},
+    {"id":"end-game","name":"End Game","weapon":"vertical_spinner","source_url":"https://battlebots.com/robot/end-game-wcvii/","assets":{"standard":"/bots/end-game.png","tekken":"/bots_tekken/end-game.png"}},
+    {"id":"gigabyte","name":"Gigabyte","weapon":"horizontal_spinner","source_url":"https://battlebots.com/robot/gigabyte-wcvii/","assets":{"standard":"/bots/gigabyte.png","tekken":"/bots_tekken/gigabyte.png"}},
+    {"id":"huge","name":"HUGE","weapon":"vertical_spinner","source_url":"https://battlebots.com/robot/huge-wcvii/","assets":{"standard":"/bots/huge.png","tekken":"/bots_tekken/huge.png"},"aliases":["h.u.g.e.","h u g e","huge-wcvii","huge-2021"],"combat":true,"combat_weapon_type":"overhead vertical bar spinner"},
+    {"id":"hydra","name":"HYDRA","weapon":"flipper","source_url":"https://battlebots.com/robot/hydra-wcvii/","assets":{"standard":"/bots/hydra.png","tekken":"/bots_tekken/hydra.png"}},
+    {"id":"hypershock","name":"HyperShock","weapon":"horizontal_spinner","source_url":"https://battlebots.com/robot/hypershock-wcvii/","assets":{"standard":"/bots/hypershock.png","tekken":"/bots_tekken/hypershock.png"},"aliases":["hyper shock","hyper-shock","hypershock-wcvii","hypershock-2021"],"combat":true,"combat_weapon_type":"vertical eggbeater spinner"},
+    {"id":"jackpot","name":"JackPot","weapon":null,"source_url":null,"assets":{}},
+    {"id":"lock-jaw","name":"Lock-Jaw","weapon":"vertical_spinner","source_url":"https://battlebots.com/robot/lock-jaw-wcvii/","assets":{"standard":"/bots/lock-jaw.png","tekken":"/bots_tekken/lock-jaw.png"}},
+    {"id":"mad-catter","name":"MadCatter","weapon":null,"source_url":null,"assets":{}},
+    {"id":"malice","name":"Malice","weapon":"horizontal_spinner","source_url":"https://battlebots.com/robot/malice-wcvii/","assets":{"standard":"/bots/malice.png","tekken":"/bots_tekken/malice.png"}},
+    {"id":"minotaur","name":"Minotaur","weapon":"drum","source_url":"https://battlebots.com/robot/minotaur-wcvii/","assets":{"standard":"/bots/minotaur.png","tekken":"/bots_tekken/minotaur.png"},"aliases":["mino taur","mino-taur","minotaur-wcvii","minotaur-2021"],"combat":true,"combat_weapon_type":"high-energy drum spinner"},
+    {"id":"ribbot","name":"Ribbot","weapon":"vertical_spinner","source_url":"https://battlebots.com/robot/ribbot-wcvii/","assets":{"standard":"/bots/ribbot.png","tekken":"/bots_tekken/ribbot.png"}},
+    {"id":"riptide","name":"Riptide","weapon":"vertical_spinner","source_url":"https://battlebots.com/robot/riptide-wcvii/","assets":{"standard":"/bots/riptide.png","tekken":"/bots_tekken/riptide.png"}},
+    {"id":"rotator","name":"ROTATOR","weapon":"horizontal_spinner","source_url":"https://battlebots.com/robot/rotator-wcvii/","assets":{"standard":"/bots/rotator.png","tekken":"/bots_tekken/rotator.png"}},
+    {"id":"sawblaze","name":"SawBlaze","weapon":"hammer","source_url":"https://battlebots.com/robot/sawblaze-wcvii/","assets":{"standard":"/bots/sawblaze.png","tekken":"/bots_tekken/sawblaze.png"}},
+    {"id":"shatter","name":"Shatter!","weapon":"hammer","source_url":"https://battlebots.com/robot/shatter-wcvii/","assets":{"standard":"/bots/shatter.png","tekken":"/bots_tekken/shatter.png"}},
+    {"id":"skorpios","name":"Skorpios","weapon":"hammer","source_url":"https://battlebots.com/robot/skorpios-wcvii/","assets":{"standard":"/bots/skorpios.png","tekken":"/bots_tekken/skorpios.png"}},
+    {"id":"tombstone","name":"Tombstone","weapon":"horizontal_spinner","source_url":"https://battlebots.com/robot/tombstone-2021/","assets":{"standard":"/bots/tombstone.png","tekken":"/bots_tekken/tombstone.png"},"aliases":["tomb stone","tomb-stone","tombstone-wcvii","tombstone-2021"],"combat":true,"combat_weapon_type":"full-width horizontal bar spinner"},
+    {"id":"valkyrie","name":"Valkyrie","weapon":"horizontal_spinner","source_url":"https://battlebots.com/robot/valkyrie-wcvii/","assets":{"standard":"/bots/valkyrie.png","tekken":"/bots_tekken/valkyrie.png"}},
+    {"id":"whiplash","name":"Whiplash","weapon":"vertical_spinner","source_url":"https://battlebots.com/robot/whiplash-wcvii/","assets":{"standard":"/bots/whiplash.png","tekken":"/bots_tekken/whiplash.png"}},
+    {"id":"witch-doctor","name":"Witch Doctor","weapon":"vertical_spinner","source_url":"https://battlebots.com/robot/witch-doctor-wcvii/","assets":{"standard":"/bots/witch-doctor.png","tekken":"/bots_tekken/witch-doctor.png"},"aliases":["witchdoctor","witch doctor","witch-doctor-wcvii","witch-doctor-2021"],"combat":true,"combat_weapon_type":"dual vertical disc spinner"}
+  ]
+}
