@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BOT BEEF — Rap Battle Mode</title>
+<title>BOT BEEF — Rap Evidence</title>
 <link rel="stylesheet" href="/css/mode-switcher.css">
 <style>
   :root{
@@ -98,7 +98,8 @@
   <span class="tag" id="prov">loading…</span>
   <div class="spacer"></div>
   <nav class="mode-nav mode-nav--header" aria-label="Bot Beef modes">
-    <a href="/rap" aria-current="page">Rap</a>
+    <a href="/rap">Arena</a>
+    <a href="/rap/data" aria-current="page">Data</a>
     <a href="/fight">Fight</a>
   </nav>
   <select id="beatSelect" aria-label="Rap beat">
@@ -131,11 +132,10 @@
 import {
   RapAudioController,
   selectBeatForMatchup,
-  selectCachedMatchup,
 } from "/js/rap-audio.js";
 
 const $ = s => document.querySelector(s);
-let TABLE = null, BATTLE = null, BEATS = [], PLAYABLE = [];
+let TABLE = null, BATTLE = null, BEATS = [], PLAYABLE = [], NAMES = new Map();
 
 const rapAudio = new RapAudioController({
   voiceElement: $('#au'),
@@ -158,14 +158,54 @@ const rapAudio = new RapAudioController({
 
 const fmt = n => (n > 0 ? '+' : '') + n.toFixed(1);
 
+function isPlayablePair(a, b){
+  return PLAYABLE.some(pair =>
+    (pair.a === a && pair.b === b) || (pair.a === b && pair.b === a)
+  );
+}
+
+function playablePartners(slug){
+  const partners = new Set();
+  for (const pair of PLAYABLE) {
+    if (pair.a === slug) partners.add(pair.b);
+    if (pair.b === slug) partners.add(pair.a);
+  }
+  return partners;
+}
+
+function optionMarkup(row){
+  return `<option value="${esc(row.slug)}">${esc(canonicalName(row.slug, row.name))}</option>`;
+}
+
+function canonicalName(slug, fallback = ''){
+  return NAMES.get(slug) || fallback || String(slug || '').replaceAll('-', ' ');
+}
+
+function syncOpponentOptions(preferred = ''){
+  const partners = playablePartners($('#selA').value);
+  const rows = TABLE.rows.filter(row => partners.has(row.slug));
+  $('#selB').innerHTML = rows.map(optionMarkup).join('');
+  $('#selB').disabled = rows.length === 0;
+  if (preferred && partners.has(preferred)) $('#selB').value = preferred;
+  $('#play').disabled = rows.length === 0;
+}
+
 async function boot(){
-  const [t, cached, beatData] = await Promise.all([
+  const [t, cached, beatData, identityData] = await Promise.all([
     fetch('/api/table').then(r => r.json()),
     fetch('/api/battles').then(r => r.json()),
-    fetch('/beats/beats.json').then(r => r.ok ? r.json() : { beats: [] }).catch(() => ({ beats: [] }))
+    fetch('/beats/beats.json').then(r => r.ok ? r.json() : { beats: [] }).catch(() => ({ beats: [] })),
+    fetch('/data/robot-identities.json')
+      .then(r => r.ok ? r.json() : { robots: [] })
+      .catch(() => ({ robots: [] }))
   ]);
   TABLE = t;
   BEATS = Array.isArray(beatData.beats) ? beatData.beats : [];
+  NAMES = new Map(
+    (Array.isArray(identityData.robots) ? identityData.robots : [])
+      .filter(robot => typeof robot?.id === 'string' && typeof robot?.name === 'string')
+      .map(robot => [robot.id, robot.name])
+  );
   $('#beatSelect').innerHTML = '<option value="auto">Auto · matchup theme</option>' +
     BEATS.map(beat =>
       `<option value="${esc(beat.slug)}">${esc(beat.style)} · ${beat.bpm} BPM</option>`
@@ -182,18 +222,31 @@ async function boot(){
   }
 
   const rows = t.rows;
-  for (const sel of [$('#selA'), $('#selB')]) {
-    sel.innerHTML = rows.map(r => `<option value="${r.slug}">${r.name}</option>`).join('');
-  }
   // Default to a matchup that has a battle on disk AND whose bots are both
   // still in the roster. Those two sets drift apart every time the data is
   // re-ingested — a cached battle for a bot that has since dropped out
   // selects nothing, and the demo dies on the first click.
   const slugs = new Set(rows.map(r => r.slug));
-  PLAYABLE = (cached.battles || []).filter(b => slugs.has(b.a) && slugs.has(b.b));
-  const first = selectCachedMatchup(rows, PLAYABLE);
-  $('#selA').value = first.a;
-  $('#selB').value = first.b;
+  PLAYABLE = (cached.battles || []).filter(
+    b => b.playable === true && slugs.has(b.a) && slugs.has(b.b)
+  );
+  const readySlugs = new Set(PLAYABLE.flatMap(pair => [pair.a, pair.b]));
+  $('#selA').innerHTML = rows
+    .filter(row => readySlugs.has(row.slug))
+    .map(optionMarkup)
+    .join('');
+  $('#selA').disabled = PLAYABLE.length === 0;
+  if (PLAYABLE.length) {
+    const first = PLAYABLE[0];
+    $('#selA').value = first.a;
+    syncOpponentOptions(first.b);
+  } else {
+    $('#selB').innerHTML = '';
+    $('#selB').disabled = true;
+    $('#play').disabled = true;
+    $('#bars').innerHTML = `<div class="empty"><strong>No verified rap battles are ready.</strong><br><br>
+      Cached drafts stay hidden until their citations, provenance, and audio pass validation.</div>`;
+  }
 
   $('#chartSub').innerHTML =
     `<b>${rows.length}</b> bots · fitted line r=<b>${t.fit.r}</b> · ` +
@@ -207,7 +260,11 @@ async function boot(){
       if (ready.has(opt.value)) opt.textContent = '● ' + opt.textContent;
 
   draw();
-  $('#selA').onchange = $('#selB').onchange = draw;
+  $('#selA').onchange = () => {
+    syncOpponentOptions();
+    draw();
+  };
+  $('#selB').onchange = draw;
 }
 
 function selectedBeat(a, b){
@@ -254,7 +311,7 @@ function draw(){
     s += `<circle class="dot ${hi}" cx="${px(r.performance)}" cy="${py(r.hype)}" r="${hi ? 9 : 4.5}"/>`;
     if (hi || named.has(r.slug)){
       s += `<text class="lbl ${hi ? 'hi ' + hi : ''}" x="${px(r.performance) + (hi ? 14 : 8)}"
-                  y="${py(r.hype) + 4}">${r.name} ${fmt(r.residual)}</text>`;
+                  y="${py(r.hype) + 4}">${esc(canonicalName(r.slug, r.name))} ${fmt(r.residual)}</text>`;
     }
   }
 
@@ -278,6 +335,11 @@ async function playBattle(){
     $('#bars').innerHTML = `<div class="empty">Pick two <em>different</em> bots.</div>`;
     return;
   }
+  if (!isPlayablePair(a, b)){
+    $('#bars').innerHTML = `<div class="empty">That matchup is not verified for playback.
+      Choose one of the available opponents.</div>`;
+    return;
+  }
   rapAudio.stop();
   $('#play').disabled = true;
   $('#bars').innerHTML = '<div class="empty">loading…</div>';
@@ -297,9 +359,11 @@ async function playBattle(){
   BATTLE = d;
   const beat = selectedBeat(a, b);
   const ra = TABLE.rows.find(r => r.slug === a), rb = TABLE.rows.find(r => r.slug === b);
+  const nameA = canonicalName(a, d.names?.[a]);
+  const nameB = canonicalName(b, d.names?.[b]);
   $('#battleSub').innerHTML =
-    `<b>${d.names[a]}</b> ${ra ? fmt(ra.residual) : ''} hype residual · ` +
-    `<b>${d.names[b]}</b> ${rb ? fmt(rb.residual) : ''} · ` +
+    `<b>${esc(nameA)}</b> ${ra ? fmt(ra.residual) : ''} hype residual · ` +
+    `<b>${esc(nameB)}</b> ${rb ? fmt(rb.residual) : ''} · ` +
     `<b>${d.bars.length}</b> bars, <b>${d.bars.length}</b> sourced` +
     (d.rejected.length ? ` · <span style="color:var(--warn)">${d.rejected.length} rejected as unsourced</span>` : '');
 
@@ -311,7 +375,7 @@ async function playBattle(){
 
   $('#bars').innerHTML = d.bars.map((x, i) => `
     <div class="bar ${x.bot === a ? 'a' : 'b'}" id="bar${i}">
-      <div class="who">${d.names[x.bot]}</div>
+      <div class="who">${esc(canonicalName(x.bot, d.names?.[x.bot]))}</div>
       <div class="txt">${esc(x.text)}</div>
       <div class="cite"><b>${x.fact_id}</b> ${esc(x.fact)}</div>
     </div>`).join('');

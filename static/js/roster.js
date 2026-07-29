@@ -1,3 +1,8 @@
+import {
+  joinCombatProfiles,
+  loadIdentityRegistry,
+} from "./identity-registry.js";
+
 /**
  * Canonical fighter data for the six-robot gameplay roster.
  *
@@ -19,18 +24,9 @@ const deepFreeze = (value) => {
   return value;
 };
 
-const roster = [
+const combatProfiles = [
   {
     id: "witch-doctor",
-    name: "Witch Doctor",
-    aliases: [
-      "witchdoctor",
-      "witch doctor",
-      "witch-doctor-wcvii",
-      "witch-doctor-2021",
-    ],
-    image: "/bots/witch-doctor.png",
-    weaponType: "dual vertical disc spinner",
     stats: { speed: 8, power: 8, armour: 6, reach: 6, handling: 8 },
     palette: {
       primary: "#5a247d",
@@ -105,15 +101,6 @@ const roster = [
   },
   {
     id: "tombstone",
-    name: "Tombstone",
-    aliases: [
-      "tomb stone",
-      "tomb-stone",
-      "tombstone-wcvii",
-      "tombstone-2021",
-    ],
-    image: "/bots/tombstone.png",
-    weaponType: "full-width horizontal bar spinner",
     stats: { speed: 5, power: 10, armour: 6, reach: 8, handling: 4 },
     palette: {
       primary: "#b80f1f",
@@ -188,15 +175,6 @@ const roster = [
   },
   {
     id: "hypershock",
-    name: "HyperShock",
-    aliases: [
-      "hyper shock",
-      "hyper-shock",
-      "hypershock-wcvii",
-      "hypershock-2021",
-    ],
-    image: "/bots/hypershock.png",
-    weaponType: "vertical eggbeater spinner",
     stats: { speed: 10, power: 7, armour: 5, reach: 5, handling: 9 },
     palette: {
       primary: "#f3df00",
@@ -271,15 +249,6 @@ const roster = [
   },
   {
     id: "minotaur",
-    name: "Minotaur",
-    aliases: [
-      "mino taur",
-      "mino-taur",
-      "minotaur-wcvii",
-      "minotaur-2021",
-    ],
-    image: "/bots/minotaur.png",
-    weaponType: "high-energy drum spinner",
     stats: { speed: 8, power: 8, armour: 8, reach: 4, handling: 7 },
     palette: {
       primary: "#d8d8d8",
@@ -354,15 +323,6 @@ const roster = [
   },
   {
     id: "huge",
-    name: "HUGE",
-    aliases: [
-      "h.u.g.e.",
-      "h u g e",
-      "huge-wcvii",
-      "huge-2021",
-    ],
-    image: "/bots/huge.png",
-    weaponType: "overhead vertical bar spinner",
     stats: { speed: 5, power: 7, armour: 6, reach: 10, handling: 6 },
     palette: {
       primary: "#ededed",
@@ -437,16 +397,6 @@ const roster = [
   },
   {
     id: "cobalt",
-    name: "Cobalt",
-    aliases: [
-      "co balt",
-      "co-balt",
-      "cobalt-wcvii",
-      "cobalt-2021",
-      "cobalt-2019",
-    ],
-    image: "/bots/cobalt.png",
-    weaponType: "vertical disc spinner",
     stats: { speed: 6, power: 9, armour: 7, reach: 6, handling: 6 },
     palette: {
       primary: "#164d94",
@@ -520,6 +470,9 @@ const roster = [
     ],
   },
 ];
+
+const identities = await loadIdentityRegistry();
+const roster = joinCombatProfiles(combatProfiles, identities);
 
 export const ROBOT_LIST = deepFreeze(roster);
 

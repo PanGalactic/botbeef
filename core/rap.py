@@ -14,6 +14,7 @@ import json
 import os
 import pathlib
 import re
+from copy import deepcopy
 
 import requests
 
@@ -21,6 +22,17 @@ from . import facts, store
 
 BATTLES = store.ROOT / "data" / "battles"
 BATTLES.mkdir(parents=True, exist_ok=True)
+AUDIO = store.ROOT / "audio"
+
+EXPECTED_BAR_COUNT = 16
+PROVENANCE_FIELDS = (
+    "fights_total",
+    "fights_real",
+    "posts_total",
+    "posts_real",
+    "fights_ingested_at",
+    "chatter_ingested_at",
+)
 
 BAR_SCHEMA = {
     "type": "object",
@@ -169,12 +181,237 @@ def cache_path(a, b):
     return BATTLES / f"{'__'.join(sorted([a, b]))}.json"
 
 
+def _audit_provenance(payload, current_provenance):
+    embedded = (payload.get("context") or {}).get("provenance")
+    if not isinstance(embedded, dict):
+        return "missing", "battle has no embedded corpus provenance"
+    if embedded.get("is_real") is not True:
+        return "placeholder", "battle was generated from placeholder or unsourced data"
+    if not isinstance(current_provenance, dict) or current_provenance.get("is_real") is not True:
+        return "unverifiable", "current local corpus is not fully sourced"
+    if any(embedded.get(key) != current_provenance.get(key) for key in PROVENANCE_FIELDS):
+        return "stale", "battle provenance does not match the current local corpus"
+    return "current", "battle matches the current fully sourced local corpus"
+
+
+def _audit_audio(a, b, bar_count, audio_dir=None):
+    audio_dir = pathlib.Path(audio_dir or AUDIO)
+    path = audio_dir / f"manifest__{'__'.join(sorted([a, b]))}.json"
+    try:
+        with open(path, encoding="utf-8") as fh:
+            manifest = json.load(fh)
+    except FileNotFoundError:
+        return {
+            "manifest": False,
+            "complete": False,
+            "clips_expected": bar_count,
+            "clips_present": 0,
+            "reason": "audio manifest is missing",
+        }
+    except (json.JSONDecodeError, OSError):
+        return {
+            "manifest": False,
+            "complete": False,
+            "clips_expected": bar_count,
+            "clips_present": 0,
+            "reason": "audio manifest is unreadable",
+        }
+
+    entries = manifest.get("bars")
+    if not isinstance(entries, list):
+        entries = []
+    by_index = {}
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        index, filename = entry.get("index"), entry.get("file")
+        if (
+            isinstance(index, int)
+            and 0 <= index < bar_count
+            and isinstance(filename, str)
+            and filename
+            and pathlib.Path(filename).name == filename
+            and (audio_dir / filename).is_file()
+        ):
+            by_index[index] = filename
+    intro = manifest.get("intro")
+    intro_present = (
+        isinstance(intro, str)
+        and bool(intro)
+        and pathlib.Path(intro).name == intro
+        and (audio_dir / intro).is_file()
+    )
+    complete = (
+        bar_count > 0
+        and len(by_index) == bar_count
+        and set(by_index) == set(range(bar_count))
+        and intro_present
+    )
+    return {
+        "manifest": True,
+        "complete": complete,
+        "clips_expected": bar_count,
+        "clips_present": len(by_index),
+        "intro_present": intro_present,
+        "reason": "complete" if complete else "manifest has missing or invalid audio files",
+    }
+
+
+def audit_cached(payload, current_provenance=None, audio_dir=None):
+    """Audit a cached battle using local data only."""
+    errors = []
+    if not isinstance(payload, dict):
+        payload = {}
+        errors.append("battle payload is not an object")
+
+    a, b = payload.get("a"), payload.get("b")
+    if not isinstance(a, str) or not a.strip():
+        errors.append("battle is missing robot a")
+    if not isinstance(b, str) or not b.strip():
+        errors.append("battle is missing robot b")
+    if isinstance(a, str) and isinstance(b, str) and a == b:
+        errors.append("battle robots must be different")
+
+    facts_list = payload.get("facts")
+    if not isinstance(facts_list, list):
+        facts_list = []
+        errors.append("battle facts are missing or malformed")
+    fact_by_id = {
+        fact.get("id"): fact
+        for fact in facts_list
+        if isinstance(fact, dict) and isinstance(fact.get("id"), str)
+    }
+
+    bars = payload.get("bars")
+    if not isinstance(bars, list):
+        bars = []
+        errors.append("battle bars are missing or malformed")
+    elif len(bars) != EXPECTED_BAR_COUNT:
+        errors.append(f"battle has {len(bars)} bars; expected {EXPECTED_BAR_COUNT}")
+
+    for index, bar in enumerate(bars):
+        if not isinstance(bar, dict):
+            errors.append(f"bar {index} is malformed")
+            continue
+        fact_id = bar.get("fact_id")
+        fact = fact_by_id.get(fact_id)
+        bar_urls = [
+            bar.get("source_url"),
+            *(bar.get("source_urls") or []),
+        ]
+        valid_bar_urls = {
+            url.strip() for url in bar_urls if store.is_http_url(url)
+        }
+        fact_urls = set()
+        if fact:
+            fact_urls = {
+                url.strip()
+                for url in [
+                    fact.get("source_url"),
+                    *(fact.get("source_urls") or []),
+                ]
+                if store.is_http_url(url)
+            }
+        if bar.get("bot") not in (a, b):
+            errors.append(f"bar {index} has an invalid speaker")
+        if not isinstance(bar.get("text"), str) or not bar["text"].strip():
+            errors.append(f"bar {index} has no text")
+        if not fact:
+            errors.append(f"bar {index} cites an unknown fact")
+        elif (
+            not valid_bar_urls
+            or not fact_urls
+            or valid_bar_urls.isdisjoint(fact_urls)
+        ):
+            errors.append(f"bar {index} has no citation backed by its fact")
+
+    current_provenance = (
+        store.provenance() if current_provenance is None else current_provenance
+    )
+    provenance_status, provenance_reason = _audit_provenance(
+        payload, current_provenance
+    )
+    audio = (
+        _audit_audio(a, b, len(bars), audio_dir)
+        if isinstance(a, str) and isinstance(b, str) and a and b
+        else {
+            "manifest": False,
+            "complete": False,
+            "clips_expected": len(bars),
+            "clips_present": 0,
+            "reason": "battle identity is invalid",
+        }
+    )
+    valid = not errors
+    ready = valid and provenance_status == "current" and audio["complete"]
+    return {
+        "valid": valid,
+        "ready": ready,
+        "playable": ready,
+        "bar_count": len(bars),
+        "provenance": {
+            "status": provenance_status,
+            "reason": provenance_reason,
+        },
+        "audio": audio,
+        "errors": errors,
+    }
+
+
+def cached_summary(payload, current_provenance=None, audio_dir=None):
+    """Return a compact API-safe description of one cached battle."""
+    audit = audit_cached(payload, current_provenance, audio_dir)
+    return {
+        "a": payload.get("a") if isinstance(payload, dict) else None,
+        "b": payload.get("b") if isinstance(payload, dict) else None,
+        "bars": audit["bar_count"],
+        "valid": audit["valid"],
+        "ready": audit["ready"],
+        "playable": audit["playable"],
+        "provenance": audit["provenance"],
+        "audio": audit["audio"],
+        "error_count": len(audit["errors"]),
+        "errors": audit["errors"][:3],
+    }
+
+
+def _cached_for_request(payload, a_slug, b_slug):
+    stored_pair = {payload.get("a"), payload.get("b")}
+    requested_pair = {a_slug, b_slug}
+    if len(requested_pair) != 2 or stored_pair != requested_pair:
+        raise ValueError("cached battle does not match the requested robots")
+    result = deepcopy(payload)
+    result["orientation"] = {
+        "requested_a": a_slug,
+        "requested_b": b_slug,
+        "a": result["a"],
+        "b": result["b"],
+        "normalized": (result["a"], result["b"]) != (a_slug, b_slug),
+    }
+    return result
+
+
 def battle(a_slug, b_slug, backend="cached", force=False):
     """Get a battle. Defaults to disk — the stage never waits on an API."""
     path = cache_path(a_slug, b_slug)
     if not force and path.exists():
-        with open(path) as fh:
-            return json.load(fh)
+        try:
+            with open(path, encoding="utf-8") as fh:
+                cached = json.load(fh)
+        except (json.JSONDecodeError, OSError) as exc:
+            raise ValueError(f"cached battle is unreadable: {path.name}") from exc
+        audit = audit_cached(cached)
+        if not audit["ready"]:
+            reasons = list(audit["errors"])
+            if audit["provenance"]["status"] != "current":
+                reasons.append(audit["provenance"]["reason"])
+            if not audit["audio"]["complete"]:
+                reasons.append(audit["audio"]["reason"])
+            suffix = f"; plus {len(reasons) - 3} more errors" if len(reasons) > 3 else ""
+            raise ValueError(
+                f"cached battle is not trusted: {'; '.join(reasons[:3])}{suffix}"
+            )
+        return _cached_for_request(cached, a_slug, b_slug)
 
     if backend == "cached":
         raise FileNotFoundError(
@@ -206,11 +443,22 @@ def battle(a_slug, b_slug, backend="cached", force=False):
 
 def list_cached():
     out = []
+    current_provenance = store.provenance()
     for p in sorted(BATTLES.glob("*.json")):
         try:
-            with open(p) as fh:
+            with open(p, encoding="utf-8") as fh:
                 d = json.load(fh)
-            out.append({"a": d["a"], "b": d["b"], "bars": len(d.get("bars", []))})
-        except (json.JSONDecodeError, KeyError):
+            summary = cached_summary(d, current_provenance)
+            if (
+                isinstance(summary["a"], str)
+                and summary["a"]
+                and isinstance(summary["b"], str)
+                and summary["b"]
+                and summary["a"] != summary["b"]
+            ):
+                out.append(summary)
+        except (json.JSONDecodeError, OSError):
+            # Preserve the historic frontend-safe contract: only entries with
+            # usable robot IDs are selectable. Direct reads still fail closed.
             continue
     return out
