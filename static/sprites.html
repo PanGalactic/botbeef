@@ -4,25 +4,76 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>BOT BEEF — sprites</title>
+<link rel="stylesheet" href="/css/tekken.css">
 <style>
-  :root{--bg:#0a0b0d;--panel:#14171f;--line:#252a35;--ink:#f2f4f8;--dim:#8b93a6;--a:#ff6b35;--ok:#2ee6a8;--bad:#ff2e4d}
+  /* Aliases onto the shared Tekken theme in css/tekken.css, which owns the values. */
+  :root{
+    --bg:var(--tk-steel-0);--panel:var(--tk-steel-1);--line:var(--tk-line);
+    --ink:var(--tk-ink);--dim:var(--tk-dim);--a:var(--tk-p1);
+    --ok:var(--tk-ok);--bad:var(--tk-danger);--mono:var(--tk-mono)
+  }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);
-       font:15px/1.5 ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif;padding:26px}
-  header{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:6px}
-  h1{font-size:24px;letter-spacing:.12em;font-weight:800}
-  h1 em{font-style:normal;color:var(--a)}
-  .sub{color:var(--dim);font-size:14px;margin-bottom:20px}
-  .tools{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
-  button{font:inherit;font-size:13px;color:var(--ink);background:var(--panel);
-         border:1px solid var(--line);border-radius:7px;padding:8px 13px;cursor:pointer}
-  button.on{background:var(--a);color:#0a0b0d;border-color:var(--a);font-weight:700}
+  body{
+    color:var(--ink);
+    font:700 15px/1.5 var(--tk-display);
+    padding:26px;min-height:100vh;
+    background:
+      linear-gradient(115deg, #ff23181a, transparent 30%),
+      linear-gradient(245deg, #1cd2ff1a, transparent 30%),
+      radial-gradient(ellipse at 50% 0%, var(--tk-steel-2) 0, #0b1016 46%, #030405 100%);
+  }
+  /* scanline pass */
+  body::after{
+    content:"";position:fixed;inset:0;z-index:99;pointer-events:none;
+    opacity:.11;mix-blend-mode:multiply;
+    background:repeating-linear-gradient(180deg,transparent 0 3px,#00000099 4px);
+  }
+  header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+  h1{
+    font-size:28px;font-style:italic;font-weight:900;letter-spacing:-.035em;
+    text-transform:uppercase;text-shadow:3px 3px 0 #050608,0 0 26px #ffffff26;
+    transform:skewX(-4deg)
+  }
+  h1 em{font-style:inherit;color:#ff4637}
+  .sub{
+    color:var(--dim);font:700 12px/1.6 var(--mono);letter-spacing:.1em;
+    text-transform:uppercase;margin-bottom:20px
+  }
+  .sub b{color:var(--tk-chrome);font-variant-numeric:tabular-nums}
+  .tools{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+  button{
+    color:var(--ink);border:1px solid var(--tk-line-hi);border-radius:0;
+    padding:10px 15px;cursor:pointer;
+    font:700 11px/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;
+    background:
+      linear-gradient(180deg,#ffffff1a,transparent 44%),
+      linear-gradient(90deg,#222b34,var(--tk-steel-1));
+    box-shadow:inset 0 0 0 2px #00000099;
+    /* sheared with clip-path so labels stay upright */
+    clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%);
+    transition:filter .15s ease,border-color .15s ease
+  }
+  button:hover{filter:brightness(1.12);border-color:var(--tk-chrome)}
+  button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  button.on{
+    border-color:var(--tk-warning);color:#05070a;
+    background:linear-gradient(180deg,#ffe37a,var(--tk-warning) 48%,#d9a800);
+    box-shadow:inset 0 0 0 2px #000,0 0 20px #ffd33d66
+  }
 
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:11px;
-        padding:12px;display:flex;flex-direction:column;gap:9px}
+  /* steel plate with the double chrome bevel, notched like a fighter card */
+  .card{
+    border:1px solid var(--tk-line-hi);border-radius:0;
+    padding:13px;display:flex;flex-direction:column;gap:9px;
+    background:
+      linear-gradient(155deg,#ffffff1f,transparent 30%),
+      linear-gradient(180deg,var(--tk-steel-2),#080b0f 76%);
+    box-shadow:inset 0 0 0 3px #0a0d11,inset 0 0 0 4px #ffffff1a,0 12px 26px #000a;
+    clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)
+  }
   .shot{height:150px;display:flex;align-items:center;justify-content:center;
-        border-radius:8px;position:relative;overflow:hidden}
+        position:relative;overflow:hidden;box-shadow:inset 0 0 0 1px #ffffff14}
   /* checkerboard proves the alpha channel is real rather than a white box */
   .shot.checks{background-image:
       linear-gradient(45deg,#1b1f28 25%,transparent 25%),
@@ -34,28 +85,47 @@
   .shot.dark{background:#05060a}
   .shot.arena{background:linear-gradient(180deg,#1a2338,#0b1018)}
   .shot img{max-width:100%;max-height:100%;object-fit:contain}
-  .nm{font-weight:700;font-size:15px}
-  .meta{font:11px/1.6 ui-monospace,Menlo,monospace;color:var(--dim)}
-  .tag{display:inline-block;font:10px/1 ui-monospace,Menlo,monospace;letter-spacing:.08em;
-       padding:4px 7px;border-radius:99px;border:1px solid var(--line);color:var(--dim)}
-  .tag.ok{color:var(--ok);border-color:var(--ok)}
-  .tag.bad{color:var(--bad);border-color:var(--bad)}
-  .missing{grid-column:1/-1;background:#1a1114;border:1px solid var(--bad);
-           border-radius:11px;padding:16px}
-  .missing h3{color:var(--bad);font-size:14px;margin-bottom:7px;letter-spacing:.06em}
-  .missing p{color:var(--dim);font-size:13px}
-  a.back{color:var(--dim);font:11px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;
-         text-decoration:none;text-transform:uppercase;border:1px solid var(--line);
-         padding:8px 12px;border-radius:6px}
-  a.back:hover{color:#fff}
+  .nm{
+    font-size:19px;font-style:italic;font-weight:900;text-transform:uppercase;
+    letter-spacing:-.02em;text-shadow:2px 2px 0 #050608
+  }
+  .meta{font:700 11px/1.6 var(--mono);color:var(--dim);letter-spacing:.08em;
+        font-variant-numeric:tabular-nums}
+  .tag{display:inline-block;font:700 10px/1 var(--mono);letter-spacing:.16em;
+       text-transform:uppercase;padding:5px 8px;border-radius:0;
+       background:#05070a99;border:1px solid currentColor;color:var(--dim)}
+  .tag.ok{color:var(--ok)}
+  .tag.bad{color:var(--bad)}
+  .missing{
+    grid-column:1/-1;border:1px solid var(--bad);border-radius:0;padding:17px;
+    background:linear-gradient(180deg,#2a1218,#12080c 78%);
+    box-shadow:inset 0 0 0 3px #0a0d11,inset 0 0 0 4px #ff516826;
+    clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)
+  }
+  .missing h3{
+    color:var(--bad);font:700 12px/1 var(--mono);margin-bottom:9px;
+    letter-spacing:.18em;text-transform:uppercase
+  }
+  .missing p{color:var(--tk-muted);font-size:14px;line-height:1.55}
+  a.back{
+    color:var(--tk-muted);font:700 10px/1 var(--mono);letter-spacing:.15em;
+    text-decoration:none;text-transform:uppercase;
+    border:1px solid var(--tk-line-hi);padding:9px 13px;border-radius:0;
+    background:linear-gradient(180deg,#ffffff1a,transparent 44%),linear-gradient(90deg,#222b34,var(--tk-steel-1));
+    box-shadow:inset 0 0 0 2px #00000099;
+    clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%);
+    transition:filter .15s ease,color .15s ease
+  }
+  a.back:hover,a.back:focus-visible{color:#fff;filter:brightness(1.12)}
 </style>
 </head>
 <body>
 
 <header>
   <h1>BOT <em>BEEF</em> — SPRITES</h1>
-  <a class="back" href="/arena">arena ▶</a>
-  <a class="back" href="/">data view</a>
+  <a class="back" href="/">modes</a>
+  <a class="back" href="/data">data view</a>
+  <a class="back" href="/fight">fight mode ▶</a>
 </header>
 <div class="sub" id="sub">loading…</div>
 

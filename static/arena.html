@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#05070a">
 <title>BOT BEEF — Robot Combat Arena</title>
+<link rel="stylesheet" href="/css/tekken.css">
 <link rel="stylesheet" href="/css/arena-fighter.css">
 <link rel="stylesheet" href="/css/mode-switcher.css">
 <style>
   *{box-sizing:border-box}
   html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#030507}
-  body{color:#fff;font-family:"Arial Narrow","Roboto Condensed","Segoe UI",sans-serif}
+  body{color:#fff;font-family:var(--tk-display)}
   #stage{position:fixed;inset:0;background:#030507}
   #stage canvas{display:block;width:100%;height:100%;touch-action:none}
   #stage-loading{position:fixed;z-index:10;inset:0;display:grid;place-items:center;
-    color:#aab8c4;background:#030507;font:700 12px/1.2 ui-monospace,monospace;
+    color:var(--tk-muted);background:#030507;font:700 12px/1.2 var(--tk-mono);
     letter-spacing:.28em;text-transform:uppercase;transition:opacity .35s}
   #stage-loading.is-ready{opacity:0;pointer-events:none}
 </style>
@@ -24,7 +25,9 @@
 <div id="stage-loading">Powering the BattleBox…</div>
 <div id="fighter-ui-root"></div>
 <nav class="mode-nav mode-nav--arena" aria-label="Bot Beef modes">
+  <a href="/">Modes</a>
   <a href="/rap">Rap</a>
+  <a href="/data">Data</a>
   <a href="/fight" aria-current="page">Fight</a>
 </nav>
 
