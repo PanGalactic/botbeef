@@ -3,15 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#07090c">
+<meta name="theme-color" content="#05070a">
 <title>BOT BEEF — Choose Your Mode</title>
+<link rel="stylesheet" href="/css/tekken.css">
 <style>
+  /* Landing page styled off the fighter-select design system in
+     css/arena-fighter.css — same steel ramp, P1-red vs P2-cyan split, chrome
+     bevels, sheared panels and skewed neon bars — so the front door and the
+     arena read as one game. Fonts are named with local fallbacks only; nothing
+     here is fetched off the network. */
+  /* Local aliases onto the shared theme in css/tekken.css — that file owns the
+     values, these keep this page's rules short. */
   :root {
-    color-scheme: dark;
-    --ink: #f5f7fa;
-    --muted: #9ba6b1;
-    --rap: #ff5b36;
-    --fight: #39c7ff;
+    --p1: var(--tk-p1);
+    --p2: var(--tk-p2);
+    --steel-2: var(--tk-steel-2);
+    --chrome: var(--tk-chrome);
+    --warning: var(--tk-warning);
+    --ink: var(--tk-ink);
+    --muted: var(--tk-muted);
+    --dim: var(--tk-dim);
+    --display: var(--tk-display);
+    --mono: var(--tk-mono);
   }
   * { box-sizing: border-box; }
   html, body { min-height: 100%; }
@@ -20,190 +33,581 @@
     display: grid;
     min-height: 100vh;
     place-items: center;
+    /* `safe` keeps the top of the lockup reachable instead of letting centred
+       overflow escape under the fixed rail on short viewports. */
+    align-content: center;
+    align-content: safe center;
     overflow-x: hidden;
+    padding-top: 34px;
     background:
-      radial-gradient(circle at 20% 20%, #81230f42, transparent 34%),
-      radial-gradient(circle at 80% 75%, #08759638, transparent 38%),
-      linear-gradient(145deg, #11161b, #030405 66%);
+      linear-gradient(115deg, #ff23181f, transparent 34%),
+      linear-gradient(245deg, #1cd2ff1f, transparent 34%),
+      radial-gradient(circle at 50% 44%, var(--steel-2) 0, #0b1016 44%, #030405 100%);
     color: var(--ink);
-    font-family: "Arial Narrow", "Roboto Condensed", "Segoe UI", sans-serif;
+    font-family: var(--display);
+    font-weight: 700;
   }
-  body::before {
+
+  /* ---------- arena ambience ---------- */
+  .fx {
     position: fixed;
+    z-index: 0;
     inset: 0;
-    background:
-      repeating-linear-gradient(90deg, transparent 0 79px, #ffffff08 80px),
-      repeating-linear-gradient(0deg, transparent 0 79px, #ffffff06 80px);
-    content: "";
+    overflow: hidden;
     pointer-events: none;
   }
-  main {
-    position: relative;
-    width: min(1120px, calc(100% - 32px));
-    padding: clamp(30px, 6vw, 76px) 0;
+  /* skewed neon light bars — P1 sweeps in from the left, P2 from the right */
+  .fx__bar {
+    position: absolute;
+    top: 15%;
+    width: 46vw;
+    height: 6px;
+    box-shadow: 0 0 20px currentColor, 0 0 55px currentColor;
   }
-  header {
-    margin-bottom: clamp(24px, 4vw, 46px);
-    text-align: center;
+  .fx__bar--p1 {
+    left: -4vw;
+    color: #ff281c;
+    background: linear-gradient(90deg, transparent, currentColor);
+    transform: skewY(-7deg);
   }
-  .eyebrow {
-    margin: 0 0 10px;
-    color: #f1bd38;
-    font: 800 11px/1 ui-monospace, monospace;
-    letter-spacing: .35em;
+  .fx__bar--p2 {
+    right: -4vw;
+    top: 74%;
+    color: #24dcff;
+    background: linear-gradient(90deg, currentColor, transparent);
+    transform: skewY(7deg);
+  }
+  /* receding floor grid */
+  .fx__floor {
+    position: absolute;
+    inset: auto 0 0;
+    height: 38%;
+    opacity: .55;
+    background:
+      linear-gradient(175deg, transparent 0 45%, #ffffff0d 45.2% 45.7%, transparent 46%),
+      repeating-linear-gradient(90deg, transparent 0 84px, #ffffff0b 85px 87px);
+    transform: perspective(260px) rotateX(47deg);
+    transform-origin: bottom;
+  }
+  .fx__hatch {
+    position: absolute;
+    inset: 0;
+    opacity: .5;
+    background: repeating-linear-gradient(135deg, transparent 0 22px, #ffffff08 23px 24px);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 44%, transparent 38%, #000 100%);
+  }
+  .fx__scan {
+    position: absolute;
+    inset: 0;
+    opacity: .13;
+    background: repeating-linear-gradient(180deg, transparent 0 3px, #00000099 4px);
+    mix-blend-mode: multiply;
+  }
+
+  /* ---------- system rail ---------- */
+  .hud {
+    position: fixed;
+    z-index: 60;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    height: 34px;
+    padding: 0 clamp(10px, 2vw, 22px);
+    border-bottom: 1px solid #53627066;
+    background: linear-gradient(180deg, #182230f2, #080b0ff2);
+    box-shadow: inset 0 1px #ffffff1a, 0 6px 20px #000a;
+    font: 700 11px/1 var(--mono);
+    letter-spacing: .16em;
     text-transform: uppercase;
   }
+  .hud__brand { color: var(--chrome); }
+  .hud__brand b { color: var(--p1); }
+  .hud__live {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--warning);
+  }
+  .hud__live i {
+    width: 7px;
+    height: 7px;
+    background: currentColor;
+    box-shadow: 0 0 10px currentColor;
+    transform: skewX(-12deg);
+    animation: blip 1.9s ease-in-out infinite;
+  }
+  .hud[data-state="offline"] .hud__live { color: var(--dim); }
+  .hud[data-state="offline"] .hud__live i { animation: none; box-shadow: none; }
+  @keyframes blip { 0%, 100% { opacity: 1 } 50% { opacity: .25 } }
+  .hud__spacer { flex: 1 }
+  .hud__stats {
+    display: flex;
+    gap: 15px;
+    overflow: hidden;
+    color: var(--dim);
+    white-space: nowrap;
+  }
+  .hud__stats b {
+    margin-left: 6px;
+    color: var(--chrome);
+    font-variant-numeric: tabular-nums;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    width: min(1180px, calc(100% - 28px));
+    padding: clamp(18px, 2.6vw, 38px) 0;
+  }
+
+  /* ---------- title lockup ---------- */
+  header {
+    margin-bottom: clamp(18px, 2.4vw, 30px);
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 10px;
+    color: var(--warning);
+    font: 700 11px/1.2 var(--mono);
+    letter-spacing: .26em;
+  }
+  .eyebrow::before, .eyebrow::after {
+    width: clamp(16px, 6vw, 62px);
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--warning));
+    content: "";
+    transform: skewY(-6deg);
+  }
+  .eyebrow::after { background: linear-gradient(90deg, var(--warning), transparent) }
+
   h1 {
     margin: 0;
-    font-size: clamp(58px, 10vw, 124px);
+    font-size: clamp(54px, 8.4vw, 108px);
     font-style: italic;
-    letter-spacing: -.07em;
-    line-height: .78;
-    text-shadow: 7px 8px #000, 0 0 45px #ffffff1c;
+    font-weight: 900;
+    letter-spacing: -.045em;
+    line-height: .84;
+    text-shadow: 5px 5px 0 #050608, 0 0 34px #ffffff33;
+    transform: skewX(-4deg);
   }
-  h1 span { color: #ff4a2d; }
-  header > p:last-child {
-    max-width: 640px;
-    margin: 22px auto 0;
+  h1 em { color: #ff4637; font-style: inherit }
+
+  /* chrome rule under the wordmark, straight off the versus plate */
+  .rule {
+    width: min(620px, 88%);
+    height: 3px;
+    margin: 15px auto 0;
+    background: linear-gradient(90deg, transparent, #758391 18%, var(--chrome) 50%, #758391 82%, transparent);
+    box-shadow: 0 1px 0 #000, 0 0 18px #dce7ef4d;
+    transform: skewX(-24deg);
+  }
+  .lede {
+    max-width: 620px;
+    margin: 15px auto 0;
     color: var(--muted);
+    font-family: var(--display);
     font-size: clamp(15px, 2vw, 19px);
+    font-weight: 700;
+    letter-spacing: .02em;
+    line-height: 1.45;
+    text-transform: none;
   }
+
+  /* ---------- versus rack ---------- */
   .modes {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(14px, 2.5vw, 28px);
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: stretch;
+    gap: 0;
   }
+  .versus {
+    z-index: 5;
+    align-self: center;
+    margin-inline: -14px;
+    padding: 10px 12px;
+    border: 2px solid #8593a0;
+    background: linear-gradient(#f2f7fa, #758391 52%, #17212a 53%);
+    box-shadow: 0 3px 0 #000, 0 0 22px #ffffff59;
+    color: #0a0c0e;
+    font-size: 26px;
+    font-style: italic;
+    font-weight: 900;
+    letter-spacing: .02em;
+    text-shadow: 0 1px #fff;
+    transform: skewX(-9deg);
+  }
+
   .mode {
     position: relative;
     display: grid;
-    min-height: 400px;
+    min-height: clamp(320px, 45vh, 408px);
     align-content: end;
     overflow: hidden;
-    padding: clamp(24px, 4vw, 42px);
-    border: 1px solid #8d99a455;
-    background: #0b0f13d9;
-    box-shadow: inset 0 1px #fff2, 0 25px 65px #000a;
+    padding: clamp(22px, 2.8vw, 34px);
+    border: 1px solid #637180;
+    background:
+      linear-gradient(155deg, #ffffff2b, transparent 32%),
+      linear-gradient(180deg, var(--steel-2), #080b0f 74%);
+    box-shadow:
+      inset 0 0 0 3px #0a0d11,
+      inset 0 0 0 4px #ffffff21,
+      0 14px 30px #000a;
     color: var(--ink);
     isolation: isolate;
     text-decoration: none;
-    clip-path: polygon(24px 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%, 0 24px);
-    transition: border-color .18s, transform .18s, filter .18s;
+    transition: transform .16s ease, filter .16s ease, border-color .16s ease, box-shadow .16s ease;
   }
+  .mode--rap {
+    --c: var(--p1);
+    clip-path: polygon(0 0, 100% 0, calc(100% - 30px) 100%, 0 100%);
+    transform: skewX(-2deg);
+  }
+  .mode--fight {
+    --c: var(--p2);
+    clip-path: polygon(30px 0, 100% 0, 100% 100%, 0 100%);
+    transform: skewX(-2deg);
+  }
+  /* content rides upright inside the sheared plate */
+  .mode > * { position: relative; transform: skewX(2deg) }
+
+  /* fighter render */
   .mode::before {
     position: absolute;
     z-index: -2;
     inset: 0;
-    background-position: 92% 28%;
+    background-position: 94% 26%;
     background-repeat: no-repeat;
-    background-size: min(72%, 430px);
+    background-size: min(82%, 448px);
     content: "";
-    filter: drop-shadow(0 18px 18px #000);
-    opacity: .8;
+    /* the hero bots are near-black castings on a near-black plate — lift them
+       off the steel rather than letting them read as a smudge */
+    filter: drop-shadow(0 16px 20px #000) saturate(1.14) contrast(1.06) brightness(1.24);
+    opacity: 1;
     transform: scale(1.02);
-    transition: transform .25s;
+    transition: transform .28s ease, opacity .28s ease;
   }
+  /* accent wash + hazard hatch + legibility scrim */
   .mode::after {
     position: absolute;
     z-index: -1;
     inset: 0;
-    background: linear-gradient(0deg, #07090d 12%, #07090df0 37%, transparent 78%);
     content: "";
+    background:
+      linear-gradient(110deg, color-mix(in srgb, var(--c), transparent 78%), transparent 34%),
+      repeating-linear-gradient(135deg, transparent 0 16px, #ffffff0f 17px 18px),
+      linear-gradient(0deg, #06080c 12%, #06080cf2 40%, transparent 82%);
   }
-  .mode--rap::before { background-image: url("/bots/tombstone.png"); }
-  .mode--fight::before { background-image: url("/bots/witch-doctor.png"); }
-  .mode:hover, .mode:focus-visible {
-    border-color: #fff;
-    filter: brightness(1.08);
-    outline: none;
-    transform: translateY(-4px);
-  }
-  .mode:hover::before, .mode:focus-visible::before { transform: scale(1.08); }
-  .mode__number {
+  .mode--rap::before   { background-image: url("/bots_tekken/tombstone.png") }
+  .mode--fight::before { background-image: url("/bots_tekken/witch-doctor.png") }
+
+  /* HUD corner brackets */
+  .frame {
     position: absolute;
-    top: 24px;
-    left: 28px;
-    color: #ffffff55;
-    font: 800 13px/1 ui-monospace, monospace;
+    z-index: 3;
+    inset: 14px;
+    pointer-events: none;
+    opacity: .55;
+    background:
+      linear-gradient(var(--c), var(--c)) 0 0 / 16px 2px no-repeat,
+      linear-gradient(var(--c), var(--c)) 0 0 / 2px 16px no-repeat,
+      linear-gradient(var(--c), var(--c)) 100% 0 / 16px 2px no-repeat,
+      linear-gradient(var(--c), var(--c)) 100% 0 / 2px 16px no-repeat,
+      linear-gradient(var(--c), var(--c)) 0 100% / 16px 2px no-repeat,
+      linear-gradient(var(--c), var(--c)) 0 100% / 2px 16px no-repeat,
+      linear-gradient(var(--c), var(--c)) 100% 100% / 16px 2px no-repeat,
+      linear-gradient(var(--c), var(--c)) 100% 100% / 2px 16px no-repeat;
+    transition: opacity .16s ease, inset .16s ease;
+  }
+  .frame::before {
+    position: absolute;
+    inset: -14px;
+    background: linear-gradient(105deg, transparent 38%, #ffffff1f 48%, transparent 58%);
+    content: "";
+    opacity: 0;
+    transform: translateX(-34%);
+  }
+
+  .slot {
+    position: absolute;
+    top: 26px;
+    left: 30px;
+    z-index: 3;
+    color: #ffffff5e;
+    font: 700 13px/1 var(--mono);
     letter-spacing: .2em;
   }
-  .mode__tag {
+  .sys {
+    position: absolute;
+    top: 26px;
+    right: 30px;
+    z-index: 3;
+    color: #ffffff3d;
+    font: 700 11px/1 var(--mono);
+    letter-spacing: .16em;
+  }
+
+  .tag {
     width: max-content;
-    margin-bottom: 10px;
-    padding: 5px 8px;
+    margin-bottom: 12px;
+    padding: 6px 10px;
     border: 1px solid currentColor;
-    color: var(--rap);
-    font: 800 10px/1 ui-monospace, monospace;
+    background: #05070a99;
+    color: var(--c);
+    font: 700 11px/1 var(--mono);
     letter-spacing: .18em;
     text-transform: uppercase;
+    transform: skewX(2deg);
+    transition: background .16s ease, color .16s ease, box-shadow .16s ease;
   }
-  .mode--fight .mode__tag { color: var(--fight); }
   h2 {
     margin: 0;
-    font-size: clamp(36px, 5vw, 62px);
+    font-size: clamp(38px, 5.2vw, 66px);
     font-style: italic;
+    font-weight: 900;
     letter-spacing: -.04em;
     line-height: .85;
+    text-shadow: 3px 3px 0 #050608, 0 0 26px #0009;
     text-transform: uppercase;
   }
   .mode p {
     max-width: 42ch;
-    margin: 17px 0 24px;
+    margin: 13px 0 15px;
     color: #b7c0c8;
     font-size: 15px;
+    font-weight: 700;
     line-height: 1.5;
   }
-  .mode strong {
+
+  /* telemetry readout */
+  .spec {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 17px;
+    border-top: 1px solid #53627066;
+    border-bottom: 1px solid #53627066;
+    background: #05070a4d;
+  }
+  .spec > div {
+    flex: 1 1 auto;
+    min-width: 86px;
+    padding: 10px 14px 10px 0;
+  }
+  .spec > div + div { padding-left: 14px; border-left: 1px solid #5362703d }
+  .spec dt {
+    margin: 0 0 5px;
+    color: var(--dim);
+    font: 700 10px/1 var(--mono);
+    letter-spacing: .17em;
+    text-transform: uppercase;
+  }
+  .spec dd {
+    margin: 0;
+    color: var(--chrome);
+    font: 700 17px/1 var(--mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cta {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     color: #fff;
-    font: 900 12px/1 ui-monospace, monospace;
+    font: 700 13px/1 var(--mono);
     letter-spacing: .16em;
     text-transform: uppercase;
   }
-  .mode strong::after { content: "→"; font-size: 22px; }
+  .cta::after { font-size: 22px; content: "▶"; transition: transform .16s ease }
+
+  /* ---------- select state ---------- */
+  .mode:hover, .mode:focus-visible {
+    border-color: var(--c);
+    box-shadow:
+      inset 0 0 0 3px #000,
+      inset 0 0 0 4px color-mix(in srgb, var(--c), transparent 55%),
+      0 16px 34px #000c,
+      0 0 30px color-mix(in srgb, var(--c), transparent 45%);
+    filter: brightness(1.07);
+    outline: none;
+    z-index: 4;
+  }
+  .mode--rap:hover, .mode--rap:focus-visible     { transform: skewX(-2deg) translateY(-6px) }
+  .mode--fight:hover, .mode--fight:focus-visible { transform: skewX(-2deg) translateY(-6px) }
+  .mode:hover::before, .mode:focus-visible::before { opacity: 1; transform: scale(1.08) }
+  .mode:hover .frame, .mode:focus-visible .frame { inset: 10px; opacity: 1 }
+  .mode:hover .frame::before, .mode:focus-visible .frame::before {
+    opacity: 1;
+    animation: shine .7s ease-out;
+  }
+  .mode:hover .tag, .mode:focus-visible .tag {
+    background: var(--c);
+    box-shadow: 0 0 18px color-mix(in srgb, var(--c), transparent 40%);
+    color: #05070a;
+  }
+  .mode:hover .cta::after, .mode:focus-visible .cta::after { transform: translateX(6px) }
+  @keyframes shine { from { transform: translateX(-34%) } to { transform: translateX(34%) } }
+
   footer {
-    margin-top: 23px;
-    color: #737e87;
-    font: 10px/1.5 ui-monospace, monospace;
+    margin-top: 18px;
+    color: var(--dim);
+    font: 700 11px/1.6 var(--mono);
     letter-spacing: .13em;
     text-align: center;
     text-transform: uppercase;
   }
-  @media (max-width: 720px) {
-    body { place-items: start center; }
-    .modes { grid-template-columns: 1fr; }
-    .mode { min-height: 330px; }
+  footer .prov b { color: var(--muted); font-variant-numeric: tabular-nums }
+
+  @media (max-width: 760px) {
+    body { place-items: start center }
+    .modes { grid-template-columns: 1fr }
+    .mode { min-height: 356px }
+    .mode--rap, .mode--fight {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 26px), calc(100% - 26px) 100%, 0 100%);
+      transform: none;
+    }
+    .mode > * { transform: none }
+    .tag { transform: none }
+    .mode--rap:hover, .mode--rap:focus-visible,
+    .mode--fight:hover, .mode--fight:focus-visible { transform: translateY(-4px) }
+    .mode::before { background-size: min(88%, 340px); background-position: 96% 18% }
+    .versus { margin: -12px auto; justify-self: center }
+    .hud__stats, .sys { display: none }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      transition-duration: .01ms !important;
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+    }
   }
 </style>
 </head>
 <body>
+
+<div class="fx" aria-hidden="true">
+  <div class="fx__hatch"></div>
+  <div class="fx__bar fx__bar--p1"></div>
+  <div class="fx__bar fx__bar--p2"></div>
+  <div class="fx__floor"></div>
+  <div class="fx__scan"></div>
+</div>
+
+<div class="hud" id="hud" data-state="loading">
+  <span class="hud__brand">BOT<b>_</b>BEEF</span>
+  <span class="hud__live"><i></i><span id="hudState">Linking</span></span>
+  <span class="hud__spacer"></span>
+  <span class="hud__stats" aria-live="polite">
+    <span>Roster<b id="sRoster">—</b></span>
+    <span>Fights<b id="sFights">—</b></span>
+    <span>Posts<b id="sPosts">—</b></span>
+    <span>Verified<b id="sVerified">—</b></span>
+  </span>
+</div>
+
 <main>
   <header>
     <p class="eyebrow">Data has entered the BattleBox</p>
-    <h1>BOT <span>BEEF</span></h1>
-    <p>One roster. Two ways to settle it. Choose the performance or take direct control.</p>
+    <h1>BOT <em>BEEF</em></h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="lede">One roster. Two ways to settle it. Choose the performance or take direct control.</p>
   </header>
 
-  <div class="modes" aria-label="Choose a Bot Beef mode">
+  <div class="modes" role="group" aria-label="Choose a Bot Beef mode">
     <a class="mode mode--rap" href="/rap">
-      <span class="mode__number">MODE 01</span>
-      <span class="mode__tag">Data-powered</span>
+      <span class="frame" aria-hidden="true"></span>
+      <span class="slot">MODE 01</span>
+      <span class="sys" aria-hidden="true">SYS/RAP</span>
+      <span class="tag">Data-powered</span>
       <h2>Rap Battle</h2>
       <p>Scraped records and fan chatter become voiced bars. Every punchline shows its source.</p>
-      <strong>Drop the beat</strong>
+      <dl class="spec">
+        <div><dt>Fights</dt><dd id="cFights">—</dd></div>
+        <div><dt>Posts</dt><dd id="cPosts">—</dd></div>
+        <div><dt>Verified</dt><dd id="cVerified">—</dd></div>
+      </dl>
+      <strong class="cta">Drop the beat</strong>
     </a>
 
+    <span class="versus" aria-hidden="true">OR</span>
+
     <a class="mode mode--fight" href="/fight">
-      <span class="mode__number">MODE 02</span>
-      <span class="mode__tag">Playable</span>
+      <span class="frame" aria-hidden="true"></span>
+      <span class="slot">MODE 02</span>
+      <span class="sys" aria-hidden="true">SYS/FGT</span>
+      <span class="tag">Playable</span>
       <h2>Robot Fight</h2>
       <p>Pick a machine, enter the 3D arena, and fight a best-of-three match with full controls.</p>
-      <strong>Enter the arena</strong>
+      <dl class="spec">
+        <div><dt>Roster</dt><dd id="cRoster">—</dd></div>
+        <div><dt>Arena</dt><dd>3D</dd></div>
+        <div><dt>Match</dt><dd>BO3</dd></div>
+      </dl>
+      <strong class="cta">Enter the arena</strong>
     </a>
   </div>
 
-  <footer>Rap and combat are separate modes — the data, robots, and rivalry are shared.</footer>
+  <footer>
+    Rap and combat are separate modes — the data, robots, and rivalry are shared.
+    <div class="prov" id="prov">Telemetry linking…</div>
+  </footer>
 </main>
+
+<script>
+// Fill the rail and the per-card readouts from the live API. Every figure on
+// this page is real; if a fetch fails the placeholders stay as "—" rather than
+// showing invented numbers.
+(async () => {
+  const set = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  };
+  const hud = document.getElementById('hud');
+  const prov = document.getElementById('prov');
+
+  try {
+    const [table, cached] = await Promise.all([
+      fetch('/api/table').then(r => { if (!r.ok) throw new Error('table'); return r.json(); }),
+      fetch('/api/battles').then(r => r.ok ? r.json() : { battles: [] }).catch(() => ({ battles: [] })),
+    ]);
+
+    const p = table.provenance || {};
+    const roster = (table.rows || []).length;
+    const verified = (cached.battles || []).filter(b => b.playable === true).length;
+    const num = n => Number(n || 0).toLocaleString('en-US');
+
+    set('sRoster', num(roster));
+    set('sFights', num(p.fights_real));
+    set('sPosts', num(p.posts_real));
+    set('sVerified', num(verified));
+
+    set('cRoster', num(roster));
+    set('cFights', num(p.fights_real));
+    set('cPosts', num(p.posts_real));
+    set('cVerified', num(verified));
+
+    hud.dataset.state = 'online';
+    set('hudState', p.is_real ? 'Scraped data' : 'Placeholder data');
+
+    const stamp = p.fights_ingested_at ? String(p.fights_ingested_at).slice(0, 10) : '';
+    if (prov) {
+      prov.textContent = p.is_real
+        ? `Live data · ${num(p.fights_real)} fights · ${num(p.posts_real)} posts · ` +
+          `${num(roster)} bots${stamp ? ` · ingested ${stamp}` : ''}`
+        : `⚠ Placeholder data — ${num(p.fights_real)}/${num(p.fights_total)} fights scraped`;
+    }
+  } catch (err) {
+    hud.dataset.state = 'offline';
+    set('hudState', 'Telemetry offline');
+    if (prov) prov.textContent = 'Telemetry unavailable — start the stage server to load live counts.';
+  }
+})();
+</script>
 </body>
 </html>

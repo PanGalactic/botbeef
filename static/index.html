@@ -4,91 +4,149 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>BOT BEEF — Rap Evidence</title>
+<link rel="stylesheet" href="/css/tekken.css">
 <link rel="stylesheet" href="/css/mode-switcher.css">
 <style>
+  /* Aliases onto the shared Tekken theme in css/tekken.css, which owns the
+     values. Bot A takes P1 red, bot B takes P2 cyan. */
   :root{
-    --bg:#0a0b0d; --panel:#121419; --line:#242832;
-    --ink:#f2f4f8; --dim:#8b93a6;
-    --a:#ff6b35;      /* bot A */
-    --b:#35c8ff;      /* bot B */
-    --warn:#ff2e4d;
+    --bg:var(--tk-steel-0); --panel:var(--tk-steel-1); --line:var(--tk-line);
+    --ink:var(--tk-ink); --dim:var(--tk-dim);
+    --a:var(--tk-p1);      /* bot A */
+    --b:var(--tk-p2);      /* bot B */
+    --warn:var(--tk-danger);
+    --mono:var(--tk-mono);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{
-    background:var(--bg); color:var(--ink);
-    font:16px/1.5 ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink);
+    font:700 16px/1.5 var(--tk-display);
     height:100vh; display:flex; flex-direction:column; overflow:hidden;
+    background:
+      linear-gradient(115deg, #ff23181a, transparent 30%),
+      linear-gradient(245deg, #1cd2ff1a, transparent 30%),
+      radial-gradient(ellipse at 50% 0%, var(--tk-steel-2) 0, #0b1016 46%, #030405 100%);
+  }
+  /* scanline pass over the whole evidence view */
+  body::after{
+    content:""; position:fixed; inset:0; z-index:99; pointer-events:none;
+    opacity:.11; mix-blend-mode:multiply;
+    background:repeating-linear-gradient(180deg, transparent 0 3px, #00000099 4px);
   }
 
   header{
-    display:flex; align-items:center; gap:20px;
-    padding:14px 22px; border-bottom:1px solid var(--line); flex:0 0 auto;
+    display:flex; align-items:center; gap:18px;
+    /* wrap rather than clip: the control row is wider than a 1000px viewport,
+       which used to push the BATTLE button off-screen entirely. */
+    flex-wrap:wrap; row-gap:10px;
+    padding:12px 22px; flex:0 0 auto;
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,#182230f2,#080b0ff2);
+    box-shadow:inset 0 1px #ffffff1a, 0 6px 20px #0009;
   }
-  h1{font-size:26px; letter-spacing:.14em; font-weight:800}
-  h1 em{font-style:normal; color:var(--a)}
+  h1{
+    font-size:30px; font-style:italic; font-weight:900;
+    letter-spacing:-.035em; text-transform:uppercase;
+    text-shadow:3px 3px 0 #050608, 0 0 26px #ffffff26;
+    transform:skewX(-4deg);
+  }
+  h1 em{font-style:inherit; color:#ff4637}
   .tag{
-    font:11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
-    letter-spacing:.1em; text-transform:uppercase;
-    padding:6px 10px; border:1px solid var(--line); border-radius:99px; color:var(--dim);
+    font:700 10px/1 var(--mono);
+    letter-spacing:.16em; text-transform:uppercase;
+    padding:6px 10px; border:1px solid currentColor; border-radius:0;
+    background:#05070a99; color:var(--dim);
   }
-  .tag.bad{color:var(--warn); border-color:var(--warn); font-weight:700}
-  .tag.good{color:#2ee6a8; border-color:#2ee6a8}
+  .tag.bad{color:var(--warn)}
+  .tag.good{color:var(--tk-ok)}
   .spacer{flex:1}
 
   select,button{
-    font:inherit; font-size:15px; color:var(--ink);
-    background:var(--panel); border:1px solid var(--line);
-    border-radius:8px; padding:9px 12px; cursor:pointer;
+    color:var(--ink); border:1px solid var(--tk-line-hi); border-radius:0;
+    padding:10px 12px; cursor:pointer;
+    font:700 14px/1 var(--tk-display); letter-spacing:.04em;
+    background:
+      linear-gradient(180deg,#ffffff1a,transparent 44%),
+      linear-gradient(90deg,#222b34,var(--tk-steel-1));
+    box-shadow:inset 0 0 0 2px #00000099;
   }
+  select:focus-visible,button:focus-visible{outline:2px solid #fff; outline-offset:2px}
+  select{min-width:0}
   #beatSelect{max-width:190px}
   button.play{
-    background:var(--a); color:#0a0b0d; border-color:var(--a);
-    font-weight:800; letter-spacing:.08em; padding:9px 22px;
+    border-color:var(--a); color:#05070a;
+    font:700 12px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase;
+    padding:11px 24px;
+    background:linear-gradient(180deg,#ff7a63,var(--a) 46%,#d62a20);
+    box-shadow:inset 0 0 0 2px #000, 0 0 22px #ff3a2f66;
+    /* sheared with clip-path so the label stays upright */
+    clip-path:polygon(11px 0, 100% 0, calc(100% - 11px) 100%, 0 100%);
   }
-  button:disabled{opacity:.4; cursor:default}
+  button.play:hover:not(:disabled){border-color:#fff; box-shadow:inset 0 0 0 2px #000, 0 0 30px #ff3a2f99}
+  button:disabled{opacity:.42; cursor:not-allowed}
 
   main{flex:1; display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); min-height:0}
   section{padding:18px 22px; min-height:0; display:flex; flex-direction:column}
   section + section{border-left:1px solid var(--line)}
 
   .cap{
-    font:11px/1 ui-monospace,Menlo,monospace; letter-spacing:.12em;
-    text-transform:uppercase; color:var(--dim); margin-bottom:4px;
+    font:700 10px/1 var(--mono); letter-spacing:.2em;
+    text-transform:uppercase; color:var(--tk-warning); margin-bottom:6px;
   }
-  .sub{font-size:14px; color:var(--dim); margin-bottom:10px}
-  .sub b{color:var(--ink)}
+  .sub{font:700 13px/1.5 var(--mono); color:var(--dim); margin-bottom:10px; letter-spacing:.03em}
+  .sub b{color:var(--tk-chrome); font-variant-numeric:tabular-nums}
 
   svg{flex:1; width:100%; min-height:0}
   .grid{stroke:var(--line); stroke-width:1}
   .fit{stroke:#4a5163; stroke-width:2; stroke-dasharray:7 6}
   .dot{fill:#525a6e}
   .dot.hi-a{fill:var(--a)} .dot.hi-b{fill:var(--b)}
-  .lbl{font-size:11px; fill:var(--dim)}
-  .lbl.hi{font-size:16px; font-weight:800}
+  .lbl{font-size:11px; fill:var(--dim); font-family:var(--mono)}
+  .lbl.hi{font-size:16px; font-weight:900; font-style:italic}
   .lbl.hi-a{fill:var(--a)} .lbl.hi-b{fill:var(--b)}
-  .axis{font-size:12px; fill:var(--dim); letter-spacing:.08em}
+  .axis{font-size:11px; fill:var(--dim); letter-spacing:.16em; font-family:var(--mono)}
   .resid{stroke:#6c7488; stroke-width:1.5; stroke-dasharray:3 4}
 
   #bars{flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:12px; padding-right:6px}
   .bar{
-    border-left:4px solid var(--line); padding:9px 0 9px 14px;
-    opacity:.34; transition:opacity .18s;
+    border-left:4px solid var(--tk-steel-3); padding:10px 0 10px 15px;
+    opacity:.34; transition:opacity .18s, background .18s;
   }
   .bar.a{border-left-color:var(--a)} .bar.b{border-left-color:var(--b)}
   .bar.on{opacity:1}
   .bar.on .txt{color:var(--ink)}
+  /* the live bar lights its own side, like a hit landing */
+  .bar.a.on{background:linear-gradient(90deg,#ff3a2f1f,transparent 42%)}
+  .bar.b.on{background:linear-gradient(90deg,#27d9ff1f,transparent 42%)}
   .who{
-    font:11px/1 ui-monospace,Menlo,monospace; letter-spacing:.12em;
-    text-transform:uppercase; margin-bottom:5px;
+    font:700 10px/1 var(--mono); letter-spacing:.18em;
+    text-transform:uppercase; margin-bottom:6px;
   }
   .bar.a .who{color:var(--a)} .bar.b .who{color:var(--b)}
-  .txt{font-size:23px; line-height:1.32; font-weight:600; color:#cfd5e2}
+  .txt{font-size:24px; line-height:1.3; font-weight:900; font-style:italic; color:#cfd5e2}
   .cite{
-    margin-top:7px; font:12px/1.45 ui-monospace,Menlo,monospace;
-    color:var(--dim); border-top:1px dashed var(--line); padding-top:6px;
+    margin-top:8px; font:700 11px/1.5 var(--mono); letter-spacing:.04em;
+    color:var(--dim); border-top:1px solid var(--line); padding-top:7px;
   }
-  .cite b{color:#2ee6a8}
-  .empty{color:var(--dim); font-size:15px; margin:auto; text-align:center; max-width:34ch}
+  .cite b{color:var(--tk-ok)}
+  .empty{
+    color:var(--dim); font:700 12px/1.7 var(--mono); letter-spacing:.1em;
+    margin:auto; text-align:center; max-width:38ch; text-transform:uppercase;
+  }
+
+  /* Narrow screens: the chart and the bars cannot share a row at phone width,
+     and the wrapped control header needs the document to scroll. */
+  @media (max-width:760px){
+    body{height:auto; min-height:100vh; overflow-y:auto}
+    header{gap:10px; padding:10px 14px}
+    h1{font-size:24px}
+    main{grid-template-columns:1fr}
+    section{min-height:0; padding:16px 14px}
+    section + section{border-left:0; border-top:1px solid var(--line)}
+    #chart{min-height:340px}
+    #bars{flex:none; overflow:visible}
+    .txt{font-size:20px}
+  }
 </style>
 </head>
 <body>
@@ -98,8 +156,9 @@
   <span class="tag" id="prov">loading…</span>
   <div class="spacer"></div>
   <nav class="mode-nav mode-nav--header" aria-label="Bot Beef modes">
-    <a href="/rap">Arena</a>
-    <a href="/rap/data" aria-current="page">Data</a>
+    <a href="/">Modes</a>
+    <a href="/rap">Rap</a>
+    <a href="/data" aria-current="page">Data</a>
     <a href="/fight">Fight</a>
   </nav>
   <select id="beatSelect" aria-label="Rap beat">
